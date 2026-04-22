@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ccrwppfgxqm6l"]
+
+[ext_resource type="PackedScene" uid="uid://cvyd4txtbtna" path="res://brackeys_3d_game_assets/dungeon_assets/building/floor_stone.glb" id="1_552gg"]
+[ext_resource type="PackedScene" uid="uid://cbw26443cikq5" path="res://brackeys_3d_game_assets/dungeon_assets/building/floor_wood.glb" id="2_v8tqa"]
+
+[node name="Node3D" type="Node3D" unique_id=202857855]
+
+[node name="floor_stone" parent="." unique_id=1583842665 instance=ExtResource("1_552gg")]
+
+[node name="floor_wood" parent="." unique_id=1160988174 instance=ExtResource("2_v8tqa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.954895, 0, -0.004313946)
