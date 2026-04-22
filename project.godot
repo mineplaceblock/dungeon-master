@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="dungeon-master"
+run/main_scene="uid://15qp0yrhoxec"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
