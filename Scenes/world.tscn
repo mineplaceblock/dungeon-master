@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://15qp0yrhoxec"]
+[gd_scene format=3 uid="uid://883ku8ahamk8"]
 
-[ext_resource type="PackedScene" path="res://Player/proto_controller.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" path="res://Player/proto_controller.tscn" id="1_a02cp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jjgbg"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -38,7 +38,7 @@ mesh = SubResource("BoxMesh_7u77a")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=1408686088]
 shape = SubResource("BoxShape3D_jjgbg")
 
-[node name="ProtoController" parent="." unique_id=2066130245 instance=ExtResource("1_jjgbg")]
+[node name="ProtoController" parent="." unique_id=2066130245 instance=ExtResource("1_a02cp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.398185, 0)
 can_sprint = true
 can_freefly = true
