@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://883ku8ahamk8"]
 
 [ext_resource type="PackedScene" path="res://Player/proto_controller.tscn" id="1_a02cp"]
+[ext_resource type="Texture2D" uid="uid://c24ifoit84iim" path="res://w7yfuteogao0-M4a1/M4a1/palette1.png" id="2_5a7ea"]
+[ext_resource type="ArrayMesh" uid="uid://h7blqmna5s8k" path="res://w7yfuteogao0-M4a1/M4a1/M4a1.obj" id="3_8j60k"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jjgbg"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -19,6 +21,13 @@ glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jjgbg"]
 size = Vector3(1, 7.9526367, 1.0023464)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fo5ed"]
+albedo_texture = ExtResource("2_5a7ea")
+
+[sub_resource type="Skin" id="Skin_go701"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5a7ea"]
 
 [node name="World" type="Node3D" unique_id=1061197318]
 
@@ -42,3 +51,17 @@ shape = SubResource("BoxShape3D_jjgbg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.398185, 0)
 can_sprint = true
 can_freefly = true
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1775868357]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.803806, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D" unique_id=180137715]
+transform = Transform3D(0.20297329, 0, 0, 0, 0.24319851, 0, 0, 0, 0.1978294, -10.854145, 3.2237873, 0)
+material_override = SubResource("StandardMaterial3D_fo5ed")
+mesh = ExtResource("3_8j60k")
+skin = SubResource("Skin_go701")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/MeshInstance3D" unique_id=1822540371]
+physics_material_override = SubResource("PhysicsMaterial_5a7ea")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MeshInstance3D/StaticBody3D" unique_id=654337294]
