@@ -24,8 +24,11 @@ size = Vector3(1, 7.9526367, 1.0023464)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fo5ed"]
 albedo_texture = ExtResource("2_5a7ea")
+emission_enabled = true
 
 [sub_resource type="Skin" id="Skin_go701"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5a7ea"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5a7ea"]
 
@@ -47,21 +50,19 @@ mesh = SubResource("BoxMesh_7u77a")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=1408686088]
 shape = SubResource("BoxShape3D_jjgbg")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=180137715]
+transform = Transform3D(0.20297329, 0, 0, 0, 0.24319851, 0, 0, 0, 0.2294358, 5.9496613, 3.2237873, 0)
+material_override = SubResource("StandardMaterial3D_fo5ed")
+mesh = ExtResource("3_8j60k")
+skin = SubResource("Skin_go701")
+surface_material_override/0 = SubResource("StandardMaterial3D_5a7ea")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1822540371]
+physics_material_override = SubResource("PhysicsMaterial_5a7ea")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=654337294]
+
 [node name="ProtoController" parent="." unique_id=2066130245 instance=ExtResource("1_a02cp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.398185, 0)
 can_sprint = true
 can_freefly = true
-
-[node name="Node3D" type="Node3D" parent="." unique_id=1775868357]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.803806, 0, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D" unique_id=180137715]
-transform = Transform3D(0.20297329, 0, 0, 0, 0.24319851, 0, 0, 0, 0.1978294, -10.854145, 3.2237873, 0)
-material_override = SubResource("StandardMaterial3D_fo5ed")
-mesh = ExtResource("3_8j60k")
-skin = SubResource("Skin_go701")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/MeshInstance3D" unique_id=1822540371]
-physics_material_override = SubResource("PhysicsMaterial_5a7ea")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MeshInstance3D/StaticBody3D" unique_id=654337294]

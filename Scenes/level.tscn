@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://bh0smpy0tc71w"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_51e2h"]
-size = Vector3(99.65704, 1, 126.569824)
+[sub_resource type="Environment" id="Environment_51e2h"]
+glow_enabled = true
 
 [node name="Node3D" type="Node3D" unique_id=2105909514]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=495101076]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=618251906]
+environment = SubResource("Environment_51e2h")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=333681775]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.420929, 0, -32.552002)
-shape = SubResource("BoxShape3D_51e2h")
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1921201302]
+light_energy = 3.0
+light_volumetric_fog_energy = 1.317
+light_angular_distance = 8.91
+light_specular = 0.0
+shadow_enabled = true
