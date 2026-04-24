@@ -1,21 +1,29 @@
 [gd_scene format=3 uid="uid://15qp0yrhoxec"]
 
-[ext_resource type="PackedScene" path="res://Player/proto_controller.tscn" id="1_jjgbg"]
-[ext_resource type="Texture2D" uid="uid://c6qyi05jhpooj" path="res://brackeys_3d_game_assets/dungeon_assets/wood_7.png" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://dwnkhg0oc16lc" path="res://Player/proto_controller.tscn" id="1_jjgbg"]
+[ext_resource type="Texture2D" uid="uid://dy420kkgf3hu2" path="res://Assets/Brackeys/sky_background/autumn_field_puresky_4k.hdr" id="1_kry3j"]
+[ext_resource type="Texture2D" path="res://brackeys_3d_game_assets/dungeon_assets/wood_7.png" id="2_bo1nx"]
 [ext_resource type="Texture2D" uid="uid://8bmw0j4aaa8t" path="res://Player/T_fire01 (1).png" id="3_8gbba"]
+[ext_resource type="MeshLibrary" uid="uid://bl5kcns0i58ij" path="res://Assets/Kenney/tiles_kenney_dungeon_kit.tres" id="5_21xkr"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jjgbg"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6bp64"]
+panorama = ExtResource("1_kry3j")
+energy_multiplier = 0.1
 
-[sub_resource type="Sky" id="Sky_bo1nx"]
-sky_material = SubResource("ProceduralSkyMaterial_jjgbg")
+[sub_resource type="Sky" id="Sky_344ge"]
+sky_material = SubResource("PanoramaSkyMaterial_6bp64")
 
 [sub_resource type="Environment" id="Environment_8gbba"]
 background_mode = 2
-sky = SubResource("Sky_bo1nx")
-tonemap_mode = 2
+sky = SubResource("Sky_344ge")
+tonemap_mode = 3
+tonemap_exposure = 0.85
+tonemap_white = 4.47
+ssao_enabled = true
+ssao_radius = 1.6
 glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.0195, 0.031191662, 0.05, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7u77a"]
 
@@ -123,7 +131,7 @@ omni_attenuation = 0.604
 omni_shadow_mode = 0
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="ANTORCHA/ANTORCHA2" unique_id=2016292305]
-transform = Transform3D(0.24374777, 0, 0, 0, 0.02824707, 0, 0, 0, 1, -0.15534592, 2.144207, 0)
+transform = Transform3D(0.24374777, 0, 0, 0, 0.016247327, 0, 0, 0, 1, -0.15534592, 2.144207, 0)
 material_override = SubResource("StandardMaterial3D_21xkr")
 amount = 10
 lifetime = 1.2
@@ -136,3 +144,6 @@ transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 0.99999994, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ANTORCHA/StaticBody3D" unique_id=1800610092]
 shape = SubResource("CylinderShape3D_21xkr")
+
+[node name="GridMap" type="GridMap" parent="." unique_id=1603080882]
+mesh_library = ExtResource("5_21xkr")

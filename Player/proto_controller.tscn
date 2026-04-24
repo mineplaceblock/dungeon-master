@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://c57gxiixx0lb8"]
+[gd_scene format=3 uid="uid://dwnkhg0oc16lc"]
 
 [ext_resource type="Script" uid="uid://bimwkqxufe78s" path="res://Player/advanced_player.gd" id="1_1dcjc"]
-[ext_resource type="PackedScene" uid="uid://uk2vb536n34d" path="res://Player/AWP.fbx" id="2_kcy6y"]
+[ext_resource type="PackedScene" uid="uid://re0mj8ukialf" path="res://Player/awp.tscn" id="2_kcy6y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iof21"]
 albedo_color = Color(0.91806, 0.575202, 0.222449, 1)
@@ -32,8 +32,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=88253308]
 
-[node name="AWP" parent="Head/Camera3D" unique_id=237852346 instance=ExtResource("2_kcy6y")]
-transform = Transform3D(-0.0981313, 0, -0.019241935, 0, 0.1, 0, 0.019241935, 0, -0.0981313, 0.5665684, -0.15447474, -0.9091108)
+[node name="AWP" parent="Head/Camera3D" unique_id=334229785 instance=ExtResource("2_kcy6y")]
+transform = Transform3D(-0.099894494, 0, -0.004592078, 0, 0.099999994, 0, 0.004592078, 0, -0.099894494, 0.4370431, 0, -0.8273982)
 
 [node name="pos" type="Node3D" parent="Head/Camera3D/AWP" unique_id=306781093]
-transform = Transform3D(0.9411524, 0, 0.33798242, 0, 0.99999917, 0, -0.33798242, 0, 0.9411524, 0.0049977303, 0.5526619, 14.010677)
+transform = Transform3D(-0.09232908, 0, -0.038410213, 0, 0.09999991, 0, 0.038410213, 0, -0.09232908, 0.4006135, -0.09920859, -2.639864)
