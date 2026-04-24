@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://883ku8ahamk8"]
 
-[ext_resource type="PackedScene" path="res://Player/proto_controller.tscn" id="1_a02cp"]
+[ext_resource type="PackedScene" uid="uid://c57gxiixx0lb8" path="res://Player/proto_controller.tscn" id="1_a02cp"]
 [ext_resource type="Texture2D" uid="uid://c24ifoit84iim" path="res://w7yfuteogao0-M4a1/M4a1/palette1.png" id="2_5a7ea"]
 [ext_resource type="ArrayMesh" uid="uid://h7blqmna5s8k" path="res://w7yfuteogao0-M4a1/M4a1/M4a1.obj" id="3_8j60k"]
 [ext_resource type="PackedScene" uid="uid://bh0smpy0tc71w" path="res://Scenes/level.tscn" id="4_8j60k"]
