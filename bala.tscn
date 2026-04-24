@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://hiek0i6sheor"]
+
+[ext_resource type="Script" uid="uid://dm3ggapbode86" path="res://bala.gd" id="1_jk513"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hv006"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jk513"]
+
+[node name="Bullet" type="CharacterBody3D" unique_id=194539720]
+script = ExtResource("1_jk513")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2072435538]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_hv006")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=931434411]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_jk513")

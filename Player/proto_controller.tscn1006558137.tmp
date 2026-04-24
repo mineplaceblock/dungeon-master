@@ -33,7 +33,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=88253308]
 
 [node name="AWP" parent="Head/Camera3D" unique_id=237852346 instance=ExtResource("2_kcy6y")]
-transform = Transform3D(-0.0981313, 0, -0.019241935, 0, 0.1, 0, 0.019241935, 0, -0.0981313, 0.5665684, -0.15447474, -0.9091108)
-
-[node name="pos" type="Node3D" parent="Head/Camera3D/AWP" unique_id=306781093]
-transform = Transform3D(0.9411524, 0, 0.33798242, 0, 0.9999997, 0, -0.33798242, 0, 0.9411524, -0.7288537, 0, 15.034164)
+transform = Transform3D(-0.09993323, 0, 0.0036538963, 0, 0.1, 0, -0.0036538963, 0, -0.09993323, -0.5488571, -0.15447474, -1.8452559)

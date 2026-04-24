@@ -52,7 +52,8 @@ var freeflying : bool = false
 ## IMPORTANT REFERENCES
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
-
+var bullet = load("res://bala.tscn")
+@onready var pos = $Head/Camera3D/AWP/pos
 func _ready() -> void:
 	check_input_mappings()
 	look_rotation.y = rotation.y
@@ -64,6 +65,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		capture_mouse()
 	if Input.is_key_pressed(KEY_ESCAPE):
 		release_mouse()
+	
+	if Input.is_action_just_pressed("clicknormal"):
+		var balita = bullet.instantiate()
+		balita.position = pos.global_position
+		balita.transform.basis = pos.global_transform.basis
+		get_parent().add_child(balita)
 	
 	# Look around
 	if mouse_captured and event is InputEventMouseMotion:
