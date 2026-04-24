@@ -1,52 +1,78 @@
 [gd_scene format=3 uid="uid://ccrwppfgxqm6l"]
 
-[ext_resource type="PackedScene" uid="uid://ck4wgjjgea7lw" path="res://brackeys_3d_game_assets/dungeon_assets/building/Colors/floor_stone.tscn" id="1_v8tqa"]
-[ext_resource type="PackedScene" uid="uid://b0u2cw5sdic1x" path="res://brackeys_3d_game_assets/dungeon_assets/building/Colors/floor_wood.tscn" id="2_oo0aq"]
-[ext_resource type="PackedScene" uid="uid://euwr8o2cdnxn" path="res://brackeys_3d_game_assets/dungeon_assets/building/Colors/wall_doorway_2.tscn" id="3_v8tqa"]
-[ext_resource type="Texture2D" uid="uid://c6qyi05jhpooj" path="res://brackeys_3d_game_assets/dungeon_assets/wood_7.png" id="4_oo0aq"]
+[ext_resource type="PackedScene" uid="uid://b0u2cw5sdic1x" path="res://brackeys_3d_game_assets/dungeon_assets/building/Colors/floor_wood.tscn" id="1_552gg"]
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_v8tqa"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5qaeq"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m21ok"]
-albedo_texture = ExtResource("4_oo0aq")
+[sub_resource type="Sky" id="Sky_552gg"]
+sky_material = SubResource("ProceduralSkyMaterial_5qaeq")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vhd4b"]
-albedo_texture = ExtResource("4_oo0aq")
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_4y5yq"]
+[sub_resource type="Environment" id="Environment_v8tqa"]
+background_mode = 2
+sky = SubResource("Sky_552gg")
+tonemap_mode = 2
+glow_enabled = true
 
 [node name="Node3D" type="Node3D" unique_id=202857855]
 
-[node name="floor_stone2" parent="." unique_id=1583842665 instance=ExtResource("1_v8tqa")]
-
-[node name="floor_wood" parent="." unique_id=1160988174 instance=ExtResource("2_oo0aq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.959682, 0, -0.006863594)
-
-[node name="wall_doorway2" parent="." unique_id=1466109621 instance=ExtResource("3_v8tqa")]
-transform = Transform3D(0.9999362, 0, -0.01129204, 0, 1, 0, 0.01129204, 0, 0.9999362, -0.0069277287, 0, 2.4989545)
-
-[node name="ANTORCHA" type="MeshInstance3D" parent="." unique_id=1625061045]
-transform = Transform3D(0.060376648, 0, 0, 0, 0.24986628, 0, 0, 0, 0.064659394, 1.4632155, 1.2856362, 2.1121597)
-mesh = SubResource("CylinderMesh_v8tqa")
-surface_material_override/0 = SubResource("StandardMaterial3D_m21ok")
-
-[node name="ANTORCHA2" type="MeshInstance3D" parent="ANTORCHA" unique_id=2069212684]
-transform = Transform3D(1.6481413, 0, 0, 0, 0.15514174, 0, 0, 0, 1.5405777, 0, 0.8267746, 0)
-mesh = SubResource("CylinderMesh_v8tqa")
-surface_material_override/0 = SubResource("StandardMaterial3D_vhd4b")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="ANTORCHA/ANTORCHA2" unique_id=2141044143]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4946518, 0)
-light_color = Color(0.83, 0.66400003, 0, 1)
-light_size = 0.079
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1830549002]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
-distance_fade_enabled = true
-omni_range = 0.848
-omni_attenuation = 0.604
-omni_shadow_mode = 0
 
-[node name="StaticBody3D" type="StaticBody3D" parent="ANTORCHA" unique_id=1748910632]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 0.99999994, 0, 0, 0)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=548189855]
+environment = SubResource("Environment_v8tqa")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ANTORCHA/StaticBody3D" unique_id=534426002]
-shape = SubResource("CylinderShape3D_4y5yq")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=260561431]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=263673895]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=675806366]
+
+[node name="floor_wood" parent="." unique_id=1160988174 instance=ExtResource("1_552gg")]
+
+[node name="floor_wood2" parent="." unique_id=2054509904 instance=ExtResource("1_552gg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="floor_wood3" parent="." unique_id=155850235 instance=ExtResource("1_552gg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="floor_wood4" parent="." unique_id=408477711 instance=ExtResource("1_552gg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+
+[node name="floor_wood5" parent="." unique_id=1291474210 instance=ExtResource("1_552gg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="floor_wood6" parent="." unique_id=1175174325 instance=ExtResource("1_552gg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="floor_wood7" parent="." unique_id=668830061 instance=ExtResource("1_552gg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="floor_wood8" parent="." unique_id=880932117 instance=ExtResource("1_552gg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 4)
+
+[node name="floor_wood9" parent="." unique_id=1567703114 instance=ExtResource("1_552gg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="floor_wood10" parent="." unique_id=1682688478 instance=ExtResource("1_552gg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12)
+
+[node name="floor_wood11" parent="." unique_id=492222940 instance=ExtResource("1_552gg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 12)
+
+[node name="floor_wood12" parent="." unique_id=791378348 instance=ExtResource("1_552gg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 12)
+
+[node name="floor_wood13" parent="." unique_id=1818943102 instance=ExtResource("1_552gg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="floor_wood14" parent="." unique_id=2035488729 instance=ExtResource("1_552gg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="floor_wood15" parent="." unique_id=335756034 instance=ExtResource("1_552gg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8)
+
+[node name="floor_wood16" parent="." unique_id=589626418 instance=ExtResource("1_552gg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 8)
