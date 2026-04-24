@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://15qp0yrhoxec"]
 
 [ext_resource type="PackedScene" path="res://Player/proto_controller.tscn" id="1_jjgbg"]
+[ext_resource type="Texture2D" uid="uid://c6qyi05jhpooj" path="res://brackeys_3d_game_assets/dungeon_assets/wood_7.png" id="2_bo1nx"]
+[ext_resource type="Texture2D" uid="uid://8bmw0j4aaa8t" path="res://Player/T_fire01 (1).png" id="3_8gbba"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jjgbg"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -20,16 +22,65 @@ glow_enabled = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_jjgbg"]
 size = Vector3(1, 7.9526367, 1.0023464)
 
-[node name="World" type="Node3D" unique_id=1061197318]
+[sub_resource type="CylinderMesh" id="CylinderMesh_8gbba"]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=126947165]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.094359, 4.8316407, 5.9363527)
-light_energy = 3.0
-light_indirect_energy = 3.0
-light_volumetric_fog_energy = 0.0
-light_angular_distance = 3.0
-light_specular = 2.901
-shadow_enabled = true
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jjvhh"]
+albedo_texture = ExtResource("2_bo1nx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kry3j"]
+albedo_texture = ExtResource("2_bo1nx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21xkr"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_color = Color(1, 0.94533336, 0.18, 1)
+albedo_texture = ExtResource("3_8gbba")
+albedo_texture_force_srgb = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_8gbba"]
+offsets = PackedFloat32Array(0.19387755, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jjvhh"]
+gradient = SubResource("Gradient_8gbba")
+
+[sub_resource type="Curve" id="Curve_kry3j"]
+_data = [Vector2(0, 0.5393259), 0.0, 1.7202634, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_21xkr"]
+curve = SubResource("Curve_kry3j")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6bp64"]
+lifetime_randomness = 0.08
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 0.2
+angle_min = -179.99998
+angle_max = 180.00002
+initial_velocity_min = 0.9
+initial_velocity_max = 1.4
+gravity = Vector3(0, 2, 0)
+scale_min = 0.5
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_21xkr")
+color = Color(2.2011487, 1.7035239, 0, 1)
+color_ramp = SubResource("GradientTexture1D_jjvhh")
+
+[sub_resource type="QuadMesh" id="QuadMesh_344ge"]
+
+[sub_resource type="Skin" id="Skin_ynf5e"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_21xkr"]
+
+[node name="World" type="Node3D" unique_id=1061197318]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1191723514]
 environment = SubResource("Environment_8gbba")
@@ -47,3 +98,41 @@ shape = SubResource("BoxShape3D_jjgbg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.398185, 0)
 can_sprint = true
 can_freefly = true
+
+[node name="ANTORCHA" type="MeshInstance3D" parent="." unique_id=515590487]
+transform = Transform3D(0.060376648, 0, 0, 0, 0.24986628, 0, 0, 0, 0.064659394, 1.7169398, 1.3664706, 2.1121597)
+mesh = SubResource("CylinderMesh_8gbba")
+surface_material_override/0 = SubResource("StandardMaterial3D_jjvhh")
+
+[node name="ANTORCHA2" type="MeshInstance3D" parent="ANTORCHA" unique_id=696881253]
+transform = Transform3D(1.6481413, 0, 0, 0, 0.15514174, 0, 0, 0, 1.5405777, 0, 0.8267746, 0)
+mesh = SubResource("CylinderMesh_8gbba")
+surface_material_override/0 = SubResource("StandardMaterial3D_kry3j")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="ANTORCHA/ANTORCHA2" unique_id=320011409]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4946518, 0)
+light_color = Color(0.83, 0.66400003, 0, 1)
+light_energy = 2.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 2.0
+light_size = 0.238
+shadow_enabled = true
+distance_fade_enabled = true
+omni_range = 1.941
+omni_attenuation = 0.604
+omni_shadow_mode = 0
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="ANTORCHA/ANTORCHA2" unique_id=2016292305]
+transform = Transform3D(0.24374777, 0, 0, 0, 0.02824707, 0, 0, 0, 1, -0.15534592, 2.144207, 0)
+material_override = SubResource("StandardMaterial3D_21xkr")
+amount = 10
+lifetime = 1.2
+process_material = SubResource("ParticleProcessMaterial_6bp64")
+draw_pass_1 = SubResource("QuadMesh_344ge")
+draw_skin = SubResource("Skin_ynf5e")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ANTORCHA" unique_id=1139947879]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ANTORCHA/StaticBody3D" unique_id=1800610092]
+shape = SubResource("CylinderShape3D_21xkr")
