@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cvnn54wtpcjgf"]
+
+[ext_resource type="MeshLibrary" uid="uid://bl5kcns0i58ij" path="res://Assets/Kenney/tiles_kenney_dungeon_kit.tres" id="1_xg6cx"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8xi55"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_xg6cx"]
+sky_material = SubResource("ProceduralSkyMaterial_8xi55")
+
+[sub_resource type="Environment" id="Environment_vrrve"]
+background_mode = 2
+sky = SubResource("Sky_xg6cx")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="World" type="Node3D" unique_id=792627231]
+
+[node name="Enviroment" type="Node3D" parent="." unique_id=293451769]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Enviroment" unique_id=1378292986]
+environment = SubResource("Environment_vrrve")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Enviroment" unique_id=998605727]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="GridMap" type="GridMap" parent="." unique_id=76854197]
+mesh_library = ExtResource("1_xg6cx")

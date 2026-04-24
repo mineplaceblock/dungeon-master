@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://je6xkfocrcc"]
+
+[ext_resource type="PackedScene" uid="uid://dsgfsdoma5c8f" path="res://Assets/Kenney/Dungeon Kit/corridor-corner.glb" id="1_h7ayd"]
+[ext_resource type="PackedScene" uid="uid://d2m7ldn1o2gvl" path="res://Assets/Kenney/Dungeon Kit/corridor-end.glb" id="2_ai3s1"]
+[ext_resource type="PackedScene" uid="uid://b0tp510wtupdx" path="res://Assets/Kenney/Dungeon Kit/corridor-intersection.glb" id="3_a5miy"]
+[ext_resource type="PackedScene" uid="uid://bnuwm5xppevnj" path="res://Assets/Kenney/Dungeon Kit/corridor-junction.glb" id="4_wkvm8"]
+[ext_resource type="PackedScene" uid="uid://vmdpun6myjvt" path="res://Assets/Kenney/Dungeon Kit/corridor-transition.glb" id="5_1oxjg"]
+[ext_resource type="PackedScene" uid="uid://d2w4cnrmwppln" path="res://Assets/Kenney/Dungeon Kit/corridor-wide-corner.glb" id="6_b5yxs"]
+[ext_resource type="PackedScene" uid="uid://dvuv57dam2mmy" path="res://Assets/Kenney/Dungeon Kit/corridor-wide-end.glb" id="7_a5hgt"]
+[ext_resource type="PackedScene" uid="uid://bec2wgr3amlqw" path="res://Assets/Kenney/Dungeon Kit/corridor-wide-intersection.glb" id="8_fk5qp"]
+[ext_resource type="PackedScene" uid="uid://bpgerpxqaid44" path="res://Assets/Kenney/Dungeon Kit/corridor-wide-junction.glb" id="9_h1yj7"]
+[ext_resource type="PackedScene" uid="uid://ij3irwrci1gv" path="res://Assets/Kenney/Dungeon Kit/corridor-wide.glb" id="10_8pvpr"]
+[ext_resource type="PackedScene" uid="uid://d1lclt4reswgc" path="res://Assets/Kenney/Dungeon Kit/corridor.glb" id="11_ynw81"]
+[ext_resource type="PackedScene" uid="uid://dqylutr6762r7" path="res://Assets/Kenney/Dungeon Kit/gate-door-window.glb" id="12_35tu4"]
+[ext_resource type="PackedScene" uid="uid://dyvg2n1sfuxej" path="res://Assets/Kenney/Dungeon Kit/gate-door.glb" id="13_5eax2"]
+[ext_resource type="PackedScene" uid="uid://ctwpr6wu4tcfk" path="res://Assets/Kenney/Dungeon Kit/gate-metal-bars.glb" id="14_mxgvq"]
+[ext_resource type="PackedScene" uid="uid://khithiafbeo" path="res://Assets/Kenney/Dungeon Kit/gate.glb" id="15_dqimm"]
+[ext_resource type="PackedScene" uid="uid://c5hg72mpb3n6i" path="res://Assets/Kenney/Dungeon Kit/room-corner.glb" id="16_03egj"]
+[ext_resource type="PackedScene" uid="uid://cguia4x6t2ndf" path="res://Assets/Kenney/Dungeon Kit/room-large-variation.glb" id="17_kf2t1"]
+[ext_resource type="PackedScene" uid="uid://ckd1uq3kgee7g" path="res://Assets/Kenney/Dungeon Kit/room-large.glb" id="18_cn311"]
+[ext_resource type="PackedScene" uid="uid://bh7v1awk1ergm" path="res://Assets/Kenney/Dungeon Kit/room-small-variation.glb" id="19_nyuw4"]
+[ext_resource type="PackedScene" uid="uid://dnwphn7r6dmwk" path="res://Assets/Kenney/Dungeon Kit/room-small.glb" id="20_agfaq"]
+[ext_resource type="PackedScene" uid="uid://bwceu4oq3tdt5" path="res://Assets/Kenney/Dungeon Kit/room-wide-variation.glb" id="21_l3l2u"]
+[ext_resource type="PackedScene" uid="uid://b6t0408g1o8vk" path="res://Assets/Kenney/Dungeon Kit/room-wide.glb" id="22_tlv5m"]
+[ext_resource type="PackedScene" uid="uid://d3sg8whfe03jr" path="res://Assets/Kenney/Dungeon Kit/stairs-wide.glb" id="23_7b5hx"]
+[ext_resource type="PackedScene" uid="uid://vgn0ie3f4h3i" path="res://Assets/Kenney/Dungeon Kit/stairs.glb" id="24_8u7ra"]
+[ext_resource type="PackedScene" uid="uid://cgmonn1tsm0ku" path="res://Assets/Kenney/Dungeon Kit/template-corner.glb" id="25_crc2v"]
+[ext_resource type="PackedScene" uid="uid://udv70jbux2mn" path="res://Assets/Kenney/Dungeon Kit/template-detail.glb" id="26_lwh1m"]
+[ext_resource type="PackedScene" uid="uid://dwknmkknmyih7" path="res://Assets/Kenney/Dungeon Kit/template-floor-big.glb" id="27_2p7pu"]
+[ext_resource type="PackedScene" uid="uid://bswgkqxqbts36" path="res://Assets/Kenney/Dungeon Kit/template-floor-detail-a.glb" id="28_hr0k8"]
+[ext_resource type="PackedScene" uid="uid://bjur0wsayuuaw" path="res://Assets/Kenney/Dungeon Kit/template-floor-detail.glb" id="29_jv0oa"]
+[ext_resource type="PackedScene" uid="uid://b506fedq5evbo" path="res://Assets/Kenney/Dungeon Kit/template-floor-layer-hole.glb" id="30_1vhpt"]
+[ext_resource type="PackedScene" uid="uid://c4eetme3b43tk" path="res://Assets/Kenney/Dungeon Kit/template-floor-layer-raised.glb" id="31_me401"]
+[ext_resource type="PackedScene" uid="uid://dg1iaedwugcvf" path="res://Assets/Kenney/Dungeon Kit/template-floor-layer.glb" id="32_ix311"]
+[ext_resource type="PackedScene" uid="uid://c8gu2nj7lllx5" path="res://Assets/Kenney/Dungeon Kit/template-floor.glb" id="33_1oqcx"]
+[ext_resource type="PackedScene" uid="uid://bdb0cu0p8hv7n" path="res://Assets/Kenney/Dungeon Kit/template-wall-corner.glb" id="34_8wwnk"]
+[ext_resource type="PackedScene" uid="uid://v83k4osa6vak" path="res://Assets/Kenney/Dungeon Kit/template-wall-detail-a.glb" id="35_vp18t"]
+[ext_resource type="PackedScene" uid="uid://csrp4ra4aoey" path="res://Assets/Kenney/Dungeon Kit/template-wall-half.glb" id="36_ntyn7"]
+[ext_resource type="PackedScene" uid="uid://bbdfxlo0kf3ev" path="res://Assets/Kenney/Dungeon Kit/template-wall-stairs.glb" id="37_fkcbr"]
+[ext_resource type="PackedScene" uid="uid://b50eymhddefu5" path="res://Assets/Kenney/Dungeon Kit/template-wall-top.glb" id="38_yiqko"]
+[ext_resource type="PackedScene" uid="uid://dp445phrew2dk" path="res://Assets/Kenney/Dungeon Kit/template-wall.glb" id="39_avq6s"]
+
+[node name="Tiles Kenney Dungeon Kit" type="Node3D" unique_id=1321677402]
+
+[node name="corridor-corner2" parent="." unique_id=696025432 instance=ExtResource("1_h7ayd")]
+
+[node name="corridor-end2" parent="." unique_id=203224969 instance=ExtResource("2_ai3s1")]
+
+[node name="corridor-intersection2" parent="." unique_id=1624036028 instance=ExtResource("3_a5miy")]
+
+[node name="corridor-junction2" parent="." unique_id=1880913620 instance=ExtResource("4_wkvm8")]
+
+[node name="corridor-transition2" parent="." unique_id=159924299 instance=ExtResource("5_1oxjg")]
+
+[node name="corridor-wide-corner2" parent="." unique_id=1808595226 instance=ExtResource("6_b5yxs")]
+
+[node name="corridor-wide-end2" parent="." unique_id=862775657 instance=ExtResource("7_a5hgt")]
+
+[node name="corridor-wide-intersection2" parent="." unique_id=1856938930 instance=ExtResource("8_fk5qp")]
+
+[node name="corridor-wide-junction2" parent="." unique_id=1719255470 instance=ExtResource("9_h1yj7")]
+
+[node name="corridor-wide2" parent="." unique_id=303121552 instance=ExtResource("10_8pvpr")]
+
+[node name="corridor2" parent="." unique_id=881575306 instance=ExtResource("11_ynw81")]
+
+[node name="gate-door-window2" parent="." unique_id=2050335319 instance=ExtResource("12_35tu4")]
+
+[node name="gate-door2" parent="." unique_id=1637676770 instance=ExtResource("13_5eax2")]
+
+[node name="gate-metal-bars2" parent="." unique_id=1623434122 instance=ExtResource("14_mxgvq")]
+
+[node name="gate2" parent="." unique_id=367840257 instance=ExtResource("15_dqimm")]
+
+[node name="room-corner2" parent="." unique_id=430886155 instance=ExtResource("16_03egj")]
+
+[node name="room-large-variation2" parent="." unique_id=124230953 instance=ExtResource("17_kf2t1")]
+
+[node name="room-large2" parent="." unique_id=36847415 instance=ExtResource("18_cn311")]
+
+[node name="room-small-variation2" parent="." unique_id=2009225938 instance=ExtResource("19_nyuw4")]
+
+[node name="room-small2" parent="." unique_id=1592215511 instance=ExtResource("20_agfaq")]
+
+[node name="room-wide-variation2" parent="." unique_id=382692815 instance=ExtResource("21_l3l2u")]
+
+[node name="room-wide2" parent="." unique_id=640001393 instance=ExtResource("22_tlv5m")]
+
+[node name="stairs-wide2" parent="." unique_id=869268207 instance=ExtResource("23_7b5hx")]
+
+[node name="stairs2" parent="." unique_id=485931188 instance=ExtResource("24_8u7ra")]
+
+[node name="template-corner2" parent="." unique_id=1148619007 instance=ExtResource("25_crc2v")]
+
+[node name="template-detail2" parent="." unique_id=1209221514 instance=ExtResource("26_lwh1m")]
+
+[node name="template-floor-big2" parent="." unique_id=1729395622 instance=ExtResource("27_2p7pu")]
+
+[node name="template-floor-detail-a2" parent="." unique_id=1117014889 instance=ExtResource("28_hr0k8")]
+
+[node name="template-floor-detail2" parent="." unique_id=712350679 instance=ExtResource("29_jv0oa")]
+
+[node name="template-floor-layer-hole2" parent="." unique_id=840116239 instance=ExtResource("30_1vhpt")]
+
+[node name="template-floor-layer-raised2" parent="." unique_id=388455 instance=ExtResource("31_me401")]
+
+[node name="template-floor-layer2" parent="." unique_id=1242748150 instance=ExtResource("32_ix311")]
+
+[node name="template-floor2" parent="." unique_id=1393802175 instance=ExtResource("33_1oqcx")]
+
+[node name="template-wall-corner2" parent="." unique_id=676574562 instance=ExtResource("34_8wwnk")]
+
+[node name="template-wall-detail-a2" parent="." unique_id=859360921 instance=ExtResource("35_vp18t")]
+
+[node name="template-wall-half2" parent="." unique_id=462876145 instance=ExtResource("36_ntyn7")]
+
+[node name="template-wall-stairs2" parent="." unique_id=718573859 instance=ExtResource("37_fkcbr")]
+
+[node name="template-wall-top2" parent="." unique_id=1730771279 instance=ExtResource("38_yiqko")]
+
+[node name="template-wall2" parent="." unique_id=1851423997 instance=ExtResource("39_avq6s")]

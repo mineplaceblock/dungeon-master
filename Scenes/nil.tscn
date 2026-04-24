@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ccrwppfgxqm6l"]
 
-[ext_resource type="PackedScene" uid="uid://b0u2cw5sdic1x" path="res://brackeys_3d_game_assets/dungeon_assets/building/Colors/floor_wood.tscn" id="1_552gg"]
+[ext_resource type="PackedScene" uid="uid://b0u2cw5sdic1x" path="res://Assets/Brackeys/dungeon_assets/building/Colors/floor_wood.tscn" id="1_552gg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5qaeq"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)

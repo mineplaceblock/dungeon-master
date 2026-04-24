@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cusgiaus6e5hv"]
+
+[ext_resource type="PackedScene" path="res://brackeys_3d_game_assets/dungeon_assets/building/wall_cracked.glb" id="1_36uh1"]
+[ext_resource type="Texture2D" path="res://brackeys_3d_game_assets/dungeon_assets/dungeon_albedo.png" id="2_femc2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fkwh1"]
+albedo_texture = ExtResource("2_femc2")
+
+[node name="wall_cracked2" unique_id=582116757 instance=ExtResource("1_36uh1")]
+
+[node name="wall_cracked" parent="." index="0" unique_id=1000857602]
+surface_material_override/0 = SubResource("StandardMaterial3D_fkwh1")

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ck4wgjjgea7lw"]
+
+[ext_resource type="PackedScene" uid="uid://cvyd4txtbtna" path="res://Assets/Brackeys/dungeon_assets/building/floor_stone.glb" id="1_jt0sj"]
+[ext_resource type="Texture2D" uid="uid://cw55ibafarfvo" path="res://Assets/Brackeys/dungeon_assets/dungeon_albedo.png" id="2_f2c6s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_crrl4"]
+albedo_texture = ExtResource("2_f2c6s")
+
+[node name="floor_stone" unique_id=1583842665 instance=ExtResource("1_jt0sj")]
+
+[node name="floor_tile_large" parent="." index="0" unique_id=1539803230]
+surface_material_override/0 = SubResource("StandardMaterial3D_crrl4")

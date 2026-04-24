@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bxrhuma7mlcww"]
+
+[ext_resource type="PackedScene" uid="uid://s5j03lirbgpa" path="res://Assets/Brackeys/dungeon_assets/props/chair.glb" id="1_5qw0q"]
+[ext_resource type="Texture2D" uid="uid://cw55ibafarfvo" path="res://Assets/Brackeys/dungeon_assets/dungeon_albedo.png" id="2_73ih3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qvppo"]
+albedo_texture = ExtResource("2_73ih3")
+
+[node name="chair2" unique_id=69184741 instance=ExtResource("1_5qw0q")]
+
+[node name="chair" parent="." index="0" unique_id=1480150956]
+surface_material_override/0 = SubResource("StandardMaterial3D_qvppo")
