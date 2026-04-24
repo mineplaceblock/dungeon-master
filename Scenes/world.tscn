@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" path="res://Player/proto_controller.tscn" id="1_a02cp"]
 [ext_resource type="Texture2D" uid="uid://c24ifoit84iim" path="res://w7yfuteogao0-M4a1/M4a1/palette1.png" id="2_5a7ea"]
 [ext_resource type="ArrayMesh" uid="uid://h7blqmna5s8k" path="res://w7yfuteogao0-M4a1/M4a1/M4a1.obj" id="3_8j60k"]
+[ext_resource type="PackedScene" uid="uid://bh0smpy0tc71w" path="res://Scenes/level.tscn" id="4_8j60k"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jjgbg"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -34,12 +35,22 @@ emission_enabled = true
 
 [node name="World" type="Node3D" unique_id=1061197318]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=787995644]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.094359, 2.398871, 0)
-shadow_enabled = true
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1191723514]
 environment = SubResource("Environment_8gbba")
+
+[node name="Node3D" parent="WorldEnvironment" unique_id=2105909514 instance=ExtResource("4_8j60k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6857419, 0)
+
+[node name="Camera3D2" type="Camera3D" parent="WorldEnvironment/Node3D" unique_id=994537782]
+fov = 37.849285
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="WorldEnvironment/Node3D" unique_id=123738718]
+light_energy = 3.0
+light_volumetric_fog_energy = 1.317
+light_angular_distance = 8.91
+light_specular = 0.0
+shadow_enabled = true
+sky_mode = 1
 
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=1461819451]
 transform = Transform3D(15.996985, 0, 0, 0, 0.20598906, 0, 0, 0, 15.271391, 0, 0, 0)
