@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy420kkgf3hu2"
-path.bptc="res://.godot/imported/autumn_field_puresky_4k.hdr-ebcce0e2c801e4bb37a685721c0a11c3.bptc.ctex"
+uid="uid://c6qyi05jhpooj"
+path.s3tc="res://.godot/imported/wood_7.png-0b108933ce5201c9e460bf25c26385df.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://brackeys_3d_game_assets/sky_background/autumn_field_puresky_4k.hdr"
-dest_files=["res://.godot/imported/autumn_field_puresky_4k.hdr-ebcce0e2c801e4bb37a685721c0a11c3.bptc.ctex"]
+source_file="res://brackeys_3d_game_assets/dungeon_assets/wood_7.png"
+dest_files=["res://.godot/imported/wood_7.png-0b108933ce5201c9e460bf25c26385df.s3tc.ctex"]
 
 [params]
 

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ctr2o5lu0mp7f"]
+
+[ext_resource type="PackedScene" uid="uid://b6klsh314fg3" path="res://brackeys_3d_game_assets/dungeon_assets/building/wall_arched.glb" id="1_4vj5y"]
+[ext_resource type="Texture2D" uid="uid://cw55ibafarfvo" path="res://brackeys_3d_game_assets/dungeon_assets/dungeon_albedo.png" id="2_ek28x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0art3"]
+albedo_texture = ExtResource("2_ek28x")
+
+[node name="wall_arched2" unique_id=1010482706 instance=ExtResource("1_4vj5y")]
+
+[node name="wall_arched" parent="." index="0" unique_id=1319321760]
+surface_material_override/0 = SubResource("StandardMaterial3D_0art3")

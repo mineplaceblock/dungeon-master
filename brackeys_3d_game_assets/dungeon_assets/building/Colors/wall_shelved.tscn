@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://csa4js137vveg"]
+
+[ext_resource type="PackedScene" uid="uid://dk4ce7dsi2m74" path="res://brackeys_3d_game_assets/dungeon_assets/building/wall_shelved.glb" id="1_0ehf5"]
+[ext_resource type="Texture2D" uid="uid://cw55ibafarfvo" path="res://brackeys_3d_game_assets/dungeon_assets/dungeon_albedo.png" id="2_5yoqh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b7jqu"]
+albedo_texture = ExtResource("2_5yoqh")
+
+[node name="wall_shelved" unique_id=932839202 instance=ExtResource("1_0ehf5")]
+
+[node name="wall_shelves" parent="." index="0" unique_id=357013316]
+surface_material_override/0 = SubResource("StandardMaterial3D_b7jqu")

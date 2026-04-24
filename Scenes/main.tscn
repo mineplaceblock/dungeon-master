@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://15qp0yrhoxec"]
 
-[ext_resource type="PackedScene" uid="uid://c57gxiixx0lb8" path="res://Player/proto_controller.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" path="res://Player/proto_controller.tscn" id="1_jjgbg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jjgbg"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -22,8 +22,13 @@ size = Vector3(1, 7.9526367, 1.0023464)
 
 [node name="World" type="Node3D" unique_id=1061197318]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=787995644]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.094359, 2.398871, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=126947165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.094359, 4.8316407, 5.9363527)
+light_energy = 3.0
+light_indirect_energy = 3.0
+light_volumetric_fog_energy = 0.0
+light_angular_distance = 3.0
+light_specular = 2.901
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1191723514]

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://85qccyajjx5f"]
+
+[ext_resource type="PackedScene" uid="uid://dh84x0doaoeb7" path="res://brackeys_3d_game_assets/dungeon_assets/props/banner_mounted.glb" id="1_8423e"]
+[ext_resource type="Texture2D" uid="uid://cw55ibafarfvo" path="res://brackeys_3d_game_assets/dungeon_assets/dungeon_albedo.png" id="2_selpk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wwddm"]
+albedo_texture = ExtResource("2_selpk")
+
+[node name="banner_mounted" unique_id=2051860170 instance=ExtResource("1_8423e")]
+
+[node name="banner_shield_brown" parent="." index="0" unique_id=192127674]
+surface_material_override/0 = SubResource("StandardMaterial3D_wwddm")
