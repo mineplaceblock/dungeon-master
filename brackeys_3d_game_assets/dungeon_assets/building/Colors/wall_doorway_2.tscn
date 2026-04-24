@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://euwr8o2cdnxn"]
+
+[ext_resource type="PackedScene" uid="uid://sf748cg747qx" path="res://brackeys_3d_game_assets/dungeon_assets/building/wall_doorway.glb" id="1_pjeya"]
+[ext_resource type="Texture2D" uid="uid://cw55ibafarfvo" path="res://brackeys_3d_game_assets/dungeon_assets/dungeon_albedo.png" id="2_gmk1i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8yh8t"]
+albedo_texture = ExtResource("2_gmk1i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5iad8"]
+albedo_texture = ExtResource("2_gmk1i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ml5nt"]
+albedo_texture = ExtResource("2_gmk1i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cfldv"]
+albedo_texture = ExtResource("2_gmk1i")
+
+[node name="wall_doorway2" unique_id=1466109621 instance=ExtResource("1_pjeya")]
+
+[node name="wall_doorway" parent="." index="0" unique_id=202633596]
+material_override = SubResource("StandardMaterial3D_8yh8t")
+material_overlay = SubResource("StandardMaterial3D_5iad8")
+
+[node name="wall_doorway_door" parent="wall_doorway" index="0" unique_id=746852753]
+material_override = SubResource("StandardMaterial3D_ml5nt")
+material_overlay = SubResource("StandardMaterial3D_cfldv")

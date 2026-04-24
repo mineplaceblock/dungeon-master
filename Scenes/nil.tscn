@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ck4wgjjgea7lw" path="res://brackeys_3d_game_assets/dungeon_assets/building/Colors/floor_stone.tscn" id="1_v8tqa"]
 [ext_resource type="PackedScene" uid="uid://b0u2cw5sdic1x" path="res://brackeys_3d_game_assets/dungeon_assets/building/Colors/floor_wood.tscn" id="2_oo0aq"]
-[ext_resource type="PackedScene" uid="uid://sf748cg747qx" path="res://brackeys_3d_game_assets/dungeon_assets/building/wall_doorway.glb" id="3_m21ok"]
+[ext_resource type="PackedScene" uid="uid://euwr8o2cdnxn" path="res://brackeys_3d_game_assets/dungeon_assets/building/Colors/wall_doorway_2.tscn" id="3_v8tqa"]
 
 [node name="Node3D" type="Node3D" unique_id=202857855]
 
@@ -11,5 +11,5 @@
 [node name="floor_wood" parent="." unique_id=1160988174 instance=ExtResource("2_oo0aq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.959682, 0, -0.006863594)
 
-[node name="wall_doorway2" parent="." unique_id=655166830 instance=ExtResource("3_m21ok")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8953681, 0, 2.8584583)
+[node name="wall_doorway2" parent="." unique_id=1466109621 instance=ExtResource("3_v8tqa")]
+transform = Transform3D(0.9999362, 0, -0.01129204, 0, 1, 0, 0.01129204, 0, 0.9999362, -0.0069277287, 0, 2.4989545)
