@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b6j2sn12pmfk7"]
+
+[ext_resource type="PackedScene" uid="uid://qe3o6t0wfgs" path="res://Assets/Brackeys/dungeon_assets/props/table_small.glb" id="1_pp6op"]
+[ext_resource type="Texture2D" uid="uid://cw55ibafarfvo" path="res://Assets/Brackeys/dungeon_assets/dungeon_albedo.png" id="2_fi31m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1tblm"]
+albedo_texture = ExtResource("2_fi31m")
+
+[node name="table_small2" unique_id=1784576770 instance=ExtResource("1_pp6op")]
+
+[node name="table_small" parent="." index="0" unique_id=733521920]
+surface_material_override/0 = SubResource("StandardMaterial3D_1tblm")

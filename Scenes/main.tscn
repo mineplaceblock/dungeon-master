@@ -1,19 +1,29 @@
 [gd_scene format=3 uid="uid://15qp0yrhoxec"]
 
-[ext_resource type="PackedScene" uid="uid://c57gxiixx0lb8" path="res://Player/proto_controller.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://dwnkhg0oc16lc" path="res://Player/proto_controller.tscn" id="1_jjgbg"]
+[ext_resource type="Texture2D" uid="uid://dy420kkgf3hu2" path="res://Assets/Brackeys/sky_background/autumn_field_puresky_4k.hdr" id="1_kry3j"]
+[ext_resource type="PackedScene" uid="uid://dmtnvps0o0sm4" path="res://Scenes/torch.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://b067wbrxelh7e" path="res://Scenes/characterMedium.fbx" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://ce5oy0wqlh1n2" path="res://Scenes/Jump Attack.fbx" id="5_kry3j"]
+[ext_resource type="Script" uid="uid://cgo5yer8wn5fe" path="res://salto.gd" id="6_21xkr"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jjgbg"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8gbba"]
+panorama = ExtResource("1_kry3j")
 
-[sub_resource type="Sky" id="Sky_bo1nx"]
-sky_material = SubResource("ProceduralSkyMaterial_jjgbg")
+[sub_resource type="Sky" id="Sky_344ge"]
+sky_material = SubResource("PanoramaSkyMaterial_8gbba")
 
 [sub_resource type="Environment" id="Environment_8gbba"]
 background_mode = 2
-sky = SubResource("Sky_bo1nx")
-tonemap_mode = 2
+background_energy_multiplier = 0.4
+sky = SubResource("Sky_344ge")
+tonemap_mode = 3
+tonemap_exposure = 0.85
+tonemap_white = 4.47
+ssao_enabled = true
+ssao_radius = 1.6
 glow_enabled = true
+fog_light_color = Color(0.0195, 0.031191662, 0.05, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7u77a"]
 
@@ -22,8 +32,9 @@ size = Vector3(1, 7.9526367, 1.0023464)
 
 [node name="World" type="Node3D" unique_id=1061197318]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=787995644]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.094359, 2.398871, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=847473009]
+transform = Transform3D(-0.7275114, -0.15740222, 0.6677961, 0.12041136, 0.9289291, 0.3501311, -0.6754466, 0.33513466, -0.65685356, 7.3974347, 6.2919025, -8.469852)
+light_energy = 1.075
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1191723514]
@@ -42,3 +53,13 @@ shape = SubResource("BoxShape3D_jjgbg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.398185, 0)
 can_sprint = true
 can_freefly = true
+
+[node name="Torch" parent="." unique_id=1964182624 instance=ExtResource("3_8gbba")]
+transform = Transform3D(0.060376648, 0, 0, 0, 0.24986628, 0, 0, 0, 0.064659394, 0.65313065, 0.450199, 1.965128)
+
+[node name="characterMedium" parent="." unique_id=1586771492 instance=ExtResource("4_jjvhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8147116, 0.81907797, 0.019281387)
+
+[node name="Jump Attack" parent="." unique_id=238248632 instance=ExtResource("5_kry3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9454985, 0.81942964, 1.1464987)
+script = ExtResource("6_21xkr")

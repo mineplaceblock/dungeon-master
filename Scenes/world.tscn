@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://883ku8ahamk8"]
 
-[ext_resource type="PackedScene" path="res://Player/proto_controller.tscn" id="1_a02cp"]
+[ext_resource type="PackedScene" uid="uid://c57gxiixx0lb8" path="res://Player/proto_controller.tscn" id="1_a02cp"]
 [ext_resource type="Texture2D" uid="uid://c24ifoit84iim" path="res://w7yfuteogao0-M4a1/M4a1/palette1.png" id="2_5a7ea"]
 [ext_resource type="ArrayMesh" uid="uid://h7blqmna5s8k" path="res://w7yfuteogao0-M4a1/M4a1/M4a1.obj" id="3_8j60k"]
 
@@ -34,8 +34,12 @@ emission_enabled = true
 
 [node name="World" type="Node3D" unique_id=1061197318]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=787995644]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.094359, 2.398871, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=221974891]
+light_energy = 3.0
+light_indirect_energy = 3.0
+light_volumetric_fog_energy = 0.0
+light_angular_distance = 3.0
+light_specular = 2.901
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1191723514]
@@ -51,7 +55,7 @@ mesh = SubResource("BoxMesh_7u77a")
 shape = SubResource("BoxShape3D_jjgbg")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=180137715]
-transform = Transform3D(0.20297329, 0, 0, 0, 0.24319851, 0, 0, 0, 0.2294358, 5.9496613, 3.2237873, 0)
+transform = Transform3D(0.20297329, 0, 0, 0, 0.24459521, 0, 0, 0, 0.2294358, 5.905701, 3.062553, 2.3841858e-07)
 material_override = SubResource("StandardMaterial3D_fo5ed")
 mesh = ExtResource("3_8j60k")
 skin = SubResource("Skin_go701")

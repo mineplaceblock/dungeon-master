@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dylo6tj67qf0k"]
+
+[ext_resource type="PackedScene" uid="uid://calbnwq0r4q3r" path="res://Assets/Brackeys/dungeon_assets/props/keg_decorated.glb" id="1_rwngx"]
+[ext_resource type="Texture2D" uid="uid://cw55ibafarfvo" path="res://Assets/Brackeys/dungeon_assets/dungeon_albedo.png" id="2_e3n52"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_deq28"]
+albedo_texture = ExtResource("2_e3n52")
+
+[node name="keg_decorated2" unique_id=1280368415 instance=ExtResource("1_rwngx")]
+
+[node name="keg_decorated" parent="." index="0" unique_id=900977815]
+surface_material_override/0 = SubResource("StandardMaterial3D_deq28")
