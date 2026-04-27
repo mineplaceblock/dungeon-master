@@ -54,10 +54,13 @@ var freeflying : bool = false
 @onready var collider: CollisionShape3D = $Collider
 var bullet = load("res://bala.tscn")
 @onready var pos = $Head/Camera3D/AWP/pos
+
+@onready var anim = $Running/AnimationPlayer
 func _ready() -> void:
 	check_input_mappings()
 	look_rotation.y = rotation.y
 	look_rotation.x = head.rotation.x
+	anim.play("mixamo_com")
 
 func _unhandled_input(event: InputEvent) -> void:
 	# Mouse capturing
