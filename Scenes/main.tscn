@@ -4,15 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://dy420kkgf3hu2" path="res://Assets/Brackeys/sky_background/autumn_field_puresky_4k.hdr" id="1_kry3j"]
 [ext_resource type="Texture2D" uid="uid://8bmw0j4aaa8t" path="res://Player/T_fire01 (1).png" id="3_8gbba"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6bp64"]
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8gbba"]
 panorama = ExtResource("1_kry3j")
-energy_multiplier = 0.1
 
 [sub_resource type="Sky" id="Sky_344ge"]
-sky_material = SubResource("PanoramaSkyMaterial_6bp64")
+sky_material = SubResource("PanoramaSkyMaterial_8gbba")
 
 [sub_resource type="Environment" id="Environment_8gbba"]
 background_mode = 2
+background_energy_multiplier = 0.4
 sky = SubResource("Sky_344ge")
 tonemap_mode = 3
 tonemap_exposure = 0.85
@@ -20,7 +20,6 @@ tonemap_white = 4.47
 ssao_enabled = true
 ssao_radius = 1.6
 glow_enabled = true
-fog_enabled = true
 fog_light_color = Color(0.0195, 0.031191662, 0.05, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7u77a"]
@@ -88,6 +87,7 @@ color_ramp = SubResource("GradientTexture1D_jjvhh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=847473009]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_energy = 1.075
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1191723514]
