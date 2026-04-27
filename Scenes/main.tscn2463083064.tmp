@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://dmtnvps0o0sm4" path="res://Scenes/torch.tscn" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://b067wbrxelh7e" path="res://Scenes/characterMedium.fbx" id="4_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://ce5oy0wqlh1n2" path="res://Scenes/Jump Attack.fbx" id="5_kry3j"]
-[ext_resource type="Script" uid="uid://cgo5yer8wn5fe" path="res://salto.gd" id="6_21xkr"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8gbba"]
 panorama = ExtResource("1_kry3j")
@@ -60,6 +59,5 @@ transform = Transform3D(0.060376648, 0, 0, 0, 0.24986628, 0, 0, 0, 0.064659394, 
 [node name="characterMedium" parent="." unique_id=1586771492 instance=ExtResource("4_jjvhh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8147116, 0.81907797, 0.019281387)
 
-[node name="Jump Attack" parent="." unique_id=238248632 instance=ExtResource("5_kry3j")]
+[node name="Jump Attack" parent="." unique_id=1525820723 instance=ExtResource("5_kry3j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9454985, 0.81942964, 1.1464987)
-script = ExtResource("6_21xkr")

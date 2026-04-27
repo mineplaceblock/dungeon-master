@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://dmtnvps0o0sm4"]
+
+[ext_resource type="Texture2D" uid="uid://8bmw0j4aaa8t" path="res://Player/T_fire01 (1).png" id="1_wced7"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8gbba"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jjvhh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kry3j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21xkr"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_color = Color(1, 0.94533336, 0.18, 1)
+albedo_texture = ExtResource("1_wced7")
+albedo_texture_force_srgb = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_8gbba"]
+offsets = PackedFloat32Array(0.19387755, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jjvhh"]
+gradient = SubResource("Gradient_8gbba")
+
+[sub_resource type="Curve" id="Curve_kry3j"]
+_data = [Vector2(0, 0.5393259), 0.0, 1.7202634, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_21xkr"]
+curve = SubResource("Curve_kry3j")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6bp64"]
+lifetime_randomness = 0.08
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 0.2
+angle_min = -179.99998
+angle_max = 180.00002
+initial_velocity_min = 0.9
+initial_velocity_max = 1.4
+gravity = Vector3(0, 2, 0)
+scale_min = 0.5
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_21xkr")
+color = Color(2.2011487, 1.7035239, 0, 1)
+color_ramp = SubResource("GradientTexture1D_jjvhh")
+
+[sub_resource type="QuadMesh" id="QuadMesh_344ge"]
+
+[sub_resource type="Skin" id="Skin_ynf5e"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_21xkr"]
+
+[node name="Torch" type="MeshInstance3D" unique_id=1964182624]
+transform = Transform3D(0.060376648, 0, 0, 0, 0.24986628, 0, 0, 0, 0.064659394, 0, 0, 0)
+mesh = SubResource("CylinderMesh_8gbba")
+surface_material_override/0 = SubResource("StandardMaterial3D_jjvhh")
+
+[node name="ANTORCHA2" type="MeshInstance3D" parent="." unique_id=78568424]
+transform = Transform3D(1.6481413, 0, 0, 0, 0.15514174, 0, 0, 0, 1.5405777, 0, 0.8267746, 0)
+mesh = SubResource("CylinderMesh_8gbba")
+surface_material_override/0 = SubResource("StandardMaterial3D_kry3j")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="ANTORCHA2" unique_id=1152479929]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4946518, 0)
+light_color = Color(0.83, 0.66400003, 0, 1)
+light_energy = 2.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 2.0
+light_size = 0.238
+shadow_enabled = true
+distance_fade_enabled = true
+omni_range = 1.941
+omni_attenuation = 0.604
+omni_shadow_mode = 0
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="ANTORCHA2" unique_id=1422298350]
+transform = Transform3D(0.24374777, 0, 0, 0, 0.016247327, 0, 0, 0, 1, -0.15534592, 2.144207, 0)
+material_override = SubResource("StandardMaterial3D_21xkr")
+amount = 10
+lifetime = 1.2
+process_material = SubResource("ParticleProcessMaterial_6bp64")
+draw_pass_1 = SubResource("QuadMesh_344ge")
+draw_skin = SubResource("Skin_ynf5e")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=591840649]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=136075317]
+shape = SubResource("CylinderShape3D_21xkr")
