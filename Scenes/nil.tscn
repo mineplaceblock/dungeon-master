@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ccrwppfgxqm6l"]
 
-[ext_resource type="PackedScene" uid="uid://b0u2cw5sdic1x" path="res://Assets/Brackeys/dungeon_assets/building/Colors/floor_wood.tscn" id="1_552gg"]
+[ext_resource type="MeshLibrary" uid="uid://dhkha3jnjpexo" path="res://Assets/Kenney/tiles_kenney_platformer_kit.tres" id="1_5qaeq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5qaeq"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -15,64 +15,20 @@ sky = SubResource("Sky_552gg")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_552gg"]
+
 [node name="Node3D" type="Node3D" unique_id=202857855]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1830549002]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=116696850]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 18.563335, 0)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=548189855]
 environment = SubResource("Environment_v8tqa")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=260561431]
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=263673895]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=675806366]
-
-[node name="floor_wood" parent="." unique_id=1160988174 instance=ExtResource("1_552gg")]
-
-[node name="floor_wood2" parent="." unique_id=2054509904 instance=ExtResource("1_552gg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
-
-[node name="floor_wood3" parent="." unique_id=155850235 instance=ExtResource("1_552gg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
-
-[node name="floor_wood4" parent="." unique_id=408477711 instance=ExtResource("1_552gg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
-
-[node name="floor_wood5" parent="." unique_id=1291474210 instance=ExtResource("1_552gg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
-
-[node name="floor_wood6" parent="." unique_id=1175174325 instance=ExtResource("1_552gg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
-
-[node name="floor_wood7" parent="." unique_id=668830061 instance=ExtResource("1_552gg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
-
-[node name="floor_wood8" parent="." unique_id=880932117 instance=ExtResource("1_552gg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 4)
-
-[node name="floor_wood9" parent="." unique_id=1567703114 instance=ExtResource("1_552gg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
-
-[node name="floor_wood10" parent="." unique_id=1682688478 instance=ExtResource("1_552gg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12)
-
-[node name="floor_wood11" parent="." unique_id=492222940 instance=ExtResource("1_552gg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 12)
-
-[node name="floor_wood12" parent="." unique_id=791378348 instance=ExtResource("1_552gg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 12)
-
-[node name="floor_wood13" parent="." unique_id=1818943102 instance=ExtResource("1_552gg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
-
-[node name="floor_wood14" parent="." unique_id=2035488729 instance=ExtResource("1_552gg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
-
-[node name="floor_wood15" parent="." unique_id=335756034 instance=ExtResource("1_552gg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8)
-
-[node name="floor_wood16" parent="." unique_id=589626418 instance=ExtResource("1_552gg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 8)
+[node name="GridMap" type="GridMap" parent="." unique_id=1247197721]
+mesh_library = ExtResource("1_5qaeq")
+physics_material = SubResource("PhysicsMaterial_552gg")
+data = {
+"cells": PackedInt32Array(0, 0, 10, 65535, 2, 2)
+}
