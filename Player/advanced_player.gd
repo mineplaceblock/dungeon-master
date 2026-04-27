@@ -70,6 +70,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		var balita = bullet.instantiate()
 		balita.position = pos.global_position
 		balita.transform.basis = pos.global_transform.basis
+		print("disparo")
 		get_parent().add_child(balita)
 	
 	# Look around
