@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://dwnkhg0oc16lc" path="res://Player/proto_controller.tscn" id="1_jjgbg"]
 [ext_resource type="Texture2D" uid="uid://dy420kkgf3hu2" path="res://Assets/Brackeys/sky_background/autumn_field_puresky_4k.hdr" id="1_kry3j"]
 [ext_resource type="PackedScene" uid="uid://dmtnvps0o0sm4" path="res://Scenes/torch.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://euwr8o2cdnxn" path="res://Assets/Brackeys/dungeon_assets/building/Colors/wall_doorway_2.tscn" id="4_kry3j"]
+[ext_resource type="PackedScene" uid="uid://csrp4ra4aoey" path="res://Assets/Kenney/Dungeon Kit/template-wall-half.glb" id="5_21xkr"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8gbba"]
 panorama = ExtResource("1_kry3j")
@@ -32,7 +34,12 @@ size = Vector3(1, 7.9526367, 1.0023464)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=847473009]
 transform = Transform3D(-0.7275114, -0.15740222, 0.6677961, 0.12041136, 0.9289291, 0.3501311, -0.6754466, 0.33513466, -0.65685356, 7.3974347, 6.2919025, -8.469852)
 light_energy = 1.075
+light_specular = 0.768
 shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 10.0
+shadow_transmittance_bias = 16.0
+shadow_blur = 1.014
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1191723514]
 environment = SubResource("Environment_8gbba")
@@ -53,3 +60,9 @@ can_freefly = true
 
 [node name="Torch" parent="." unique_id=1964182624 instance=ExtResource("3_8gbba")]
 transform = Transform3D(0.060376648, 0, 0, 0, 0.24986628, 0, 0, 0, 0.064659394, 0.65313065, 0.450199, 1.965128)
+
+[node name="wall_doorway2" parent="." unique_id=1466109621 instance=ExtResource("4_kry3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7503614, 0.36261415, 4.385967)
+
+[node name="template-wall-half2" parent="." unique_id=717683294 instance=ExtResource("5_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9893403, 1.8898182, 5.2152147)

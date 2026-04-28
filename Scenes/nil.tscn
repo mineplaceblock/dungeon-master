@@ -1,20 +1,28 @@
 [gd_scene format=3 uid="uid://ccrwppfgxqm6l"]
 
 [ext_resource type="MeshLibrary" uid="uid://bl5kcns0i58ij" path="res://Assets/Kenney/tiles_kenney_dungeon_kit.tres" id="1_5qaeq"]
+[ext_resource type="Texture2D" uid="uid://dy420kkgf3hu2" path="res://Assets/Brackeys/sky_background/autumn_field_puresky_4k.hdr" id="1_m21ok"]
 [ext_resource type="MeshLibrary" uid="uid://dhkha3jnjpexo" path="res://Assets/Kenney/tiles_kenney_platformer_kit.tres" id="2_552gg"]
+[ext_resource type="PackedScene" uid="uid://dmtnvps0o0sm4" path="res://Scenes/torch.tscn" id="2_vhd4b"]
+[ext_resource type="PackedScene" uid="uid://dwnkhg0oc16lc" path="res://Player/proto_controller.tscn" id="3_4y5yq"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5qaeq"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8oq14"]
+panorama = ExtResource("1_m21ok")
 
-[sub_resource type="Sky" id="Sky_552gg"]
-sky_material = SubResource("ProceduralSkyMaterial_5qaeq")
+[sub_resource type="Sky" id="Sky_fqv4s"]
+sky_material = SubResource("PanoramaSkyMaterial_8oq14")
 
-[sub_resource type="Environment" id="Environment_v8tqa"]
+[sub_resource type="Environment" id="Environment_lbmo4"]
 background_mode = 2
-sky = SubResource("Sky_552gg")
-tonemap_mode = 2
+background_energy_multiplier = 0.4
+sky = SubResource("Sky_fqv4s")
+tonemap_mode = 3
+tonemap_exposure = 0.85
+tonemap_white = 4.47
+ssao_enabled = true
+ssao_radius = 1.6
 glow_enabled = true
+fog_light_color = Color(0.0195, 0.031191662, 0.05, 1)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_552gg"]
 
@@ -28,12 +36,29 @@ glow_enabled = true
 
 [node name="Node3D" type="Node3D" unique_id=202857855]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=116696850]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 18.563335, 0)
-shadow_enabled = true
+[node name="WorldEnvironment2" type="WorldEnvironment" parent="." unique_id=614169292]
+environment = SubResource("Environment_lbmo4")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=548189855]
-environment = SubResource("Environment_v8tqa")
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment2" unique_id=304633153]
+transform = Transform3D(-0.7275114, -0.15740222, 0.6677961, 0.12041136, 0.9289291, 0.3501311, -0.6754466, 0.33513466, -0.65685356, 7.3974347, 6.2919025, -8.469852)
+light_energy = 1.075
+light_specular = 0.768
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 10.0
+shadow_transmittance_bias = 16.0
+shadow_blur = 1.014
+
+[node name="Torch" parent="WorldEnvironment2/DirectionalLight3D" unique_id=1964182624 instance=ExtResource("2_vhd4b")]
+transform = Transform3D(0.06037666, 1.8626451e-08, -1.1175871e-08, -4.656613e-09, 0.24986635, 1.4901161e-08, -1.8626451e-09, 1.8626451e-08, 0.06465939, -8.111301, -1.0620452, -4.539173)
+
+[node name="Torch2" parent="WorldEnvironment2/DirectionalLight3D" unique_id=1873112523 instance=ExtResource("2_vhd4b")]
+transform = Transform3D(-0.03618939, 0.113796964, -0.042562842, -0.005577077, 0.1942742, 0.040221192, 0.048005894, 0.108355954, -0.027413452, -9.898105, -0.17549157, -6.276791)
+
+[node name="ProtoController" parent="WorldEnvironment2/DirectionalLight3D/Torch2" unique_id=2066130245 instance=ExtResource("3_4y5yq")]
+transform = Transform3D(1, 2.9802322e-08, 0, -9.313226e-10, 1, -7.450581e-09, 0, -1.1920929e-07, 1.0000001, -172.34465, 7.361206, -16.043922)
+can_sprint = true
+can_freefly = true
 
 [node name="Altura 0" type="GridMap" parent="." unique_id=1585791565]
 mesh_library = ExtResource("1_5qaeq")
