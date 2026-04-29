@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dmtnvps0o0sm4" path="res://Scenes/torch.tscn" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://euwr8o2cdnxn" path="res://Assets/Brackeys/dungeon_assets/building/Colors/wall_doorway_2.tscn" id="4_kry3j"]
 [ext_resource type="PackedScene" uid="uid://csrp4ra4aoey" path="res://Assets/Kenney/Dungeon Kit/template-wall-half.glb" id="5_21xkr"]
+[ext_resource type="PackedScene" uid="uid://ccrwppfgxqm6l" path="res://Scenes/nil.tscn" id="6_21xkr"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8gbba"]
 panorama = ExtResource("1_kry3j")
@@ -66,3 +67,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7503614, 0.36261415, 4.385
 
 [node name="template-wall-half2" parent="." unique_id=717683294 instance=ExtResource("5_21xkr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9893403, 1.8898182, 5.2152147)
+
+[node name="Node3D" parent="." unique_id=202857855 instance=ExtResource("6_21xkr")]
