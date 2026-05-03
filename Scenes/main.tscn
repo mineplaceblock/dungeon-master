@@ -69,3 +69,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7503614, 0.36261415, 4.385
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9893403, 1.8898182, 5.2152147)
 
 [node name="Node3D" parent="." unique_id=202857855 instance=ExtResource("6_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.38403, 0, 0)
