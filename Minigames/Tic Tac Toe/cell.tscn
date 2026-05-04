@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bova5one0tgvu"]
 
-[ext_resource type="Script" uid="uid://diqbybvob3dr5" path="res://Minigames/cell.gd" id="1_jfgeh"]
+[ext_resource type="Script" uid="uid://diqbybvob3dr5" path="res://Minigames/Tic Tac Toe/cell.gd" id="1_jfgeh"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6hhi4"]
 

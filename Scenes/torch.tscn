@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dmtnvps0o0sm4"]
 
-[ext_resource type="Texture2D" uid="uid://8bmw0j4aaa8t" path="res://Player/T_fire01 (1).png" id="1_wced7"]
+[ext_resource type="Texture2D" uid="uid://8bmw0j4aaa8t" path="res://Assets/Particles/fire.png" id="1_wced7"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_8gbba"]
 

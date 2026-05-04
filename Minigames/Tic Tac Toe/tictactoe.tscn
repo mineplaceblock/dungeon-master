@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cgtbpgksycu1a"]
 
-[ext_resource type="Script" uid="uid://bvhafke04a48b" path="res://Minigames/tictactoe.gd" id="1_0ni5y"]
+[ext_resource type="Script" uid="uid://bvhafke04a48b" path="res://Minigames/Tic Tac Toe/tictactoe.gd" id="1_0ni5y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ocfh0"]
 bg_color = Color(0.458824, 0, 0, 1)

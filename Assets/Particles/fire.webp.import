@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://blq8v873wytmf"
-path.s3tc="res://.godot/imported/fire-burning-realistic-red-flame-transparent-png.webp-e3cd57e59a0cc0b8dd623f02fa2799f4.s3tc.ctex"
+path.s3tc="res://.godot/imported/fire.webp-4103b87a3310e03eb6c2ae93b42e7bc9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Player/fire-burning-realistic-red-flame-transparent-png.webp"
-dest_files=["res://.godot/imported/fire-burning-realistic-red-flame-transparent-png.webp-e3cd57e59a0cc0b8dd623f02fa2799f4.s3tc.ctex"]
+source_file="res://Assets/Particles/fire.webp"
+dest_files=["res://.godot/imported/fire.webp-4103b87a3310e03eb6c2ae93b42e7bc9.s3tc.ctex"]
 
 [params]
 
