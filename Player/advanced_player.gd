@@ -66,6 +66,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		capture_mouse()
 	if Input.is_key_pressed(KEY_ESCAPE):
 		release_mouse()
+		
+	if Input.is_action_just_pressed("cambiar_escena"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		get_tree().change_scene_to_file("res://Minigames/tictactoe.tscn")
 	
 	if Input.is_action_just_pressed("clicknormal"):
 		var balita = bullet.instantiate()
