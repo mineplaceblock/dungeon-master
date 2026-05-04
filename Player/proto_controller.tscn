@@ -2,7 +2,13 @@
 
 [ext_resource type="Script" uid="uid://bimwkqxufe78s" path="res://Player/advanced_player.gd" id="1_1dcjc"]
 [ext_resource type="PackedScene" uid="uid://re0mj8ukialf" path="res://Player/awp.tscn" id="2_kcy6y"]
-[ext_resource type="PackedScene" uid="uid://du0v65ghrp3h4" path="res://running.tscn" id="3_rj16e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iof21"]
+albedo_color = Color(0.91806, 0.575202, 0.222449, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ucva2"]
+radius = 0.4
+height = 1.8
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iof21"]
 radius = 0.4
@@ -10,6 +16,11 @@ height = 1.8
 
 [node name="ProtoController" type="CharacterBody3D" unique_id=2066130245]
 script = ExtResource("1_1dcjc")
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=465720746]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+material_override = SubResource("StandardMaterial3D_iof21")
+mesh = SubResource("CapsuleMesh_ucva2")
 
 [node name="Collider" type="CollisionShape3D" parent="." unique_id=570585720]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
@@ -19,13 +30,10 @@ shape = SubResource("CapsuleShape3D_iof21")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=88253308]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.12689698)
 
 [node name="AWP" parent="Head/Camera3D" unique_id=334229785 instance=ExtResource("2_kcy6y")]
 transform = Transform3D(-0.099894494, 0, -0.004592078, 0, 0.099999994, 0, 0.004592078, 0, -0.099894494, 0.4370431, 0, -0.8273982)
 
 [node name="pos" type="Node3D" parent="Head/Camera3D/AWP" unique_id=306781093]
-transform = Transform3D(0.09999995, 0, 0, 0, 0.09999983, 0, 0, 0, 0.09999991, -0.027831078, 0.5657501, 14.706812)
-
-[node name="Running" parent="." unique_id=49044704 instance=ExtResource("3_rj16e")]
-transform = Transform3D(-0.99918735, 0, 0.04030629, 0, 1, 0, -0.04030629, 0, -0.99918735, -0.070298314, 0, 0.16634941)
+transform = Transform3D(-0.009989443, 0, -0.0004592073, 0, 0.009999982, 0, 0.00045920743, 0, -0.0099894395, 0.37228844, 1.7565751, -2.2966557)
+top_level = true
