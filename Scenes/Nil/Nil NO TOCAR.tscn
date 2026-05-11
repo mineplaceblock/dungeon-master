@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://dwnkhg0oc16lc" path="res://Player/proto_controller.tscn" id="1_i620n"]
 [ext_resource type="PackedScene" uid="uid://cvg35stxe36r0" path="res://Scenes/Nil/Mage enemy.tscn" id="1_tuq4o"]
-[ext_resource type="PackedScene" uid="uid://dhe7g4k4it6ep" path="res://Pieces/wall_scaffold.tscn" id="3_1nt4o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i620n"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -53,29 +52,17 @@ use_collision = true
 size = Vector3(50, 1, 50)
 
 [node name="Enemy2" parent="." unique_id=444686518 instance=ExtResource("1_tuq4o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.798, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.380848, 0, 0)
 
 [node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemy2" unique_id=1593793926]
 avoidance_enabled = true
 debug_enabled = true
 
 [node name="NavigationRegion3D2" type="NavigationRegion3D" parent="." unique_id=704998449]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.798, -0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.380848, -0.5, 0)
 navigation_mesh = SubResource("NavigationMesh_tuq4o")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D2" unique_id=1264162537]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 use_collision = true
 size = Vector3(50, 1, 50)
-
-[node name="WallScaffold" parent="." unique_id=1272032105 instance=ExtResource("3_1nt4o")]
-transform = Transform3D(-0.04865803, 0, 0.9988155, 0, 1, 0, -0.9988155, 0, -0.04865803, -20.891052, -0.5, 2.0249658)
-
-[node name="WallScaffold2" parent="." unique_id=355954977 instance=ExtResource("3_1nt4o")]
-transform = Transform3D(-0.04865803, 0, 0.9988155, 0, 1, 0, -0.9988155, 0, -0.04865803, -20.891052, -0.5, -1.9707317)
-
-[node name="WallScaffold3" parent="." unique_id=1467875552 instance=ExtResource("3_1nt4o")]
-transform = Transform3D(-0.04865803, 0, 0.9988155, 0, 1, 0, -0.9988155, 0, -0.04865803, -20.891052, -0.5, 5.857791)
-
-[node name="WallScaffold4" parent="." unique_id=856418078 instance=ExtResource("3_1nt4o")]
-transform = Transform3D(-0.9955439, 0, -0.09429951, 0, 1, 0, 0.09429951, 0, -0.9955439, -18.661127, -0.5, 7.7102146)
