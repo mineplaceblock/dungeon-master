@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dumimmjg4m30s"]
+
+[ext_resource type="ArrayMesh" uid="uid://bkqdrvi4knnnr" path="res://Assets/Dungeon/Assets/obj/floor_dirt_large.obj" id="1_4yupj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ywr0k"]
+
+[node name="FloorDirtLarge" type="Node3D" unique_id=523106716]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=137202009]
+mesh = ExtResource("1_4yupj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1401394635]
+transform = Transform3D(4, 0, 0, 0, 0.1, 0, 0, 0, 4, 0, -0.05, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1434354908]
+shape = SubResource("BoxShape3D_ywr0k")

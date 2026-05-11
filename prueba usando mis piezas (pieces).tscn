@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://cyg5k5jknnmpn"]
+
+[ext_resource type="PackedScene" uid="uid://dumimmjg4m30s" path="res://Pieces/floor_dirt_large.tscn" id="1_3prw3"]
+[ext_resource type="PackedScene" uid="uid://bjqgs570v2rvq" path="res://Pieces/wall_corner_scaffold.tscn" id="2_csgwi"]
+[ext_resource type="PackedScene" uid="uid://bfdutjbw3v8dq" path="res://Pieces/wall_doorway_scaffold.tscn" id="3_0c6qn"]
+[ext_resource type="PackedScene" uid="uid://ccmlfpiyl5lwr" path="res://Pieces/wall_archedwindow_gated_scaffold.tscn" id="4_3s2de"]
+[ext_resource type="PackedScene" uid="uid://cf31itblb3b5u" path="res://Pieces/wall_open_scaffold.tscn" id="5_f8gb8"]
+[ext_resource type="PackedScene" uid="uid://cpvy83eo547ad" path="res://Pieces/wall_window_closed_scaffold.tscn" id="6_kave3"]
+[ext_resource type="PackedScene" uid="uid://d1jlu16qmh7xv" path="res://Pieces/floor_tile_large.tscn" id="7_3s2de"]
+[ext_resource type="PackedScene" uid="uid://dhe7g4k4it6ep" path="res://Pieces/wall_scaffold.tscn" id="8_f8gb8"]
+[ext_resource type="PackedScene" uid="uid://d253rmpic6ys5" path="res://Pieces/wall_window_open_scaffold.tscn" id="9_kave3"]
+
+[node name="PruebaUsandoMisPiezas(pieces)" type="Node3D" unique_id=1026505385]
+
+[node name="FloorDirtLarge" parent="." unique_id=523106716 instance=ExtResource("1_3prw3")]
+
+[node name="FloorDirtLarge2" parent="." unique_id=1638246956 instance=ExtResource("1_3prw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="FloorDirtLarge3" parent="." unique_id=735260771 instance=ExtResource("1_3prw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="FloorDirtLarge4" parent="." unique_id=2141669766 instance=ExtResource("1_3prw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="WallCornerScaffold" parent="." unique_id=620538003 instance=ExtResource("2_csgwi")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2, 0, -2)
+
+[node name="WallCornerScaffold2" parent="." unique_id=1367640501 instance=ExtResource("2_csgwi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -2)
+
+[node name="WallCornerScaffold3" parent="." unique_id=1019498652 instance=ExtResource("2_csgwi")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6, 0, 6)
+
+[node name="WallCornerScaffold4" parent="." unique_id=330507917 instance=ExtResource("2_csgwi")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2, 0, 6)
+
+[node name="WallDoorwayScaffold" parent="." unique_id=1408071210 instance=ExtResource("3_0c6qn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+
+[node name="WallArchedwindowGatedScaffold" parent="." unique_id=324398996 instance=ExtResource("4_3s2de")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2, 0, 2)
+
+[node name="WallOpenScaffold" parent="." unique_id=598502655 instance=ExtResource("5_f8gb8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 6)
+
+[node name="WallWindowClosedScaffold" parent="." unique_id=1997742996 instance=ExtResource("6_kave3")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6, 0, 2)
+
+[node name="FloorTileLarge" parent="." unique_id=776837452 instance=ExtResource("7_3s2de")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="FloorTileLarge2" parent="." unique_id=533649054 instance=ExtResource("7_3s2de")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="FloorTileLarge3" parent="." unique_id=1307148325 instance=ExtResource("7_3s2de")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="FloorTileLarge4" parent="." unique_id=119895034 instance=ExtResource("7_3s2de")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12)
+
+[node name="WallScaffold" parent="." unique_id=1272032105 instance=ExtResource("8_f8gb8")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2, 0, 10)
+
+[node name="WallWindowOpenScaffold" parent="." unique_id=2004997013 instance=ExtResource("9_kave3")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6, 0, 10)

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d1jlu16qmh7xv"]
+
+[ext_resource type="ArrayMesh" uid="uid://wscxjtlv0k7n" path="res://Assets/Dungeon/Assets/obj/floor_tile_large.obj" id="1_3wlvd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ww7xm"]
+
+[node name="FloorTileLarge" type="Node3D" unique_id=776837452]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1602617111]
+mesh = ExtResource("1_3wlvd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=933573901]
+transform = Transform3D(4, 0, 0, 0, 0.1, 0, 0, 0, 4, 0, -0.05, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1873140203]
+shape = SubResource("BoxShape3D_ww7xm")
