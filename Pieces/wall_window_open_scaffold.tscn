@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d253rmpic6ys5"]
+
+[ext_resource type="ArrayMesh" uid="uid://4dgf5nknb70b" path="res://Assets/Dungeon/Assets/obj/wall_window_open_scaffold.obj" id="1_7sq4c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ywr0k"]
+
+[node name="WallWindowOpenScaffold" type="Node3D" unique_id=2004997013]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1914987040]
+mesh = ExtResource("1_7sq4c")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=611565432]
+transform = Transform3D(4, 0, 0, 0, 4.004, 0, 0, 0, 1.004, 0, 2, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1191761426]
+shape = SubResource("BoxShape3D_ywr0k")

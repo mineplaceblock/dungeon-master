@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://qrxbhsiy3f6f"
+path="res://.godot/imported/stairs_wall_left.obj-07cd4b4e3a69f6ce1ed01a45f4833be0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stairs_wall_left.obj-07cd4b4e3a69f6ce1ed01a45f4833be0.mesh"]
+
+source_file="res://Assets/Dungeon/Assets/obj/stairs_wall_left.obj"
+dest_files=["res://.godot/imported/stairs_wall_left.obj-07cd4b4e3a69f6ce1ed01a45f4833be0.mesh", "res://.godot/imported/stairs_wall_left.obj-07cd4b4e3a69f6ce1ed01a45f4833be0.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

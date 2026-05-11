@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ccmlfpiyl5lwr"]
+
+[ext_resource type="ArrayMesh" uid="uid://b77c5lywfgg2v" path="res://Assets/Dungeon/Assets/obj/wall_archedwindow_gated_scaffold.obj" id="1_i8c8m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ywr0k"]
+
+[node name="WallArchedwindowGatedScaffold" type="Node3D" unique_id=324398996]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1457356512]
+mesh = ExtResource("1_i8c8m")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1118652131]
+transform = Transform3D(4, 0, 0, 0, 4.004, 0, 0, 0, 1.004, 0, 2, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1081881338]
+shape = SubResource("BoxShape3D_ywr0k")

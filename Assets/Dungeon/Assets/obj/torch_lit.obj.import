@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c31b83ki36718"
+path="res://.godot/imported/torch_lit.obj-1350acfe02e8da6706cc94977ba9c003.mesh"
+
+[deps]
+
+files=["res://.godot/imported/torch_lit.obj-1350acfe02e8da6706cc94977ba9c003.mesh"]
+
+source_file="res://Assets/Dungeon/Assets/obj/torch_lit.obj"
+dest_files=["res://.godot/imported/torch_lit.obj-1350acfe02e8da6706cc94977ba9c003.mesh", "res://.godot/imported/torch_lit.obj-1350acfe02e8da6706cc94977ba9c003.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

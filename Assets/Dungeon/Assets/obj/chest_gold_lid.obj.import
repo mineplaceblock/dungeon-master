@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://boveggwmpnuok"
+path="res://.godot/imported/chest_gold_lid.obj-7ab59436d9b0b9c2a99628e289520ae3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/chest_gold_lid.obj-7ab59436d9b0b9c2a99628e289520ae3.mesh"]
+
+source_file="res://Assets/Dungeon/Assets/obj/chest_gold_lid.obj"
+dest_files=["res://.godot/imported/chest_gold_lid.obj-7ab59436d9b0b9c2a99628e289520ae3.mesh", "res://.godot/imported/chest_gold_lid.obj-7ab59436d9b0b9c2a99628e289520ae3.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

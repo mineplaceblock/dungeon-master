@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bjqgs570v2rvq"]
+
+[ext_resource type="ArrayMesh" uid="uid://dcwnbykmw2c4x" path="res://Assets/Dungeon/Assets/obj/wall_corner_scaffold.obj" id="1_b35mv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ywr0k"]
+
+[node name="WallCornerScaffold" type="Node3D" unique_id=620538003]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2013452292]
+mesh = ExtResource("1_b35mv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1967632921]
+transform = Transform3D(2, 0, 0, 0, 4.004, 0, 0, 0, 1.004, -1, 2, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=676496022]
+shape = SubResource("BoxShape3D_ywr0k")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="MeshInstance3D" unique_id=1890985930]
+transform = Transform3D(1, 0, 0, 0, 4.004, 0, 0, 0, 2, 0, 2, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D2" unique_id=612440862]
+shape = SubResource("BoxShape3D_ywr0k")
