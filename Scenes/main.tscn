@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://crb6xa2107qg0"]
+
+[ext_resource type="Shader" uid="uid://dwurreypqfv33" path="res://Scenes/main.gdshader" id="1_jjgbg"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bo1nx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8gbba"]
+render_priority = 0
+shader = ExtResource("1_jjgbg")
+shader_parameter/time_speed = 3.0
+shader_parameter/emission_strength = 5.0
+
+[node name="Node3D" type="Node3D" unique_id=1554512529]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1410674005]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+mesh = SubResource("PlaneMesh_bo1nx")
+surface_material_override/0 = SubResource("ShaderMaterial_8gbba")

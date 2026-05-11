@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://dwnkhg0oc16lc"]
+
+[ext_resource type="Script" uid="uid://bimwkqxufe78s" path="res://Player/advanced_player.gd" id="1_1dcjc"]
+[ext_resource type="PackedScene" uid="uid://re0mj8ukialf" path="res://Player/awp.tscn" id="2_kcy6y"]
+[ext_resource type="Texture2D" uid="uid://c2ryhmega4mag" path="res://Assets/muzzle_flash_fire.png" id="3_e8egr"]
+[ext_resource type="PackedScene" uid="uid://dibum3i51ee81" path="res://Assets/source.glb" id="3_rj16e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iof21"]
+albedo_color = Color(0.91806, 0.575202, 0.222449, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ucva2"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iof21"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e66nh"]
+angle_min = -360.0
+angle_max = 360.00003
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rece0"]
+transparency = 4
+blend_mode = 1
+albedo_texture = ExtResource("3_e8egr")
+emission_enabled = true
+emission_energy_multiplier = 3.0
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_ra1uk"]
+material = SubResource("StandardMaterial3D_rece0")
+size = Vector2(0.5, 0.5)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_t81vb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ij2y"]
+albedo_color = Color(1, 0.6666667, 0, 1)
+emission_enabled = true
+emission = Color(1, 0.6666667, 0, 1)
+emission_energy_multiplier = 16.0
+
+[node name="ProtoController" type="CharacterBody3D" unique_id=2066130245]
+script = ExtResource("1_1dcjc")
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=465720746]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+material_override = SubResource("StandardMaterial3D_iof21")
+mesh = SubResource("CapsuleMesh_ucva2")
+
+[node name="Collider" type="CollisionShape3D" parent="." unique_id=570585720]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_iof21")
+
+[node name="Head" type="Node3D" parent="." unique_id=444393620]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=88253308]
+
+[node name="AWP" parent="Head" unique_id=334229785 instance=ExtResource("2_kcy6y")]
+transform = Transform3D(-0.099894494, 0, -0.004592078, 0, 0.099999994, 0, 0.004592078, 0, -0.099894494, 0.4370431, 0, -0.8273982)
+
+[node name="Marker3D" type="Marker3D" parent="Head/AWP" unique_id=756489624]
+transform = Transform3D(0.99999964, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999964, 0.057620525, 0.61129, 14.223467)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Head/AWP/Marker3D" unique_id=1720619519]
+transform = Transform3D(0.9999999, 0, 3.7252903e-09, 0, 0.9999999, 0, -3.7252903e-09, 0, 0.9999999, -0.026014328, 0, 0.5658932)
+emitting = false
+amount = 5
+lifetime = 0.05
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_e66nh")
+draw_pass_1 = SubResource("QuadMesh_ra1uk")
+
+[node name="RayCast3D" type="RayCast3D" parent="Head" unique_id=435590539]
+
+[node name="Sketchfab_Scene" parent="." unique_id=1863077715 instance=ExtResource("3_rj16e")]
+transform = Transform3D(0.05423782, 0, 0, 0, 0.062412545, 0, 0, 0, 0.042247213, 0.010982797, 1.8509169, 0.17296638)
+
+[node name="BulletTrail" type="Node3D" parent="." unique_id=1653911576]
+
+[node name="Trail" type="MeshInstance3D" parent="BulletTrail" unique_id=1698229871]
+transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, -0.02, 0, 0.02, -8.7422775e-10, 0.3701533, 1.7629402, -2.2678967)
+mesh = SubResource("CapsuleMesh_t81vb")
+surface_material_override/0 = SubResource("StandardMaterial3D_8ij2y")

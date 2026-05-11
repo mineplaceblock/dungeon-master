@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://djtgmcx6ssget"]
+
+[ext_resource type="PackedScene" uid="uid://ch3b2pak77860" path="res://suelo.tscn" id="1_o2pqt"]
+[ext_resource type="PackedScene" uid="uid://dyuoknsnssebj" path="res://pared.tscn" id="2_rh0e7"]
+[ext_resource type="PackedScene" uid="uid://dwnkhg0oc16lc" path="res://Player/proto_controller.tscn" id="3_rh0e7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i620n"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_tuq4o"]
+sky_material = SubResource("ProceduralSkyMaterial_i620n")
+
+[sub_resource type="Environment" id="Environment_nhwn5"]
+background_mode = 2
+sky = SubResource("Sky_tuq4o")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_tuq4o"]
+vertices = PackedVector3Array(-24.5, 1, -24.5, -24.5, 1, 24.5, 24.5, 1, 24.5, 24.5, 1, -24.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+geometry_parsed_geometry_type = 0
+agent_height = 1.8
+agent_radius = 0.3
+
+[node name="DiearreaProteica" type="Node3D" unique_id=101627158]
+
+[node name="Node3D" parent="." unique_id=443604126 instance=ExtResource("1_o2pqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.056495667, 0, -0.049288273)
+
+[node name="Node3D2" parent="." unique_id=163674826 instance=ExtResource("1_o2pqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.949463, 0, -0.007435322)
+
+[node name="Node3D3" parent="." unique_id=824981542 instance=ExtResource("1_o2pqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.018968582, 0, 3.9501762)
+
+[node name="Wall" parent="." unique_id=1805059057 instance=ExtResource("2_rh0e7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17170441, -1.1920929e-07, 6.332679)
+
+[node name="Wall2" parent="." unique_id=735355115 instance=ExtResource("2_rh0e7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010991216, -1.1920929e-07, -2.2934148)
+
+[node name="Wall3" parent="." unique_id=215423255 instance=ExtResource("2_rh0e7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0446334, -1.1920929e-07, -2.3129337)
+
+[node name="Wall4" parent="." unique_id=291595117 instance=ExtResource("2_rh0e7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0446334, -1.1920929e-07, 1.9039471)
+
+[node name="Wall5" parent="." unique_id=2139846526 instance=ExtResource("2_rh0e7")]
+transform = Transform3D(-0.016178543, 0, 0.9998691, 0, 1, 0, -0.9998691, 0, -0.016178543, 5.581739, -0.0846082, -0.28879285)
+
+[node name="Wall6" parent="." unique_id=361093548 instance=ExtResource("2_rh0e7")]
+transform = Transform3D(-0.016178543, 0, 0.9998691, 0, 1, 0, -0.9998691, 0, -0.016178543, -2.0358472, -0.0846082, -0.28879285)
+
+[node name="Wall7" parent="." unique_id=1820093465 instance=ExtResource("2_rh0e7")]
+transform = Transform3D(-0.016178543, 0, 0.9998691, 0, 1, 0, -0.9998691, 0, -0.016178543, -2.0358472, -0.0846082, 4.084386)
+
+[node name="Wall8" parent="." unique_id=147499403 instance=ExtResource("2_rh0e7")]
+transform = Transform3D(-0.016178543, 0, 0.9998691, 0, 1, 0, -0.9998691, 0, -0.016178543, 2.0878463, -0.0846082, 4.084386)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1606953527]
+environment = SubResource("Environment_nhwn5")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1316507604]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="ProtoController" parent="." unique_id=2066130245 instance=ExtResource("3_rh0e7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90307426, 1.4824452, -0.107)
+can_freefly = true
+
+[node name="Enemy" parent="." unique_id=519264229]
+
+[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemy" unique_id=225813328]
+avoidance_enabled = true
+debug_enabled = true
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=323878179]
+transform = Transform3D(0.06022612, 0, 0, 0, 1, 0, 0, 0, 0.15546212, 0, -0.5, 2.0903971)
+navigation_mesh = SubResource("NavigationMesh_tuq4o")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D" unique_id=564764962]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(50, 1, 50)
+
+[node name="Node3D4" parent="." unique_id=2010558934 instance=ExtResource("1_o2pqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.8294797, 0, 3.846335)
+
+[node name="Wall9" parent="." unique_id=1213501700 instance=ExtResource("2_rh0e7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8172102, -1.1920929e-07, 7.74763)
+
+[editable path="Wall6"]
