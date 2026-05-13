@@ -3,8 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://1iatwcevtlew" path="res://Assets/Skeletons/characters/gltf/Skeleton_Mage.glb" id="1_csrp5"]
 [ext_resource type="Script" uid="uid://bsaihm6oer2r7" path="res://Scenes/Nil/Mage enemy.gd" id="1_kjf26"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_kjf26"]
-size = Vector3(1, 2.4676514, 1.1162109)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wmrx8"]
+radius = 0.55908203
+height = 2.2529297
 
 [sub_resource type="Animation" id="Animation_hm810"]
 resource_name = "Death_A"
@@ -10294,7 +10295,7 @@ script = ExtResource("1_kjf26")
 
 [node name="Skeleton_Mage" parent="." unique_id=250242427 instance=ExtResource("1_csrp5")]
 
-[node name="Skeleton3D" parent="Skeleton_Mage/Rig_Medium" parent_id_path=PackedInt32Array(250242427, 352659338) index="0" unique_id=450532276]
+[node name="Skeleton3D" parent="Skeleton_Mage/Rig_Medium" parent_id_path=PackedInt32Array(250242427, 659408085) index="0" unique_id=712532101]
 bones/0/rotation = Quaternion(-2.1855692e-08, 1.19209275e-07, -2.6054013e-15, 1)
 bones/1/position = Vector3(-2.3665827e-30, 0.39206383, 0)
 bones/1/rotation = Quaternion(-1.1112795e-10, 0.043157753, 2.5724098e-09, 0.99906826)
@@ -10360,12 +10361,12 @@ bones/22/position = Vector3(-3.2884202e-09, 0.16565007, 1.1634423e-08)
 bones/22/rotation = Quaternion(-2.258756e-06, 0.9202538, -0.39132187, 5.264053e-07)
 bones/22/scale = Vector3(1, 0.999999, 1.0000018)
 
-[node name="head" parent="Skeleton_Mage/Rig_Medium/Skeleton3D" index="0" unique_id=2080817398]
+[node name="head" parent="Skeleton_Mage/Rig_Medium/Skeleton3D" index="0" unique_id=1503810803]
 transform = Transform3D(0.99972034, -1.4014343e-09, 0.023646593, 3.5978842e-10, 0.99999994, 4.4054854e-08, -0.023646593, -4.4034028e-08, 0.99972034, -4.3038546e-09, 1.2278258, -5.3669975e-08)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=797102798]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2343818, -0.05810547)
-shape = SubResource("BoxShape3D_kjf26")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.107917, -0.05810547)
+shape = SubResource("CapsuleShape3D_wmrx8")
 
 [node name="RayCastSuelo" type="RayCast3D" parent="." unique_id=1692560555]
 target_position = Vector3(0, -2, 0)
