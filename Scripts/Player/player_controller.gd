@@ -35,6 +35,7 @@ var freeflying : bool = false
 @onready var player_manager: Node = $PlayerManager
 
 func _ready() -> void:
+	add_to_group("player")
 	check_input_mappings()
 	look_rotation.y = rotation.y
 	look_rotation.x = head.rotation.x
@@ -78,6 +79,7 @@ func _physics_process(delta: float) -> void:
 	if can_sprint and Input.is_action_pressed(input_sprint):
 		var stamina_consumed: bool = player_manager.consume_stamina(player_manager.stamina_drain_rate * delta)
 		move_speed = sprint_speed if stamina_consumed else base_speed
+		#print("correte" if stamina_consumed else "no corre")
 	else:
 		move_speed = base_speed
 

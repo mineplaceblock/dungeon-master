@@ -14,12 +14,13 @@ signal player_died
 ## Seconds to wait before stamina starts regenerating after sprinting
 @export var stamina_regen_delay: float = 1.5
 
-var current_health: float
-var current_stamina: float
+var current_health: float = 100.0
+var current_stamina: float = 100.0
 var _stamina_regen_timer: float = 0.0
 var _is_dead: bool = false
 
 func _ready() -> void:
+	add_to_group("player_manager")
 	current_health = max_health
 	current_stamina = max_stamina
 
@@ -48,7 +49,7 @@ func heal(amount: float) -> void:
 
 ## Try to consume stamina (e.g. while sprinting). Returns false if not enough stamina.
 func consume_stamina(amount: float) -> bool:
-	if current_stamina <= 0.0:
+	if max(current_stamina - amount, 0.0) <= 0.0:
 		return false
 	current_stamina = max(current_stamina - amount, 0.0)
 	_stamina_regen_timer = stamina_regen_delay  # reset regen delay

@@ -7,20 +7,19 @@ extends StaticBody3D
 ## Seconds between damage ticks (only used when continuous_damage is true)
 @export var damage_interval: float = 0.5
 
-## Path to the PlayerManager node (adjust to your scene tree)
-@export var player_manager_path: NodePath = NodePath("../Player/PlayerManager")
 
 var _player_manager: Node = null
 var _player_inside: bool = false
 var _tick_timer: float = 0.0
 
 func _ready() -> void:
-	# Connect body_entered / body_exited from an Area3D child named "HurtArea"
-	# Add an Area3D child node to this StaticBody3D and name it "HurtArea"
 	var area := $HurtArea as Area3D
 	area.body_entered.connect(_on_body_entered)
 	area.body_exited.connect(_on_body_exited)
-	_player_manager = get_node(player_manager_path)
+	_player_manager = get_tree().get_first_node_in_group("player_manager")
+	print("PlayerManager encontrado: ", _player_manager)
+	print("Area3D encontrada: ", area)
+
 
 func _process(delta: float) -> void:
 	if not continuous_damage or not _player_inside:
@@ -29,20 +28,26 @@ func _process(delta: float) -> void:
 	if _tick_timer <= 0.0:
 		_tick_timer = damage_interval
 		_deal_damage()
+		print("Pupa")
 
 func _on_body_entered(body: Node) -> void:
-	if not body is CharacterBody3D:
+	print("Body entered: ", body.name, " | in group player: ", body.is_in_group("player"))
+	if not body.is_in_group("player"):
 		return
 	_player_inside = true
-	_tick_timer = 0.0  # deal damage immediately on enter
+	_tick_timer = 0.0
+	print("Player detectado, continuous: ", continuous_damage)
 	if not continuous_damage:
 		_deal_damage()
 
+func _deal_damage() -> void:
+	print("Intentando daño, manager: ", _player_manager)
+	if _player_manager:
+		print("Vida antes: ", _player_manager.current_health)
+		_player_manager.take_damage(damage_amount)
+		print("Vida después: ", _player_manager.current_health)
+
 func _on_body_exited(body: Node) -> void:
-	if not body is CharacterBody3D:
+	if not body.is_in_group("player"):
 		return
 	_player_inside = false
-
-func _deal_damage() -> void:
-	if _player_manager:
-		_player_manager.take_damage(damage_amount)
