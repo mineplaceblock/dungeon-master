@@ -35,22 +35,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0046319366)
 
 [node name="RayCast3D" type="RayCast3D" parent="Head" unique_id=435590539]
 
-[node name="Sketchfab_Scene" parent="." unique_id=1863077715 instance=ExtResource("3_rj16e")]
-transform = Transform3D(0.05423782, 0, 0, 0, 0.062412545, 0, 0, 0, 0.042247213, 0.010982797, 1.8509169, 0.17296638)
+[node name="M4a2" parent="Head" unique_id=1138020869 instance=ExtResource("5_halkx")]
+transform = Transform3D(-16.949415, 0, -1.3104355, 0, 16.999996, 0, 1.3104355, 0, -16.949415, 0.36090004, -0.2714975, -0.7722651)
 
-[node name="BulletTrail" type="Node3D" parent="." unique_id=1653911576]
-visible = false
+[node name="BulletTrail" type="Node3D" parent="Head/M4a2" unique_id=1653911576]
+transform = Transform3D(-0.058648515, 0, 0.0045343805, 0, 0.058823552, 0, -0.0045343805, 0, -0.058648515, 0.031325486, -0.097708166, -0.05166244)
 
-[node name="Trail" type="MeshInstance3D" parent="BulletTrail" unique_id=1698229871]
+[node name="Trail" type="MeshInstance3D" parent="Head/M4a2/BulletTrail" unique_id=1698229871]
 transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, -0.02, 0, 0.02, -8.7422775e-10, 0.3701533, 1.7629402, -2.2678967)
 mesh = SubResource("CapsuleMesh_t81vb")
 surface_material_override/0 = SubResource("StandardMaterial3D_8ij2y")
+
+[node name="Sketchfab_Scene" parent="." unique_id=1863077715 instance=ExtResource("3_rj16e")]
+transform = Transform3D(0.05423782, 0, 0, 0, 0.062412545, 0, 0, 0, 0.042247213, 0.010982797, 1.8509169, 0.17296638)
 
 [node name="Knight" parent="." unique_id=1306936116 instance=ExtResource("3_e8egr")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="PlayerManager" type="Node" parent="." unique_id=1719169405]
 script = ExtResource("4_6nbh1")
-
-[node name="M4a2" parent="." unique_id=1138020869 instance=ExtResource("5_halkx")]
-transform = Transform3D(-16.53966, 0, -3.9293222, 0, 16.999996, 0, 3.9293222, 0, -16.53966, 0.36090004, 1.5714092, -1.4944967)

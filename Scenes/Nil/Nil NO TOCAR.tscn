@@ -37,7 +37,6 @@ shadow_enabled = true
 
 [node name="ProtoController" parent="." unique_id=2066130245 instance=ExtResource("1_i620n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08910179, 2.4458447, 9.641514)
-can_freefly = true
 
 [node name="Enemy" parent="." unique_id=1128761082 instance=ExtResource("1_tuq4o")]
 
