@@ -52,8 +52,6 @@ var freeflying : bool = false
 ## IMPORTANT REFERENCES
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
-var bullet = load("res://bala.tscn")
-@onready var pos = $Head/Camera3D/AWP/pos
 
 func _ready() -> void:
 	check_input_mappings()

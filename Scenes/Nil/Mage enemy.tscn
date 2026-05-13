@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cvg35stxe36r0"]
 
-[ext_resource type="PackedScene" uid="uid://1iatwcevtlew" path="res://Assets/KayKit_Skeletons_1.1_FREE/characters/gltf/Skeleton_Mage.glb" id="1_csrp5"]
+[ext_resource type="PackedScene" uid="uid://1iatwcevtlew" path="res://Assets/Skeletons/characters/gltf/Skeleton_Mage.glb" id="1_csrp5"]
 [ext_resource type="Script" uid="uid://bsaihm6oer2r7" path="res://Scenes/Nil/Mage enemy.gd" id="1_kjf26"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kjf26"]

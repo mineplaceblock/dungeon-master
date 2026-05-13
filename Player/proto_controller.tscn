@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dwnkhg0oc16lc"]
 
 [ext_resource type="Script" uid="uid://bimwkqxufe78s" path="res://Scripts/Player/player_controller.gd" id="1_1dcjc"]
-[ext_resource type="PackedScene" uid="uid://ci8rkq0xbiwc0" path="res://Assets/KayKit_Adventurers_2.0_FREE/Characters/fbx/Knight.fbx" id="3_e8egr"]
+[ext_resource type="PackedScene" uid="uid://ci8rkq0xbiwc0" path="res://Assets/Adventurers/Characters/fbx/Knight.fbx" id="3_e8egr"]
 [ext_resource type="PackedScene" uid="uid://dibum3i51ee81" path="res://Assets/source.glb" id="3_rj16e"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iof21"]
@@ -42,5 +42,5 @@ transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, -0.02, 0, 0.02, -8.742277
 mesh = SubResource("CapsuleMesh_t81vb")
 surface_material_override/0 = SubResource("StandardMaterial3D_8ij2y")
 
-[node name="Knight" parent="." unique_id=1542843189 instance=ExtResource("3_e8egr")]
+[node name="Knight" parent="." unique_id=1306936116 instance=ExtResource("3_e8egr")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
