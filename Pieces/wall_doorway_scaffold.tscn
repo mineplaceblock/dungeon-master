@@ -2,8 +2,6 @@
 
 [ext_resource type="ArrayMesh" uid="uid://dvegiukv2dp66" path="res://Assets/Dungeon/Assets/obj/wall_doorway_scaffold.obj" id="1_7g1i0"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ywr0k"]
-
 [node name="WallDoorwayScaffold" type="Node3D" unique_id=1408071210]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1283952894]
@@ -12,5 +10,5 @@ mesh = ExtResource("1_7g1i0")
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1753536314]
 transform = Transform3D(4, 0, 0, 0, 4.004, 0, 0, 0, 1.004, 0, 2, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1620067716]
-shape = SubResource("BoxShape3D_ywr0k")
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="MeshInstance3D/StaticBody3D" unique_id=1290760454]
+polygon = PackedVector2Array(-0.49932256, 0.49887478, 0.50371087, 0.4989292, 0.49922925, -0.50015795, 0.25189048, -0.4998584, 0.24265406, 0.20746517, -0.24447954, 0.20433813, -0.26094392, -0.49966916, -0.4965653, -0.4993068)
