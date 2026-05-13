@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ci8rkq0xbiwc0" path="res://Assets/Adventurers/Characters/fbx/Knight.fbx" id="3_e8egr"]
 [ext_resource type="PackedScene" uid="uid://dibum3i51ee81" path="res://Assets/source.glb" id="3_rj16e"]
 [ext_resource type="Script" uid="uid://dq3caujlaxj7x" path="res://Scripts/Player/player_manager.gd" id="4_6nbh1"]
+[ext_resource type="PackedScene" uid="uid://bx4o378hsuw6p" path="res://m_4a_1.tscn" id="5_halkx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iof21"]
 radius = 0.4
@@ -48,3 +49,6 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 
 [node name="PlayerManager" type="Node" parent="." unique_id=1719169405]
 script = ExtResource("4_6nbh1")
+
+[node name="M4a2" parent="." unique_id=1138020869 instance=ExtResource("5_halkx")]
+transform = Transform3D(-16.53966, 0, -3.9293222, 0, 16.999996, 0, 3.9293222, 0, -16.53966, 0.36090004, 1.5714092, -1.4944967)
