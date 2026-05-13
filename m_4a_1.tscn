@@ -37,6 +37,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_eib41")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xccvw"]
+albedo_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_85w5g"]
 resource_name = "Magazine1"
 vertex_color_use_as_albedo = true
@@ -76,6 +79,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_tbmst")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o7bw8"]
+albedo_color = Color(0.20871013, 0.20871016, 0.20871013, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0cyn"]
 resource_name = "Silencer1"
 vertex_color_use_as_albedo = true
@@ -113,17 +119,23 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_c3fnf")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3wy2b"]
+albedo_color = Color(0, 0, 0, 1)
+
 [node name="M4a1" type="Node3D" unique_id=1138020869]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 
 [node name="Gun" type="MeshInstance3D" parent="." unique_id=1557751233]
 transform = Transform3D(0.3007702, 0, 0, 0, 0, -0.3007702, 0, 1.3452133, 0, 1.5568594e-18, 0.0053267204, -0.0053570797)
 mesh = SubResource("ArrayMesh_i77a3")
+surface_material_override/0 = SubResource("StandardMaterial3D_xccvw")
 
 [node name="Magazine" type="MeshInstance3D" parent="." unique_id=1406331100]
 transform = Transform3D(0.16215216, 0, 0, 0, 0.40555876, 0, 0, 0, 0.37003836, -2.3178004e-18, -0.011491783, 0.0028880576)
 mesh = SubResource("ArrayMesh_etq4l")
+surface_material_override/0 = SubResource("StandardMaterial3D_o7bw8")
 
 [node name="Silencer" type="MeshInstance3D" parent="." unique_id=2102862586]
 transform = Transform3D(0.2898488, 0, 0, 0, 0, -0.2898488, 0, 1.3721628, 0, -0.0006388784, 0.0060292976, 0.067820385)
 mesh = SubResource("ArrayMesh_rvanh")
+surface_material_override/0 = SubResource("StandardMaterial3D_3wy2b")
