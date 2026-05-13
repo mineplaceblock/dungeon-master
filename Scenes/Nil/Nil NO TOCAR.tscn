@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dwnkhg0oc16lc" path="res://Player/proto_controller.tscn" id="1_i620n"]
 [ext_resource type="PackedScene" uid="uid://cvg35stxe36r0" path="res://Scenes/Nil/Mage enemy.tscn" id="1_tuq4o"]
+[ext_resource type="PackedScene" uid="uid://cyg5k5jknnmpn" path="res://prueba usando mis piezas (pieces).tscn" id="3_1nt4o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i620n"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -33,7 +34,7 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="ProtoController" parent="." unique_id=2066130245 instance=ExtResource("1_i620n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.823, 0, -0.107)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08910179, 2.4458447, 9.641514)
 can_freefly = true
 
 [node name="Enemy" parent="." unique_id=1128761082 instance=ExtResource("1_tuq4o")]
@@ -66,3 +67,6 @@ navigation_mesh = SubResource("NavigationMesh_tuq4o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 use_collision = true
 size = Vector3(50, 1, 50)
+
+[node name="PruebaUsandoMisPiezas(pieces)" parent="." unique_id=1026505385 instance=ExtResource("3_1nt4o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.095766, -0.4, -2.2060118)
