@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://ttckpadgv6r7"]
 
-[ext_resource type="PackedScene" uid="uid://dwnkhg0oc16lc" path="res://Player/proto_controller.tscn" id="1_i620n"]
+[ext_resource type="PackedScene" uid="uid://dwnkhg0oc16lc" path="res://player_controller.tscn" id="1_i620n"]
 [ext_resource type="PackedScene" uid="uid://cvg35stxe36r0" path="res://Scenes/Nil/Mage enemy.tscn" id="1_tuq4o"]
 [ext_resource type="PackedScene" uid="uid://cyg5k5jknnmpn" path="res://prueba usando mis piezas (pieces).tscn" id="3_1nt4o"]
+[ext_resource type="PackedScene" uid="uid://wuol6lche0gd" path="res://damage.tscn" id="4_s0h42"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i620n"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -70,3 +71,6 @@ size = Vector3(50, 1, 50)
 
 [node name="PruebaUsandoMisPiezas(pieces)" parent="." unique_id=1026505385 instance=ExtResource("3_1nt4o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.095766, -0.4, -2.2060118)
+
+[node name="StaticBody3D" parent="." unique_id=526126464 instance=ExtResource("4_s0h42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3096063, 0.10000038, 9.261494)

@@ -1,6 +1,6 @@
 extends Control
 
-const Cell = preload("res://Minigames/cell.tscn")
+const Cell = preload("res://Minigames/Tic Tac Toe/cell.tscn")
 
 @export_enum("Human", "AI") var play_with : String = "Human"
 

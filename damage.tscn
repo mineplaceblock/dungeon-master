@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://wuol6lche0gd"]
+
+[ext_resource type="Script" uid="uid://bfxha75pjwn6h" path="res://Scripts/damage_block.gd" id="1_c7fco"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_s11oa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c7fco"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rwnek"]
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=526126464]
+script = ExtResource("1_c7fco")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=211462061]
+mesh = SubResource("BoxMesh_s11oa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=652495735]
+shape = SubResource("BoxShape3D_c7fco")
+
+[node name="HurtArea" type="Area3D" parent="." unique_id=264840710]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtArea" unique_id=2041568740]
+shape = SubResource("BoxShape3D_rwnek")
