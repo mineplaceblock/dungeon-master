@@ -19,6 +19,8 @@ emission_energy_multiplier = 16.0
 
 [node name="ProtoController" type="CharacterBody3D" unique_id=2066130245]
 script = ExtResource("1_1dcjc")
+can_sprint = true
+can_freefly = true
 
 [node name="Collider" type="CollisionShape3D" parent="." unique_id=570585720]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
