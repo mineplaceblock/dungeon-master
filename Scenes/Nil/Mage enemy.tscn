@@ -10297,7 +10297,7 @@ script = ExtResource("1_kjf26")
 
 [node name="Skeleton_Mage" parent="." unique_id=250242427 instance=ExtResource("1_csrp5")]
 
-[node name="Skeleton3D" parent="Skeleton_Mage/Rig_Medium" parent_id_path=PackedInt32Array(250242427, 1012426533) index="0" unique_id=1285313545]
+[node name="Skeleton3D" parent="Skeleton_Mage/Rig_Medium" parent_id_path=PackedInt32Array(250242427, 1230073699) index="0" unique_id=1410802040]
 bones/0/rotation = Quaternion(-2.1855692e-08, 1.19209275e-07, -2.6054013e-15, 1)
 bones/1/position = Vector3(-2.3665827e-30, 0.39206383, 0)
 bones/1/rotation = Quaternion(-1.1112795e-10, 0.043157753, 2.5724098e-09, 0.99906826)
@@ -10363,7 +10363,7 @@ bones/22/position = Vector3(-3.2884202e-09, 0.16565007, 1.1634423e-08)
 bones/22/rotation = Quaternion(-2.258756e-06, 0.9202538, -0.39132187, 5.264053e-07)
 bones/22/scale = Vector3(1, 0.999999, 1.0000018)
 
-[node name="head" parent="Skeleton_Mage/Rig_Medium/Skeleton3D" index="0" unique_id=200790593]
+[node name="head" parent="Skeleton_Mage/Rig_Medium/Skeleton3D" index="0" unique_id=757010298]
 transform = Transform3D(0.99972034, -1.4014343e-09, 0.023646593, 3.5978842e-10, 0.99999994, 4.4054854e-08, -0.023646593, -4.4034028e-08, 0.99972034, -4.3038546e-09, 1.2278258, -5.3669975e-08)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=797102798]
