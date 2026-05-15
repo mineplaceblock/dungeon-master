@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cvg35stxe36r0" path="res://Scenes/Nil/Mage enemy.tscn" id="1_tuq4o"]
 [ext_resource type="PackedScene" uid="uid://cyg5k5jknnmpn" path="res://prueba usando mis piezas (pieces).tscn" id="3_1nt4o"]
 [ext_resource type="PackedScene" uid="uid://wuol6lche0gd" path="res://damage.tscn" id="4_s0h42"]
-[ext_resource type="PackedScene" path="res://Scenes/Nil/Jefe.tscn" id="5_3g0cs"]
+[ext_resource type="PackedScene" uid="uid://dwt8tyanglro1" path="res://Scenes/Nil/Jefe.tscn" id="5_3g0cs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i620n"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -76,7 +76,5 @@ size = Vector3(50, 1, 50)
 [node name="StaticBody3D" parent="." unique_id=526126464 instance=ExtResource("4_s0h42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3096063, 0.10000038, 9.261494)
 
-[node name="CharacterBody3D" parent="." unique_id=786693127 instance=ExtResource("5_3g0cs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.957825, -0.22988263, 12.159433)
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="CharacterBody3D" unique_id=1529711788]
+[node name="CharacterBody3D" parent="." unique_id=391023328 instance=ExtResource("5_3g0cs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.728878, -0.2974127, 14.1413355)
