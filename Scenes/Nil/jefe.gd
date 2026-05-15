@@ -3,12 +3,12 @@ extends CharacterBody3D
 const SPEED = 5.0
 const WALK_SPEED = 2.5
 const MAX_DISTANCE = 20.0
-const ATTACK_DISTANCE = 2
+const ATTACK_DISTANCE = 2.5
 const ATTACK_COOLDOWN = 0.5
 
-static var nav_baked: bool = false
+static var nav_baked: bool = true
 
-@onready var navAgent = $NavigationAgent3D2
+@onready var navAgent = $NavigationAgent3D
 @onready var target = $"../ProtoController"
 @onready var navRegion = get_tree().get_root().find_child("NavigationRegion3D", true, false)
 @onready var animPlayer = $AnimationPlayer3
