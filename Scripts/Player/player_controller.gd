@@ -28,12 +28,21 @@ var mouse_captured : bool = false
 var look_rotation : Vector2
 var move_speed : float = 0.0
 var freeflying : bool = false
-var freeze : bool = false  # When true, all movement and input is disabled
+var freeze : bool = false
+var thirdpelson : bool = false
+
+# --- Animation state tracking ---
+enum JumpState { NONE, STARTING, AIRBORNE, LANDING }
+var jump_state : JumpState = JumpState.NONE
+var was_on_floor : bool = true
+var jump_hold_timer : float = 0.0          # how long we've been in the air
+const JUMP_LONG_THRESHOLD : float = 0.55   # seconds airborne → Long vs Short land
 
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
-## Assign PlayerManager node in the scene tree
 @onready var player_manager: Node = $PlayerManager
+## Assign your AnimationPlayer node path here
+@onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	add_to_group("player")
@@ -41,6 +50,9 @@ func _ready() -> void:
 	look_rotation.y = rotation.y
 	look_rotation.x = head.rotation.x
 	player_manager.player_died.connect(_on_player_died)
+	# Connect animation finished signal for one-shot anims
+	anim_player.animation_finished.connect(_on_animation_finished)
+	anim_player.play("Descans")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if freeze:
@@ -64,6 +76,14 @@ func _unhandled_input(event: InputEvent) -> void:
 		else:
 			disable_freefly()
 
+	if Input.is_action_just_pressed("debugk"):
+		if thirdpelson:
+			$Head/Camera3D.make_current()
+			thirdpelson = false
+		else:
+			$ThirdPersonCamera.make_current()
+			thirdpelson = true
+
 func _physics_process(delta: float) -> void:
 	if freeze:
 		velocity = Vector3.ZERO
@@ -81,11 +101,15 @@ func _physics_process(delta: float) -> void:
 		if not is_on_floor():
 			velocity += get_gravity() * delta
 
+	# --- Jump input → trigger Jump_Start ---
 	if can_jump:
 		if Input.is_action_just_pressed(input_jump) and is_on_floor():
 			velocity.y = jump_velocity
+			jump_state = JumpState.STARTING
+			jump_hold_timer = 0.0
+			_play_anim("Jump_Start")
 
-	# Sprint: only if PlayerManager has enough stamina
+	# Sprint stamina
 	if can_sprint and Input.is_action_pressed(input_sprint):
 		var stamina_consumed: bool = player_manager.consume_stamina(player_manager.stamina_drain_rate * delta)
 		move_speed = sprint_speed if stamina_consumed else base_speed
@@ -106,6 +130,104 @@ func _physics_process(delta: float) -> void:
 		velocity.y = 0
 
 	move_and_slide()
+
+	# --- Track airborne time ---
+	if not is_on_floor():
+		jump_hold_timer += delta
+
+	# --- Detect landing ---
+	var just_landed : bool = (not was_on_floor) and is_on_floor()
+	was_on_floor = is_on_floor()
+
+	_update_animations(just_landed)
+
+# ─────────────────────────────────────────────
+#  ANIMATION STATE MACHINE
+# ─────────────────────────────────────────────
+func _update_animations(just_landed: bool) -> void:
+	# Don't interrupt one-shot anims that are still playing
+	var cur : String = anim_player.current_animation
+
+	# ── DEATH (highest priority, handled by signal) ──
+	if freeze and (cur == "Mort" or cur == "Mort posi"):
+		return
+
+	# ── LANDING ──
+	if just_landed:
+		jump_state = JumpState.LANDING
+		if jump_hold_timer >= JUMP_LONG_THRESHOLD:
+			_play_anim("Jump_Full_Long")
+		else:
+			_play_anim("Jump_Full_Short")
+		jump_hold_timer = 0.0
+		return
+
+	# ── IN THE AIR ──
+	if not is_on_floor():
+		match jump_state:
+			JumpState.STARTING:
+				pass  # Wait for Jump_Start to finish (handled in _on_animation_finished)
+			JumpState.AIRBORNE:
+				if cur != "Jump_Idle":
+					_play_anim("Jump_Idle")
+		return
+
+	# ── ON THE FLOOR ──
+	# If we just finished landing, let the landing anim finish first
+	if jump_state == JumpState.LANDING:
+		return
+
+	jump_state = JumpState.NONE
+
+	var horizontal_speed : float = Vector2(velocity.x, velocity.z).length()
+	var is_moving : bool = horizontal_speed > 0.5
+	var is_sprinting : bool = can_sprint and Input.is_action_pressed(input_sprint) and horizontal_speed > 0.5
+
+	if is_sprinting:
+		# Alternate Running_A / Running_B on each cycle
+		if cur != "Running_A" and cur != "Running_B":
+			_play_anim("Running_A")
+	elif is_moving:
+		# Cycle through walking variants for natural feel
+		if cur != "Walking_A" and cur != "Walking_B" and cur != "Walking_C":
+			_play_anim("Walking_A")
+	else:
+		if cur != "Descans":
+			_play_anim("Descans")
+
+# Called when a one-shot animation finishes
+func _on_animation_finished(anim_name: String) -> void:
+	match anim_name:
+		"Jump_Start":
+			# Now truly airborne → loop Jump_Idle
+			jump_state = JumpState.AIRBORNE
+			_play_anim("Jump_Idle")
+
+		"Jump_Full_Long", "Jump_Full_Short", "Jump_Land":
+			jump_state = JumpState.NONE
+			_play_anim("Descans")
+
+		"Running_A":
+			_play_anim("Running_B")
+		"Running_B":
+			_play_anim("Running_A")
+
+		"Walking_A":
+			_play_anim("Walking_B")
+		"Walking_B":
+			_play_anim("Walking_C")
+		"Walking_C":
+			_play_anim("Walking_A")
+
+		"Mort", "Mort posi":
+			pass  # Stay on death pose
+
+# ─────────────────────────────────────────────
+#  HELPERS
+# ─────────────────────────────────────────────
+func _play_anim(anim_name: String) -> void:
+	if anim_player.current_animation != anim_name:
+		anim_player.play(anim_name)
 
 func rotate_look(rot_input : Vector2):
 	look_rotation.x -= rot_input.y * look_speed
@@ -160,3 +282,5 @@ func _on_player_died():
 	freeze = true
 	release_mouse()
 	$ThirdPersonCamera.make_current()
+	thirdpelson = true
+	_play_anim("Mort")
