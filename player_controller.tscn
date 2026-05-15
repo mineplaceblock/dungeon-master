@@ -3465,23 +3465,8 @@ _data = {
 
 [node name="ProtoController" type="CharacterBody3D" unique_id=2066130245]
 script = ExtResource("1_1dcjc")
-can_move = null
-has_gravity = null
-can_jump = null
 can_sprint = true
 can_freefly = true
-look_speed = null
-base_speed = null
-jump_velocity = null
-sprint_speed = null
-freefly_speed = null
-input_left = null
-input_right = null
-input_forward = null
-input_back = null
-input_jump = null
-input_sprint = null
-input_freefly = null
 
 [node name="Collider" type="CollisionShape3D" parent="." unique_id=570585720]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, -0.23379427)
