@@ -4,7 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://cvg35stxe36r0" path="res://Scenes/Nil/Mage enemy.tscn" id="2_21xkr"]
 [ext_resource type="PackedScene" uid="uid://cyg5k5jknnmpn" path="res://prueba usando mis piezas (pieces).tscn" id="3_6bp64"]
 [ext_resource type="PackedScene" uid="uid://wuol6lche0gd" path="res://damage.tscn" id="4_344ge"]
-[ext_resource type="PackedScene" path="res://UI/PlayerHUD.tscn" id="5_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://duvmmoehfo3qk" path="res://UI/PlayerHUD.tscn" id="5_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://lwtj2dnvko4a" path="res://Scenes/map/level_1.tscn" id="6_21xkr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i620n"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -77,3 +78,6 @@ size = Vector3(50, 1, 50)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3096063, 0.10000038, 9.261494)
 
 [node name="PlayerHUD" parent="." unique_id=488782356 instance=ExtResource("5_ynf5e")]
+
+[node name="Level1" parent="." unique_id=800708433 instance=ExtResource("6_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.220228, -0.40000096, 5.4475126)
