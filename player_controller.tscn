@@ -3469,7 +3469,7 @@ can_sprint = true
 can_freefly = true
 
 [node name="Collider" type="CollisionShape3D" parent="." unique_id=570585720]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, -0.23379427)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, -0.18270981)
 shape = SubResource("CapsuleShape3D_iof21")
 
 [node name="Head" type="Node3D" parent="." unique_id=444393620]
@@ -3494,7 +3494,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_8ij2y")
 [node name="Knight" parent="." unique_id=1306936116 instance=ExtResource("3_e8egr")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
-[node name="Skeleton3D" parent="Knight/Rig_Medium" parent_id_path=PackedInt32Array(1306936116, 773676963) index="0" unique_id=1555307688]
+[node name="Skeleton3D" parent="Knight/Rig_Medium" parent_id_path=PackedInt32Array(1306936116, 1772561033) index="0" unique_id=980683564]
 bones/1/position = Vector3(4.3561184e-18, 0.36031148, 0)
 bones/1/rotation = Quaternion(-5.3290705e-15, -1.19209275e-07, -6.3527476e-22, 1)
 bones/2/position = Vector3(-7.7539095e-29, 0.1919775, -1.441206e-15)
