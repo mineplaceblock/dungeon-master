@@ -54,3 +54,6 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 
 [node name="PlayerManager" type="Node" parent="." unique_id=1719169405]
 script = ExtResource("4_6nbh1")
+
+[node name="ThirdPersonCamera" type="Camera3D" parent="." unique_id=1125916110]
+transform = Transform3D(-1, 0, -8.742278e-08, -2.262668e-08, 0.9659259, 0.25881907, 8.444392e-08, 0.25881907, -0.9659258, 0, 2.498547, -3.779751)

@@ -52,9 +52,12 @@ func _on_bake_finished():
 
 func _on_animation_finished(anim_name):
 	if anim_name == "Atacar":
-		is_attacking = false
 		attack_timer = ATTACK_COOLDOWN
-
+		is_attacking = false
+		var player_manager = target.get_node("PlayerManager")
+		if player_manager:
+			player_manager.take_damage(20)
+			
 func _physics_process(delta):
 	var distance_to_player = global_position.distance_to(target.global_position)
 

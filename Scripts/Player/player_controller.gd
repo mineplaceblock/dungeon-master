@@ -28,6 +28,7 @@ var mouse_captured : bool = false
 var look_rotation : Vector2
 var move_speed : float = 0.0
 var freeflying : bool = false
+var freeze : bool = false  # When true, all movement and input is disabled
 
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
@@ -39,8 +40,12 @@ func _ready() -> void:
 	check_input_mappings()
 	look_rotation.y = rotation.y
 	look_rotation.x = head.rotation.x
+	player_manager.player_died.connect(_on_player_died)
 
 func _unhandled_input(event: InputEvent) -> void:
+	if freeze:
+		return
+
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		capture_mouse()
 	if Input.is_key_pressed(KEY_ESCAPE):
@@ -60,6 +65,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			disable_freefly()
 
 func _physics_process(delta: float) -> void:
+	if freeze:
+		velocity = Vector3.ZERO
+		move_and_slide()
+		return
+
 	if can_freefly and freeflying:
 		var input_dir := Input.get_vector(input_left, input_right, input_forward, input_back)
 		var motion := (head.global_basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -79,7 +89,6 @@ func _physics_process(delta: float) -> void:
 	if can_sprint and Input.is_action_pressed(input_sprint):
 		var stamina_consumed: bool = player_manager.consume_stamina(player_manager.stamina_drain_rate * delta)
 		move_speed = sprint_speed if stamina_consumed else base_speed
-		#print("correte" if stamina_consumed else "no corre")
 	else:
 		move_speed = base_speed
 
@@ -146,3 +155,8 @@ func check_input_mappings():
 	if can_freefly and not InputMap.has_action(input_freefly):
 		push_error("Freefly disabled. No InputAction found for input_freefly: " + input_freefly)
 		can_freefly = false
+
+func _on_player_died():
+	freeze = true
+	release_mouse()
+	$ThirdPersonCamera.make_current()

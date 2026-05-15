@@ -72,4 +72,4 @@ func _handle_stamina_regen(delta: float) -> void:
 func _die() -> void:
 	_is_dead = true
 	emit_signal("player_died")
-	print("Player died.")  # Replace with your death logic / scene change
+	print("Player died.")
