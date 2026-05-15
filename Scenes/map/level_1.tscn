@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://lwtj2dnvko4a"]
+
+[ext_resource type="PackedScene" uid="uid://d1jlu16qmh7xv" path="res://Pieces/floor_tile_large.tscn" id="1_cjj01"]
+[ext_resource type="PackedScene" uid="uid://ccmlfpiyl5lwr" path="res://Pieces/wall_archedwindow_gated_scaffold.tscn" id="2_216y1"]
+[ext_resource type="PackedScene" uid="uid://bjqgs570v2rvq" path="res://Pieces/wall_corner_scaffold.tscn" id="3_7ikqk"]
+[ext_resource type="PackedScene" uid="uid://dhe7g4k4it6ep" path="res://Pieces/wall_scaffold.tscn" id="4_ojbgf"]
+[ext_resource type="PackedScene" uid="uid://cpvy83eo547ad" path="res://Pieces/wall_window_closed_scaffold.tscn" id="5_ekubd"]
+[ext_resource type="PackedScene" uid="uid://bfdutjbw3v8dq" path="res://Pieces/wall_doorway_scaffold.tscn" id="6_uc1ko"]
+[ext_resource type="PackedScene" uid="uid://d253rmpic6ys5" path="res://Pieces/wall_window_open_scaffold.tscn" id="7_jarjv"]
+[ext_resource type="ArrayMesh" uid="uid://dkxnwa6auc3sr" path="res://Assets/Dungeon/Assets/obj/bed_floor.obj" id="8_84u7l"]
+[ext_resource type="ArrayMesh" uid="uid://3enr7o3oyyyp" path="res://Assets/Dungeon/Assets/obj/box_small_decorated.obj" id="9_mkisk"]
+[ext_resource type="ArrayMesh" uid="uid://xpwyimmytmrj" path="res://Assets/Dungeon/Assets/obj/candle.obj" id="10_d2gon"]
+[ext_resource type="ArrayMesh" uid="uid://cxc1cd4f4635l" path="res://Assets/Dungeon/Assets/obj/chest_gold.obj" id="11_xuvp4"]
+[ext_resource type="ArrayMesh" uid="uid://boveggwmpnuok" path="res://Assets/Dungeon/Assets/obj/chest_gold_lid.obj" id="12_ddeq0"]
+[ext_resource type="ArrayMesh" uid="uid://4p6b3m6bt7a0" path="res://Assets/Dungeon/Assets/obj/crates_stacked.obj" id="13_ojbgf"]
+[ext_resource type="ArrayMesh" uid="uid://clrhtav8pwtw6" path="res://Assets/Dungeon/Assets/obj/keg.obj" id="14_ekubd"]
+[ext_resource type="ArrayMesh" uid="uid://b3kdn8gbb52hd" path="res://Assets/Dungeon/Assets/obj/pillar_decorated.obj" id="15_uc1ko"]
+
+[node name="Level1" type="Node3D" unique_id=800708433]
+
+[node name="FloorTileLarge" parent="." unique_id=776837452 instance=ExtResource("1_cjj01")]
+
+[node name="FloorTileLarge2" parent="." unique_id=701799028 instance=ExtResource("1_cjj01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="FloorTileLarge3" parent="." unique_id=2025041837 instance=ExtResource("1_cjj01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="FloorTileLarge4" parent="." unique_id=1998466545 instance=ExtResource("1_cjj01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
+
+[node name="FloorTileLarge5" parent="." unique_id=1043697086 instance=ExtResource("1_cjj01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="FloorTileLarge7" parent="." unique_id=1125901394 instance=ExtResource("1_cjj01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="FloorTileLarge8" parent="." unique_id=1219721377 instance=ExtResource("1_cjj01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
+
+[node name="FloorTileLarge9" parent="." unique_id=282834554 instance=ExtResource("1_cjj01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="FloorTileLarge6" parent="." unique_id=809328539 instance=ExtResource("1_cjj01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="WallArchedwindowGatedScaffold" parent="." unique_id=324398996 instance=ExtResource("2_216y1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 6)
+
+[node name="WallArchedwindowGatedScaffold2" parent="." unique_id=284270217 instance=ExtResource("2_216y1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -6)
+
+[node name="WallCornerScaffold" parent="." unique_id=620538003 instance=ExtResource("3_7ikqk")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6, 0, 6)
+
+[node name="WallCornerScaffold2" parent="." unique_id=869052463 instance=ExtResource("3_7ikqk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -6)
+
+[node name="WallCornerScaffold3" parent="." unique_id=1022939231 instance=ExtResource("3_7ikqk")]
+transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -6, 0, -6)
+
+[node name="WallCornerScaffold4" parent="." unique_id=1443987980 instance=ExtResource("3_7ikqk")]
+transform = Transform3D(-1, 0, -1.3909066e-08, 0, 1, 0, 1.3909066e-08, 0, -1, -6, 0, 6)
+
+[node name="WallScaffold" parent="." unique_id=1272032105 instance=ExtResource("4_ojbgf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 6)
+
+[node name="WallWindowClosedScaffold" parent="." unique_id=1997742996 instance=ExtResource("5_ekubd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -6)
+
+[node name="WallDoorwayScaffold" parent="." unique_id=1408071210 instance=ExtResource("6_uc1ko")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6, 0, -2)
+
+[node name="WallDoorwayScaffold2" parent="." unique_id=884079943 instance=ExtResource("6_uc1ko")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6, 0, 2)
+
+[node name="WallWindowOpenScaffold" parent="." unique_id=2004997013 instance=ExtResource("7_jarjv")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6, 0, -2)
+
+[node name="WallScaffold2" parent="." unique_id=2132392089 instance=ExtResource("4_ojbgf")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6, 0, 2)
+
+[node name="BedFloor" type="MeshInstance3D" parent="." unique_id=1536331693]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -3)
+mesh = ExtResource("8_84u7l")
+
+[node name="BoxSmallDecorated" type="MeshInstance3D" parent="." unique_id=629452432]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5, 0, 5)
+mesh = ExtResource("9_mkisk")
+
+[node name="Candle" type="MeshInstance3D" parent="." unique_id=1468706052]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+mesh = ExtResource("10_d2gon")
+
+[node name="Candle2" type="MeshInstance3D" parent="." unique_id=1155170211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 2)
+mesh = ExtResource("10_d2gon")
+
+[node name="ChestGold" type="MeshInstance3D" parent="." unique_id=1484110367]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4.394367)
+mesh = ExtResource("11_xuvp4")
+
+[node name="ChestGoldLid" type="MeshInstance3D" parent="." unique_id=929685056]
+transform = Transform3D(1, 0, 0, 0, 0.7908712, 0.61198264, 0, -0.61198264, 0.7908712, 4, 0.46580625, -4.155588)
+mesh = ExtResource("12_ddeq0")
+
+[node name="CratesStacked" type="MeshInstance3D" parent="." unique_id=1192825617]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+mesh = ExtResource("13_ojbgf")
+
+[node name="Keg" type="MeshInstance3D" parent="." unique_id=1979907608]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4, 0, 4)
+mesh = ExtResource("14_ekubd")
+
+[node name="PillarDecorated" type="MeshInstance3D" parent="." unique_id=1253550841]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+mesh = ExtResource("15_uc1ko")
