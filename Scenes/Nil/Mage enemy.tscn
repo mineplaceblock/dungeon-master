@@ -10290,12 +10290,14 @@ _data = {
 &"Walking_C": SubResource("Animation_8kn57")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_wmrx8"]
+
 [node name="Enemy" type="CharacterBody3D" unique_id=1128761082]
 script = ExtResource("1_kjf26")
 
 [node name="Skeleton_Mage" parent="." unique_id=250242427 instance=ExtResource("1_csrp5")]
 
-[node name="Skeleton3D" parent="Skeleton_Mage/Rig_Medium" parent_id_path=PackedInt32Array(250242427, 659408085) index="0" unique_id=712532101]
+[node name="Skeleton3D" parent="Skeleton_Mage/Rig_Medium" parent_id_path=PackedInt32Array(250242427, 1012426533) index="0" unique_id=1285313545]
 bones/0/rotation = Quaternion(-2.1855692e-08, 1.19209275e-07, -2.6054013e-15, 1)
 bones/1/position = Vector3(-2.3665827e-30, 0.39206383, 0)
 bones/1/rotation = Quaternion(-1.1112795e-10, 0.043157753, 2.5724098e-09, 0.99906826)
@@ -10361,7 +10363,7 @@ bones/22/position = Vector3(-3.2884202e-09, 0.16565007, 1.1634423e-08)
 bones/22/rotation = Quaternion(-2.258756e-06, 0.9202538, -0.39132187, 5.264053e-07)
 bones/22/scale = Vector3(1, 0.999999, 1.0000018)
 
-[node name="head" parent="Skeleton_Mage/Rig_Medium/Skeleton3D" index="0" unique_id=1503810803]
+[node name="head" parent="Skeleton_Mage/Rig_Medium/Skeleton3D" index="0" unique_id=200790593]
 transform = Transform3D(0.99972034, -1.4014343e-09, 0.023646593, 3.5978842e-10, 0.99999994, 4.4054854e-08, -0.023646593, -4.4034028e-08, 0.99972034, -4.3038546e-09, 1.2278258, -5.3669975e-08)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=797102798]
@@ -10381,5 +10383,12 @@ libraries/ = SubResource("AnimationLibrary_et6bu")
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="." unique_id=1557603748]
 root_node = NodePath("../Skeleton_Mage")
 libraries/ = SubResource("AnimationLibrary_y447l")
+
+[node name="AttackHitbox" type="Area3D" parent="." unique_id=520225347]
+transform = Transform3D(1, 0, 0, 0, 3.8560538, 0, 0, 0, 1, 0, 0, 0.8691343)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackHitbox" unique_id=1689438911]
+transform = Transform3D(1.2574308, 0, 0, 0, 0.5979215, 0, 0, 0, 1.1282818, 0, 0.2599044, -0.37658155)
+shape = SubResource("BoxShape3D_wmrx8")
 
 [editable path="Skeleton_Mage"]

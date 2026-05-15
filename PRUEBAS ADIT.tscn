@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://rvi1b3qsnhl0"]
 
-[ext_resource type="PackedScene" uid="uid://ttckpadgv6r7" path="res://Scenes/Nil/Nil NO TOCAR.tscn" id="1_ymdtg"]
+[ext_resource type="PackedScene" uid="uid://ttckpadgv6r7" path="res://Scenes/main.tscn" id="1_ymdtg"]
 
 [node name="PruebasAdit" type="Node3D" unique_id=707407695]
 

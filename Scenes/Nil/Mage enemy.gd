@@ -10,9 +10,9 @@ static var nav_baked: bool = false
 
 @onready var navAgent = $NavigationAgent3D2
 @onready var target = $"../ProtoController"
-@onready var navRegion = $"/root/NilNoTocar/NavigationRegion3D"
+@onready var navRegion = get_tree().get_root().find_child("NavigationRegion3D", true, false)
 @onready var animPlayer = $AnimationPlayer3
-
+@onready var attack_hitbox = $AttackHitbox
 var spawn_position: Vector3
 var active: bool = true
 var is_attacking: bool = false
@@ -50,13 +50,6 @@ func _on_bake_finished():
 	await get_tree().physics_frame
 	navAgent.target_position = target.global_position
 
-func _on_animation_finished(anim_name):
-	if anim_name == "Atacar":
-		attack_timer = ATTACK_COOLDOWN
-		is_attacking = false
-		var player_manager = target.get_node("PlayerManager")
-		if player_manager:
-			player_manager.take_damage(20)
 			
 func _physics_process(delta):
 	var distance_to_player = global_position.distance_to(target.global_position)
@@ -142,3 +135,15 @@ func _physics_process(delta):
 			animPlayer.play("Descansar")
 
 	move_and_slide()
+
+
+func _on_animation_finished(anim_name):
+	if anim_name == "Atacar":
+		attack_timer = ATTACK_COOLDOWN
+		is_attacking = false
+
+		var bodies = attack_hitbox.get_overlapping_bodies()
+		if target in bodies:
+			var player_manager = target.get_node("PlayerManager")
+			if player_manager:
+				player_manager.take_damage(20)
