@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://dq3caujlaxj7x" path="res://Scripts/Player/player_manager.gd" id="4_5k7yl"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iof21"]
-radius = 0.63623047
+radius = 0.6347656
 height = 1.8
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_t81vb"]
@@ -3494,7 +3494,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_8ij2y")
 [node name="Knight" parent="." unique_id=1306936116 instance=ExtResource("3_5px3i")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
-[node name="Skeleton3D" parent="Knight/Rig_Medium" parent_id_path=PackedInt32Array(1306936116, 938989581) index="0" unique_id=561453043]
+[node name="Skeleton3D" parent="Knight/Rig_Medium" parent_id_path=PackedInt32Array(1306936116, 1195833622) index="0" unique_id=517822621]
 bones/1/position = Vector3(4.3561184e-18, 0.36031148, 0)
 bones/1/rotation = Quaternion(-5.3290705e-15, -1.19209275e-07, -6.3527476e-22, 1)
 bones/2/position = Vector3(-7.7539095e-29, 0.1919775, -1.441206e-15)

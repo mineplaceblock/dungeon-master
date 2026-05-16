@@ -9,6 +9,7 @@ radius = 0.9003906
 height = 4.0132446
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mtwsw"]
+size = Vector3(1, 1, 1.9708252)
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=391023328]
 script = ExtResource("1_mtwsw")
@@ -24,7 +25,7 @@ shape = SubResource("CapsuleShape3D_g2htk")
 transform = Transform3D(1, 0, 0, 0, 3.8560538, 0, 0, 0, 1, 0, 0, 0.8691343)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AttackHitbox" unique_id=253409155]
-transform = Transform3D(1.2574308, 0, 0, 0, 0.5979215, 0, 0, 0, 1.1282818, 0, 0.2599044, -0.37658155)
+transform = Transform3D(1.2574308, 0, 0, 0, 0.5979215, 0, 0, 0, 1.1282818, 0, 0.2599044, 0.17110074)
 shape = SubResource("BoxShape3D_mtwsw")
 
 [node name="RayCastSuelo" type="RayCast3D" parent="." unique_id=2027818134]
