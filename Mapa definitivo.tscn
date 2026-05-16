@@ -3097,6 +3097,9 @@ transform = Transform3D(-4.371138e-08, 0, 1, 0, 1, 0, -1, 0, -4.371138e-08, -117
 [node name="WallScaffold235" parent="NavigationRegion3D/Estructura" unique_id=2144189746 instance=ExtResource("3_5pbcq")]
 transform = Transform3D(-4.371138e-08, 0, 1, 0, 1, 0, -1, 0, -4.371138e-08, -112.42648, -4.7683716e-07, -133.35744)
 
+[node name="WallScaffold398" parent="NavigationRegion3D/Estructura" unique_id=1529620943 instance=ExtResource("3_5pbcq")]
+transform = Transform3D(-4.371138e-08, 0, 1, 0, 1, 0, -1, 0, -4.371138e-08, -112.42648, -4.7683716e-07, -131.35744)
+
 [node name="WallScaffold236" parent="NavigationRegion3D/Estructura" unique_id=132511549 instance=ExtResource("3_5pbcq")]
 transform = Transform3D(1, 0, -7.1054274e-15, 0, 1, 0, 7.1054274e-15, 0, 1, -114.74646, -4.7683716e-07, -135.35744)
 
@@ -3815,7 +3818,7 @@ transform = Transform3D(-3.934025e-07, 0, -1, 0, 1, 0, 1, 0, -3.934025e-07, -136
 transform = Transform3D(-3.934025e-07, 0, -1, 0, 1, 0, 1, 0, -3.934025e-07, -112.48065, 0, -28.507004)
 
 [node name="WallCornerScaffold109" parent="NavigationRegion3D/Estructura" unique_id=1405782631 instance=ExtResource("4_fmsue")]
-transform = Transform3D(1, 0, -3.496911e-07, 0, 1, 0, 3.496911e-07, 0, 1, -112.48065, 0, -131.37952)
+transform = Transform3D(1, 0, -3.496911e-07, 0, 1, 0, 3.496911e-07, 0, 1, -111.72845, 0, -131.37952)
 
 [node name="WallCornerScaffold113" parent="NavigationRegion3D/Estructura" unique_id=954577763 instance=ExtResource("4_fmsue")]
 transform = Transform3D(1, 0, -3.496911e-07, 0, 1, 0, 3.496911e-07, 0, 1, -120.48065, 0, -115.37952)
