@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bjqgs570v2rvq" path="res://Prefabs/map/wall_corner_scaffold.tscn" id="6_ie368"]
 [ext_resource type="PackedScene" uid="uid://cpvy83eo547ad" path="res://Prefabs/map/wall_window_closed_scaffold.tscn" id="7_x5dfk"]
 [ext_resource type="PackedScene" uid="uid://cvg35stxe36r0" path="res://Scenes/Nil/Mage enemy.tscn" id="8_fls3e"]
-[ext_resource type="PackedScene" uid="uid://duvmmoehfo3qk" path="res://UI/PlayerHUD.tscn" id="9_k63oc"]
+[ext_resource type="PackedScene" uid="uid://duvmmoehfo3qk" path="res://Interface/PlayerHUD.tscn" id="9_k63oc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fmsue"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
