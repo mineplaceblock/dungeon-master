@@ -66,7 +66,13 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("cambiar_escena"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().change_scene_to_file("res://Minigames/Tic Tac Toe/tictactoe.tscn")
-
+		queue_free()
+		
+	
+	if Input.is_action_just_pressed("mapsecreto"):
+		get_tree().change_scene_to_file("res://addons/inventory-system-demos/fps/fps_demo.tscn")
+		queue_free()
+	
 	if mouse_captured and event is InputEventMouseMotion:
 		rotate_look(event.relative)
 
