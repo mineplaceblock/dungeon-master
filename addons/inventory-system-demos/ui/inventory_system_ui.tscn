@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=3 uid="uid://da2b73383isem"]
+
+[ext_resource type="Script" uid="uid://c6ar3rrxp6ypx" path="res://addons/inventory-system-demos/ui/inventory_system_ui.gd" id="2_ci0ph"]
+[ext_resource type="PackedScene" uid="uid://1dijqt6vr078" path="res://addons/inventory-system-demos/ui/grid/grid_inventory_panel.tscn" id="3_akms1"]
+[ext_resource type="Script" uid="uid://dbuenlapnr3k4" path="res://addons/inventory-system-demos/ui/drop_area.gd" id="3_ras8g"]
+[ext_resource type="PackedScene" uid="uid://cci6dwxmbapt1" path="res://addons/inventory-system-demos/ui/craft/craft_station_ui.tscn" id="6_eoecr"]
+[ext_resource type="PackedScene" uid="uid://m1rlbb42ylv6" path="res://addons/inventory-system-demos/ui/hotbar/hotbar_ui.tscn" id="6_lkdat"]
+[ext_resource type="PackedScene" uid="uid://doyklj58bvj21" path="res://addons/inventory-system-demos/ui/interactor/interactor_ui.tscn" id="7_vn7uk"]
+
+[node name="Inventory System UI" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_ci0ph")
+
+[node name="InteractorUI" parent="." instance=ExtResource("7_vn7uk")]
+layout_mode = 1
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+mouse_filter = 2
+
+[node name="DropArea" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_ras8g")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="PlayerGridInventoryUI" parent="MarginContainer/HBoxContainer" instance=ExtResource("3_akms1")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="LootGridInventoryUI" parent="MarginContainer/HBoxContainer" instance=ExtResource("3_akms1")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="PlayerCraftStationUI" parent="MarginContainer/HBoxContainer" instance=ExtResource("6_eoecr")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+view_input_inventory = false
+view_output_inventory = false
+
+[node name="OtherCraftStationUI" parent="MarginContainer/HBoxContainer" instance=ExtResource("6_eoecr")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="HotbarUI" parent="." instance=ExtResource("6_lkdat")]
+layout_mode = 1
+offset_top = -64.0
+offset_bottom = -16.0
+
+[node name="SlotClick" type="AudioStreamPlayer" parent="."]
+volume_db = -12.0
+
+[node name="SlotDrop" type="AudioStreamPlayer" parent="."]
+volume_db = -12.0
+
+[node name="StackPopupMenu" type="PopupMenu" parent="."]
+size = Vector2i(20, 8)

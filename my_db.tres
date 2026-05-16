@@ -1,0 +1,7 @@
+[gd_resource type="InventoryDatabase" format=3 uid="uid://j5uc3a7ji5i"]
+
+[sub_resource type="ItemDefinition" id="ItemDefinition_x8qt7"]
+name = "Madera"
+
+[resource]
+items = Array[ItemDefinition]([SubResource("ItemDefinition_x8qt7")])

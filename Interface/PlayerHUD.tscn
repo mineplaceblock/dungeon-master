@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://duvmmoehfo3qk"]
 
 [ext_resource type="Script" uid="uid://b5ry7uxy0tipn" path="res://Interface/PlayerHUD.gd" id="1"]
+[ext_resource type="InventoryDatabase" uid="uid://j5uc3a7ji5i" path="res://my_db.tres" id="2_i44h6"]
 
 [node name="PlayerHUD" type="CanvasLayer" unique_id=1313333039]
 layer = 10
@@ -71,3 +72,6 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
 theme_override_font_sizes/font_size = 13
 text = "100"
+
+[node name="Inventory" type="Inventory" parent="." unique_id=849149166]
+database = ExtResource("2_i44h6")

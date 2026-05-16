@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjfvmoveogy0m"]
+
+[ext_resource type="PackedScene" uid="uid://bu50ku0vxmpwt" path="res://addons/inventory-system-demos/fps/dropped_items/dropped_item.tscn" id="1_6pggg"]
+[ext_resource type="PackedScene" uid="uid://bk4j7ww4qljp" path="res://addons/inventory-system-demos/assets/survival-kit-1.1/Models/GLTF format/toolAxe.glb" id="3_52drp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fdkpx"]
+size = Vector3(0.327105, 0.732304, 0.0987396)
+
+[node name="StoneAxe" instance=ExtResource("1_6pggg")]
+item_id = "stone_axe"
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0648565, 0.365588, 0)
+shape = SubResource("BoxShape3D_fdkpx")
+
+[node name="toolAxe" parent="Visual" index="0" instance=ExtResource("3_52drp")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)

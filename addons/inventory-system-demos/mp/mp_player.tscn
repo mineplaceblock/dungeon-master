@@ -1,0 +1,101 @@
+[gd_scene load_steps=17 format=3 uid="uid://dnlxnu6jpej17"]
+
+[ext_resource type="PackedScene" uid="uid://bnr02xnvoiun5" path="res://addons/inventory-system-demos/fps/player.tscn" id="1_067pm"]
+[ext_resource type="Script" uid="uid://dlemxn6c687mt" path="res://addons/inventory-system-demos/mp/sync_grid_inventory.gd" id="2_2ppxc"]
+[ext_resource type="Script" uid="uid://cuokk8t2yrr1n" path="res://addons/inventory-system-demos/mp/mp_player.gd" id="2_7hphp"]
+[ext_resource type="Script" uid="uid://dimv4yn7jk4o4" path="res://addons/inventory-system-demos/mp/sync_hotbar.gd" id="2_kp02v"]
+[ext_resource type="Script" uid="uid://chpxhifwptoga" path="res://addons/inventory-system-demos/character/hand_item_holder_3d.gd" id="3_g726w"]
+[ext_resource type="Script" uid="uid://ce3jelrqjrcl3" path="res://addons/inventory-system-demos/mp/networked_character_inventory_system.gd" id="3_lbhsf"]
+[ext_resource type="Script" uid="uid://coxx33tl8y1wc" path="res://addons/inventory-system-demos/mp/networked_object_placer.gd" id="7_pn3xn"]
+[ext_resource type="Script" uid="uid://dcb835pmtef8l" path="res://addons/inventory-system-demos/mp/networked_use_items_example_3d.gd" id="8_227f4"]
+[ext_resource type="Script" uid="uid://bldichxbdfybi" path="res://addons/inventory-system-demos/mp/sync_craft_station.gd" id="9_c6j5p"]
+[ext_resource type="Script" uid="uid://bkxu1ymravf51" path="res://addons/inventory-system-demos/mp/networked_dropper.gd" id="9_vfq4s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tipcy"]
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(1, 0.85098, 0.231373, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_v040h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t21mf"]
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0, 0.294118, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_biea6"]
+size = Vector3(0.8, 0.2, 0.4)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_bfpca"]
+properties/0/path = NodePath("..:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("..:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_d1alo"]
+size = Vector3(0.125, 0.125, 0.125)
+
+[node name="Player" instance=ExtResource("1_067pm")]
+script = ExtResource("2_7hphp")
+
+[node name="Mesh" type="MeshInstance3D" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_tipcy")
+mesh = SubResource("CapsuleMesh_v040h")
+
+[node name="Glass" type="MeshInstance3D" parent="Mesh" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.474874, -0.272574)
+material_override = SubResource("StandardMaterial3D_t21mf")
+mesh = SubResource("BoxMesh_biea6")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." index="2"]
+root_path = NodePath("../Mesh")
+replication_config = SubResource("SceneReplicationConfig_bfpca")
+
+[node name="HandItem" parent="Camera3D" index="1"]
+visible = false
+
+[node name="ThirdPersonHandItem" type="Node3D" parent="Camera3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.464388, -0.32354, -0.76413)
+visible = false
+script = ExtResource("3_g726w")
+
+[node name="DefaultHandItem" type="MeshInstance3D" parent="Camera3D/ThirdPersonHandItem" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.103376, 0, 0.154242)
+mesh = SubResource("BoxMesh_d1alo")
+
+[node name="CharacterInventorySystem" parent="." index="4"]
+script = ExtResource("3_lbhsf")
+
+[node name="SyncInventory" type="Node" parent="CharacterInventorySystem/Inventory" index="1" node_paths=PackedStringArray("inventory")]
+script = ExtResource("2_2ppxc")
+inventory = NodePath("..")
+
+[node name="SyncInventory" type="Node" parent="CharacterInventorySystem/EquipmentInventory" index="0" node_paths=PackedStringArray("inventory")]
+script = ExtResource("2_2ppxc")
+inventory = NodePath("..")
+
+[node name="SyncCraftStation" type="Node" parent="CharacterInventorySystem/CraftStation" index="0" node_paths=PackedStringArray("craft_station")]
+script = ExtResource("9_c6j5p")
+craft_station = NodePath("..")
+
+[node name="ObjectPlacer" parent="CharacterInventorySystem/Interactor" index="0"]
+script = ExtResource("7_pn3xn")
+spawner_path = NodePath("../../../../PlaceableItemSpawner")
+
+[node name="SyncHotbar" type="Node" parent="CharacterInventorySystem/Hotbar" index="0" node_paths=PackedStringArray("hotbar")]
+unique_name_in_owner = true
+script = ExtResource("2_kp02v")
+hotbar = NodePath("..")
+
+[node name="UseItemsExample" parent="." index="5"]
+script = ExtResource("8_227f4")
+
+[node name="Dropper" parent="." index="11"]
+script = ExtResource("9_vfq4s")
+drop_item_spawner_path = NodePath("../../DroppedItemSpawner")
+
+[editable path="CharacterInventorySystem"]
