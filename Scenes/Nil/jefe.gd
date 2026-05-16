@@ -146,4 +146,4 @@ func _on_animation_finished(anim_name):
 		if target in bodies:
 			var player_manager = target.get_node("PlayerManager")
 			if player_manager:
-				player_manager.take_damage(20)
+				player_manager.take_damage(35)
