@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://rvi1b3qsnhl0"]
-
-[ext_resource type="PackedScene" uid="uid://ctdhrbo7fwomk" path="res://Scenes/Nil/Nil NO TOCAR.tscn" id="1_ymdtg"]
-
-[node name="PruebasAdit" type="Node3D" unique_id=707407695]
-
-[node name="NilNoTocar" parent="." unique_id=1060690548 instance=ExtResource("1_ymdtg")]
-
-[editable path="NilNoTocar"]

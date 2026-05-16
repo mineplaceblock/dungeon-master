@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://ttckpadgv6r7"]
 
-[ext_resource type="PackedScene" uid="uid://dwnkhg0oc16lc" path="res://player_controller.tscn" id="1_kry3j"]
+[ext_resource type="PackedScene" uid="uid://dwnkhg0oc16lc" path="res://Prefabs/player_controller.tscn" id="1_kry3j"]
 [ext_resource type="PackedScene" uid="uid://cvg35stxe36r0" path="res://Scenes/Nil/Mage enemy.tscn" id="2_21xkr"]
-[ext_resource type="PackedScene" uid="uid://cyg5k5jknnmpn" path="res://prueba usando mis piezas (pieces).tscn" id="3_6bp64"]
-[ext_resource type="PackedScene" uid="uid://wuol6lche0gd" path="res://damage.tscn" id="4_344ge"]
+[ext_resource type="PackedScene" path="res://prueba usando mis piezas (pieces).tscn" id="3_6bp64"]
+[ext_resource type="PackedScene" uid="uid://wuol6lche0gd" path="res://Prefabs/damage.tscn" id="4_344ge"]
 [ext_resource type="PackedScene" uid="uid://duvmmoehfo3qk" path="res://UI/PlayerHUD.tscn" id="5_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://lwtj2dnvko4a" path="res://Scenes/map/level_1.tscn" id="6_21xkr"]
 
