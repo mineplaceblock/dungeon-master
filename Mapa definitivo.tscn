@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cpvy83eo547ad" path="res://Pieces/wall_window_closed_scaffold.tscn" id="5_2icid"]
 [ext_resource type="PackedScene" uid="uid://dwt8tyanglro1" path="res://Scenes/Nil/Jefe.tscn" id="7_fmsue"]
 [ext_resource type="PackedScene" uid="uid://cvg35stxe36r0" path="res://Scenes/Nil/Mage enemy.tscn" id="8_fmsue"]
+[ext_resource type="PackedScene" uid="uid://duvmmoehfo3qk" path="res://UI/PlayerHUD.tscn" id="9_u0i6e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fmsue"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -33,20 +34,20 @@ agent_max_climb = 0.75
 [node name="MapaDefinitivo" type="Node3D" unique_id=318139755]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1234384164]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, -174.30743, 51.647205, -52.99897)
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, -164.30743, 51.647205, -0.99897003)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=891432928]
 environment = SubResource("Environment_m3mfn")
 
 [node name="Boss" parent="." unique_id=391023328 instance=ExtResource("7_fmsue")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -129.115, 0.5, -163.774)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.884995, 0.5, -111.774)
 
 [node name="ProtoController" parent="." unique_id=2066130245 instance=ExtResource("2_5pbcq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -208.506, 0.5, 21.127)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.505997, 0.5, 73.127)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1275122542]
-transform = Transform3D(3.6097136, 0, 0, 0, 1, 0, 0, 0, 4.3187037, -191.01, 0, -76.345)
+transform = Transform3D(3.6097136, 0, 0, 0, 1, 0, 0, 0, 4.3187037, -22.009995, 0, -24.345001)
 navigation_mesh = SubResource("NavigationMesh_u0i6e")
 
 [node name="Estructura" type="Node3D" parent="NavigationRegion3D" unique_id=947961229]
@@ -3983,7 +3984,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -174.10162, 0, -143)
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -172.57101, 0, -140.5105)
 
 [node name="Enemys" type="Node3D" parent="." unique_id=1687611343]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 169, 0.5, 52)
 
 [node name="Enemy" parent="Enemys" unique_id=1128761082 instance=ExtResource("8_fmsue")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -240.115, 0.5, -0.097)
@@ -4306,3 +4307,5 @@ transform = Transform3D(-0.08178195, 0, 0.9966502, 0, 1, 0, -0.9966502, 0, -0.08
 [node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy46" unique_id=1884236499]
 avoidance_enabled = true
 debug_enabled = true
+
+[node name="PlayerHUD" parent="." unique_id=1313333039 instance=ExtResource("9_u0i6e")]
