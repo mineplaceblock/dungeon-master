@@ -9,7 +9,7 @@ const ATTACK_COOLDOWN = 0.5
 static var nav_baked: bool = false
 
 @onready var navAgent = $NavigationAgent3D2
-@onready var target = $"../ProtoController"
+@onready var target = $"../../ProtoController"
 @onready var navRegion = get_tree().get_root().find_child("NavigationRegion3D", true, false)
 @onready var animPlayer = $AnimationPlayer3
 @onready var attack_hitbox = $AttackHitbox

@@ -3476,7 +3476,7 @@ shape = SubResource("CapsuleShape3D_iof21")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, -0.7222316)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=88253308]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0046319366)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.20971781)
 
 [node name="RayCast3D" type="RayCast3D" parent="Head" unique_id=435590539]
 
@@ -3494,7 +3494,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_8ij2y")
 [node name="Knight" parent="." unique_id=1306936116 instance=ExtResource("3_e8egr")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
-[node name="Skeleton3D" parent="Knight/Rig_Medium" parent_id_path=PackedInt32Array(1306936116, 1772561033) index="0" unique_id=980683564]
+[node name="Skeleton3D" parent="Knight/Rig_Medium" parent_id_path=PackedInt32Array(1306936116, 1195833622) index="0" unique_id=517822621]
 bones/1/position = Vector3(4.3561184e-18, 0.36031148, 0)
 bones/1/rotation = Quaternion(-5.3290705e-15, -1.19209275e-07, -6.3527476e-22, 1)
 bones/2/position = Vector3(-7.7539095e-29, 0.1919775, -1.441206e-15)

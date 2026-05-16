@@ -15,7 +15,7 @@ warnings/check_invalid_track_paths=false
 [application]
 
 config/name="dungeon-master"
-run/main_scene="uid://ttckpadgv6r7"
+run/main_scene="uid://dvkuulpneoujq"
 config/features=PackedStringArray("4.6", "Mobile")
 
 [display]
