@@ -1,0 +1,357 @@
+[gd_scene format=3 uid="uid://b7smg488ye7be"]
+
+[ext_resource type="Script" uid="uid://76emgi5pa2w3" path="res://src/menu_controller.gd" id="1_7x6vp"]
+[ext_resource type="Texture2D" uid="uid://c7ycnhy7dx87w" path="res://res/00000.png" id="1_lg33l"]
+[ext_resource type="LabelSettings" uid="uid://1oyxx8ys1m6d" path="res://font.res" id="2_yfgsl"]
+[ext_resource type="Script" uid="uid://bdmgy352hpuq0" path="res://src/scroll_label.gd" id="3_v2ba3"]
+
+[sub_resource type="SystemFont" id="SystemFont_buu31"]
+font_weight = 800
+
+[sub_resource type="LabelSettings" id="LabelSettings_3fpgv"]
+font = SubResource("SystemFont_buu31")
+font_color = Color(0.24313726, 1, 1, 1)
+
+[node name="main" type="Node" unique_id=106800389]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=480695596]
+
+[node name="MainMenu" type="Control" parent="CanvasLayer" unique_id=699244795]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_7x6vp")
+
+[node name="Bg" type="TextureRect" parent="CanvasLayer/MainMenu" unique_id=370282806]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_lg33l")
+expand_mode = 1
+
+[node name="MainContainer" type="VBoxContainer" parent="CanvasLayer/MainMenu" unique_id=395256318]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -50.0
+offset_right = 120.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MainMenu/MainContainer" unique_id=1053377726]
+layout_mode = 2
+text = "Dungeon Master"
+label_settings = SubResource("LabelSettings_3fpgv")
+
+[node name="Start_button" type="Button" parent="CanvasLayer/MainMenu/MainContainer" unique_id=1503613179]
+layout_mode = 2
+text = "START"
+
+[node name="Option_button" type="Button" parent="CanvasLayer/MainMenu/MainContainer" unique_id=426863044]
+layout_mode = 2
+text = "OPTION"
+
+[node name="Exit_button" type="Button" parent="CanvasLayer/MainMenu/MainContainer" unique_id=1507808242]
+layout_mode = 2
+size_flags_vertical = 4
+text = "EXIT
+"
+
+[node name="OptionContainer" type="VBoxContainer" parent="CanvasLayer/MainMenu" unique_id=1818575999]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer/MainMenu/OptionContainer" unique_id=173089465]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+tab_alignment = 1
+current_tab = 0
+
+[node name="Video" type="TabBar" parent="CanvasLayer/MainMenu/OptionContainer/TabContainer" unique_id=1822721288]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="General_Label" type="Label" parent="CanvasLayer/MainMenu/OptionContainer/TabContainer/Video" unique_id=305046510]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 2.0
+offset_right = 95.0
+offset_bottom = 31.0
+text = "General"
+label_settings = ExtResource("2_yfgsl")
+
+[node name="Resolution_Label" type="Label" parent="CanvasLayer/MainMenu/OptionContainer/TabContainer/Video" unique_id=1569358450]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 42.0
+offset_right = 173.0
+offset_bottom = 68.0
+text = "Resolution :"
+
+[node name="Resolution_Optionbutton" type="OptionButton" parent="CanvasLayer/MainMenu/OptionContainer/TabContainer/Video" unique_id=1808337]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 26.0
+offset_top = 72.5
+offset_right = 210.0
+offset_bottom = 103.5
+item_count = 10
+popup/item_0/text = "640x480"
+popup/item_0/id = 0
+popup/item_1/text = "800x600"
+popup/item_1/id = 1
+popup/item_2/text = "1024x768"
+popup/item_2/id = 2
+popup/item_3/text = "1280x720"
+popup/item_3/id = 3
+popup/item_4/text = "1366x768"
+popup/item_4/id = 4
+popup/item_5/text = "1600x900"
+popup/item_5/id = 5
+popup/item_6/text = "1920x1080"
+popup/item_6/id = 6
+popup/item_7/text = "2560x1440"
+popup/item_7/id = 7
+popup/item_8/text = "3840x2160"
+popup/item_8/id = 8
+popup/item_9/text = "7680x4320"
+popup/item_9/id = 9
+
+[node name="WindowMode_Label" type="Label" parent="CanvasLayer/MainMenu/OptionContainer/TabContainer/Video" unique_id=1821943820]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 42.0
+offset_right = 434.0
+offset_bottom = 68.0
+text = "Window Mode :"
+
+[node name="WindowMode_Optionbutton" type="OptionButton" parent="CanvasLayer/MainMenu/OptionContainer/TabContainer/Video" unique_id=586558826]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 298.0
+offset_top = 73.0
+offset_right = 474.0
+offset_bottom = 105.0
+
+[node name="Vsync_Label" type="Label" parent="CanvasLayer/MainMenu/OptionContainer/TabContainer/Video" unique_id=2065119217]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 132.0
+offset_right = 145.0
+offset_bottom = 158.0
+text = "Vsync"
+
+[node name="Vsync_OptionButton" type="OptionButton" parent="CanvasLayer/MainMenu/OptionContainer/TabContainer/Video" unique_id=1853589751]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 169.0
+offset_right = 210.0
+offset_bottom = 201.0
+item_count = 4
+popup/item_0/text = "off"
+popup/item_0/id = 0
+popup/item_1/text = "Normal"
+popup/item_1/id = 1
+popup/item_2/text = "Adaptative"
+popup/item_2/id = 2
+popup/item_3/text = "MailBox"
+popup/item_3/id = 3
+
+[node name="Color_blind" type="Label" parent="CanvasLayer/MainMenu/OptionContainer/TabContainer/Video" unique_id=1938204266]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 131.0
+offset_right = 451.0
+offset_bottom = 157.0
+text = "Color blind mode"
+
+[node name="ColorBlind_OptionButton" type="OptionButton" parent="CanvasLayer/MainMenu/OptionContainer/TabContainer/Video" unique_id=1012355188]
+layout_mode = 0
+offset_left = 298.0
+offset_top = 169.0
+offset_right = 474.0
+offset_bottom = 200.0
+selected = 0
+item_count = 4
+popup/item_0/text = "OFF"
+popup/item_0/id = 0
+popup/item_1/text = "Protanopia"
+popup/item_1/id = 1
+popup/item_2/text = "Deuteranopia"
+popup/item_2/id = 2
+popup/item_3/text = "Tritanopia"
+popup/item_3/id = 3
+
+[node name="Graphics_Label" type="Label" parent="CanvasLayer/MainMenu/OptionContainer/TabContainer/Video" unique_id=460383580]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 256.0
+offset_right = 103.0
+offset_bottom = 285.0
+text = "Graphics"
+label_settings = ExtResource("2_yfgsl")
+
+[node name="Preset_HSlider" type="HSlider" parent="CanvasLayer/MainMenu/OptionContainer/TabContainer/Video" unique_id=844311142]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 342.0
+offset_right = 378.0
+offset_bottom = 358.0
+max_value = 20.0
+step = 5.0
+value = 5.0
+
+[node name="Preset_Label" type="Label" parent="CanvasLayer/MainMenu/OptionContainer/TabContainer/Video/Preset_HSlider" unique_id=1036488866]
+layout_mode = 0
+offset_top = -24.0
+offset_right = 352.0
+offset_bottom = -1.0
+text = " Low  	   medium          high 	    very high      ultra"
+
+[node name="Sound" type="TabBar" parent="CanvasLayer/MainMenu/OptionContainer/TabContainer" unique_id=885263645]
+visible = false
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="General_Label" type="Label" parent="CanvasLayer/MainMenu/OptionContainer/TabContainer/Sound" unique_id=460086152]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 46.0
+offset_right = 48.0
+offset_bottom = 69.0
+text = "General volume :"
+
+[node name="General_HScrollBar" type="HScrollBar" parent="CanvasLayer/MainMenu/OptionContainer/TabContainer/Sound" unique_id=414161795]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 78.0
+offset_right = 458.0
+offset_bottom = 94.0
+value = 70.0
+rounded = true
+
+[node name="Scroll_Label" type="Label" parent="CanvasLayer/MainMenu/OptionContainer/TabContainer/Sound/General_HScrollBar" unique_id=477947920]
+layout_mode = 0
+offset_left = 456.0
+offset_top = -5.0
+offset_right = 489.0
+offset_bottom = 21.0
+text = "70%"
+script = ExtResource("3_v2ba3")
+
+[node name="Music_Label" type="Label" parent="CanvasLayer/MainMenu/OptionContainer/TabContainer/Sound" unique_id=1420145086]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 99.0
+offset_right = 142.0
+offset_bottom = 125.0
+text = "Music volume :"
+
+[node name="Music_HScrollBar" type="HScrollBar" parent="CanvasLayer/MainMenu/OptionContainer/TabContainer/Sound" unique_id=967750891]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 124.0
+offset_right = 458.0
+offset_bottom = 140.0
+value = 67.0
+rounded = true
+
+[node name="Scroll_Label" type="Label" parent="CanvasLayer/MainMenu/OptionContainer/TabContainer/Sound/Music_HScrollBar" unique_id=1315302318]
+layout_mode = 0
+offset_left = 456.0
+offset_top = -5.0
+offset_right = 489.0
+offset_bottom = 21.0
+text = "67%"
+script = ExtResource("3_v2ba3")
+
+[node name="SFX_Label" type="Label" parent="CanvasLayer/MainMenu/OptionContainer/TabContainer/Sound" unique_id=365020595]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 146.0
+offset_right = 142.0
+offset_bottom = 172.0
+text = "SFX volume :"
+
+[node name="SFX_HScrollBar" type="HScrollBar" parent="CanvasLayer/MainMenu/OptionContainer/TabContainer/Sound" unique_id=1765954312]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 171.0
+offset_right = 458.0
+offset_bottom = 187.0
+value = 67.0
+rounded = true
+
+[node name="Scroll_Label" type="Label" parent="CanvasLayer/MainMenu/OptionContainer/TabContainer/Sound/SFX_HScrollBar" unique_id=575590765]
+layout_mode = 0
+offset_left = 456.0
+offset_top = -5.0
+offset_right = 489.0
+offset_bottom = 21.0
+text = "67%"
+script = ExtResource("3_v2ba3")
+
+[node name="Container" type="HBoxContainer" parent="CanvasLayer/MainMenu/OptionContainer" unique_id=1203832470]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="Apply_button" type="Button" parent="CanvasLayer/MainMenu/OptionContainer/Container" unique_id=1755589466]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "Apply
+"
+
+[node name="Return_button" type="Button" parent="CanvasLayer/MainMenu/OptionContainer/Container" unique_id=282533744]
+layout_mode = 2
+text = "Return
+"
+
+[connection signal="pressed" from="CanvasLayer/MainMenu/MainContainer/Start_button" to="CanvasLayer/MainMenu" method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenu/MainContainer/Option_button" to="CanvasLayer/MainMenu" method="_on_option_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenu/MainContainer/Exit_button" to="CanvasLayer/MainMenu" method="_on_exit_button_pressed"]
+[connection signal="item_selected" from="CanvasLayer/MainMenu/OptionContainer/TabContainer/Video/Resolution_Optionbutton" to="CanvasLayer/MainMenu" method="_on_resolution_optionbutton_item_selected"]
+[connection signal="item_selected" from="CanvasLayer/MainMenu/OptionContainer/TabContainer/Video/WindowMode_Optionbutton" to="CanvasLayer/MainMenu" method="_on_window_mode_optionbutton_item_selected"]
+[connection signal="item_selected" from="CanvasLayer/MainMenu/OptionContainer/TabContainer/Video/Vsync_OptionButton" to="CanvasLayer/MainMenu" method="_on_vsync_option_button_item_selected"]
+[connection signal="value_changed" from="CanvasLayer/MainMenu/OptionContainer/TabContainer/Video/Preset_HSlider" to="CanvasLayer/MainMenu" method="_on_preset_h_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/MainMenu/OptionContainer/TabContainer/Sound/General_HScrollBar" to="CanvasLayer/MainMenu" method="_on_general_h_scroll_bar_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/MainMenu/OptionContainer/TabContainer/Sound/General_HScrollBar" to="CanvasLayer/MainMenu/OptionContainer/TabContainer/Sound/General_HScrollBar/Scroll_Label" method="_on_h_scroll_bar_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/MainMenu/OptionContainer/TabContainer/Sound/Music_HScrollBar" to="CanvasLayer/MainMenu" method="_on_music_h_scroll_bar_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/MainMenu/OptionContainer/TabContainer/Sound/Music_HScrollBar" to="CanvasLayer/MainMenu/OptionContainer/TabContainer/Sound/Music_HScrollBar/Scroll_Label" method="_on_h_scroll_bar_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/MainMenu/OptionContainer/TabContainer/Sound/SFX_HScrollBar" to="CanvasLayer/MainMenu" method="_on_sfx_h_scroll_bar_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/MainMenu/OptionContainer/TabContainer/Sound/SFX_HScrollBar" to="CanvasLayer/MainMenu/OptionContainer/TabContainer/Sound/SFX_HScrollBar/Scroll_Label" method="_on_h_scroll_bar_value_changed"]
+[connection signal="pressed" from="CanvasLayer/MainMenu/OptionContainer/Container/Apply_button" to="CanvasLayer/MainMenu" method="_on_apply_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenu/OptionContainer/Container/Return_button" to="CanvasLayer/MainMenu" method="_on_return_button_pressed"]
