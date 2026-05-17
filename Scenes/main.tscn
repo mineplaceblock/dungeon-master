@@ -41,7 +41,7 @@ shadow_enabled = true
 environment = SubResource("Environment_m3mfn")
 
 [node name="Boss" parent="." unique_id=391023328 instance=ExtResource("1_4c2oa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.884995, 2.072433, -111.774)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.885, 0.5, -111.774)
 
 [node name="ProtoController" parent="." unique_id=2066130245 instance=ExtResource("2_olcgw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.505997, 0.5, 73.127)

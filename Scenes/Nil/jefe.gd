@@ -19,64 +19,50 @@ var active: bool = true
 var is_attacking: bool = false
 var attack_timer: float = 0.0
 
-
 func _ready():
 	floor_snap_length = 0.5
 	floor_max_angle = deg_to_rad(60)
-
 	spawn_position = global_position
+
+	# Esperar varios frames antes de buscar al jugador
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	await get_tree().physics_frame
 
 	_find_player()
 
-	if target == null:
-		queue_free()
-		return
-
-	await get_tree().physics_frame
-	await get_tree().physics_frame
-	await get_tree().physics_frame
-
-	# Solo hornear una vez entre todos los enemigos
+	# Si no encuentra al jugador no se borra, espera
 	if not nav_baked:
 		nav_baked = true
 		navRegion.bake_finished.connect(_on_bake_finished)
 		navRegion.bake_navigation_mesh()
 	else:
-		# Si ya está horneado, inicializar directamente
 		navAgent.path_desired_distance = 1.5
 		navAgent.target_desired_distance = 1.5
-
 		await get_tree().physics_frame
 		await get_tree().physics_frame
-
 		if target:
 			navAgent.target_position = target.global_position
 
 	animPlayer.animation_finished.connect(_on_animation_finished)
 	animPlayer.play("Descansar")
 
-
 func _find_player():
 	target = get_tree().get_first_node_in_group("player")
-
+	if target == null:
+		print("Boss: jugador no encontrado, reintentando en _physics_process")
 
 func _on_bake_finished():
 	navAgent.path_desired_distance = 1.5
 	navAgent.target_desired_distance = 1.5
-
 	await get_tree().physics_frame
 	await get_tree().physics_frame
-
 	if target and is_instance_valid(target):
 		navAgent.target_position = target.global_position
 
-
 func _physics_process(delta):
-
-	# Rebuscar player si desaparece al cambiar de escena
 	if target == null or not is_instance_valid(target):
 		_find_player()
-
 		if target == null:
 			velocity = Vector3.ZERO
 			move_and_slide()
@@ -101,98 +87,73 @@ func _physics_process(delta):
 	var in_attack_range = active and distance_to_player <= ATTACK_DISTANCE
 
 	if in_attack_range and not is_attacking and attack_timer <= 0.0:
-
 		is_attacking = true
 		animPlayer.play("Atacar")
-
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 		var look_target = target.global_position
 		look_target.y = global_position.y
-
 		look_at(look_target, Vector3.UP)
 		rotate_y(deg_to_rad(180))
 
 	elif is_attacking:
-
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 		var look_target = target.global_position
 		look_target.y = global_position.y
-
 		look_at(look_target, Vector3.UP)
 		rotate_y(deg_to_rad(180))
 
 	elif in_attack_range and attack_timer > 0.0:
-
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
 		if animPlayer.current_animation != "Descansar":
 			animPlayer.play("Descansar")
 
 		var look_target = target.global_position
 		look_target.y = global_position.y
-
 		look_at(look_target, Vector3.UP)
 		rotate_y(deg_to_rad(180))
 
 	elif not navAgent.is_navigation_finished():
-
 		var next = navAgent.get_next_path_position()
 		var direction = next - global_position
-
 		direction.y = 0.0
 
 		if direction.length() > 0.01:
-
 			var dir_normalized = direction.normalized()
-
 			if active:
-
 				velocity.x = dir_normalized.x * SPEED
 				velocity.z = dir_normalized.z * SPEED
-
 				if animPlayer.current_animation != "Running_A":
 					animPlayer.play("Running_A")
 
 				var look_target = target.global_position
 				look_target.y = global_position.y
-
 				look_at(look_target, Vector3.UP)
 				rotate_y(deg_to_rad(180))
-
 			else:
-
 				velocity.x = dir_normalized.x * WALK_SPEED
 				velocity.z = dir_normalized.z * WALK_SPEED
-
 				if animPlayer.current_animation != "Walking_B":
 					animPlayer.play("Walking_B")
 
 				var look_target = global_position + direction
 				look_target.y = global_position.y
-
 				look_at(look_target, Vector3.UP)
 				rotate_y(deg_to_rad(180))
-
 	else:
-
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
 		if animPlayer.current_animation != "Descansar":
 			animPlayer.play("Descansar")
 
 	move_and_slide()
 
-
 func _on_animation_finished(anim_name):
-
 	if anim_name == "Atacar":
-
 		attack_timer = ATTACK_COOLDOWN
 		is_attacking = false
 
@@ -200,10 +161,7 @@ func _on_animation_finished(anim_name):
 			return
 
 		var bodies = attack_hitbox.get_overlapping_bodies()
-
 		if target in bodies:
-
 			var player_manager = target.get_node_or_null("PlayerManager")
-
 			if player_manager:
 				player_manager.take_damage(35)
