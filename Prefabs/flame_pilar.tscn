@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bjam5kit6kfiw"]
+
+[ext_resource type="Script" uid="uid://b4pc6arpmld7a" path="res://Scripts/flame_pilar.gd" id="1_khn01"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h0rxk"]
+transparency = 4
+depth_draw_mode = 2
+albedo_color = Color(1, 0.54509807, 0.3254902, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_khn01"]
+material = SubResource("StandardMaterial3D_h0rxk")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_khn01"]
+
+[node name="FlamePillar" type="StaticBody3D" unique_id=812646925]
+script = ExtResource("1_khn01")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=826593018]
+mesh = SubResource("CylinderMesh_khn01")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1541676705]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1287520189]
+shape = SubResource("CylinderShape3D_khn01")

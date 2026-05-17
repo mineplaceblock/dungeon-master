@@ -5,6 +5,8 @@ const WALK_SPEED = 2.5
 const MAX_DISTANCE = 20.0
 const ATTACK_DISTANCE = 2.5
 const ATTACK_COOLDOWN = 0.5
+const PILLAR_COOLDOWN: float = 8.0
+const PILLAR_TPOSE_DURATION: float = 1.5
 
 static var nav_baked: bool = true
 
@@ -13,25 +15,27 @@ static var nav_baked: bool = true
 @onready var animPlayer = $AnimationPlayer3
 @onready var attack_hitbox = $AttackHitbox
 
+@export var pillar_scene: PackedScene
+
 var target: Node3D = null
 var spawn_position: Vector3
 var active: bool = true
 var is_attacking: bool = false
 var attack_timer: float = 0.0
+var _pillar_timer: float = 4.0
+var _doing_pillar: bool = false
 
 func _ready():
 	floor_snap_length = 0.5
 	floor_max_angle = deg_to_rad(60)
 	spawn_position = global_position
 
-	# Esperar varios frames antes de buscar al jugador
 	await get_tree().physics_frame
 	await get_tree().physics_frame
 	await get_tree().physics_frame
 
 	_find_player()
 
-	# Si no encuentra al jugador no se borra, espera
 	if not nav_baked:
 		nav_baked = true
 		navRegion.bake_finished.connect(_on_bake_finished)
@@ -60,7 +64,53 @@ func _on_bake_finished():
 	if target and is_instance_valid(target):
 		navAgent.target_position = target.global_position
 
+func _spawn_pillar() -> void:
+	if target == null or not is_instance_valid(target):
+		return
+	if pillar_scene == null:
+		push_error("Boss: pillar_scene no asignada en el inspector")
+		return
+
+	_doing_pillar = true
+	is_attacking = true
+	animPlayer.play("T-Pose")
+
+	await get_tree().create_timer(PILLAR_TPOSE_DURATION).timeout
+
+	if target == null or not is_instance_valid(target):
+		_doing_pillar = false
+		is_attacking = false
+		return
+
+	var pillar = pillar_scene.instantiate() as Node3D
+	get_tree().current_scene.add_child(pillar)
+
+	var spawn_pos = target.global_position
+	spawn_pos.y -= 4.0
+	pillar.global_position = spawn_pos
+	pillar.target_y = target.global_position.y
+
+	await get_tree().create_timer(2.0).timeout
+	_doing_pillar = false
+	is_attacking = false
+	_pillar_timer = PILLAR_COOLDOWN
+	animPlayer.play("Descansar")
+
 func _physics_process(delta):
+	# --- PILLAR ---
+	if not _doing_pillar:
+		_pillar_timer -= delta
+		if _pillar_timer <= 0.0 and active and not is_attacking:
+			_spawn_pillar()
+			return
+
+	if _doing_pillar:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.z = move_toward(velocity.z, 0, SPEED)
+		move_and_slide()
+		return
+	# --- FIN PILLAR ---
+
 	if target == null or not is_instance_valid(target):
 		_find_player()
 		if target == null:

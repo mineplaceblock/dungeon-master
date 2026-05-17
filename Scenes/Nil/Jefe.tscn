@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://qc00tdjfc7os" path="res://Assets/Skeletons/characters/fbx/Skeleton_Warrior.fbx" id="1_g2htk"]
 [ext_resource type="Script" uid="uid://c3f5cjhbps18p" path="res://Scenes/Nil/jefe.gd" id="1_mtwsw"]
+[ext_resource type="PackedScene" uid="uid://bjam5kit6kfiw" path="res://Prefabs/flame_pilar.tscn" id="2_hhxbi"]
 [ext_resource type="AnimationLibrary" uid="uid://shotoryeugvn" path="res://Assets/Skeletons/Animations/fbx/Rig_Medium/Final.res" id="3_2pypo"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g2htk"]
@@ -13,6 +14,7 @@ size = Vector3(1, 1, 1.9708252)
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=391023328]
 script = ExtResource("1_mtwsw")
+pillar_scene = ExtResource("2_hhxbi")
 
 [node name="Skeleton_Warrior" parent="." unique_id=1394687982 instance=ExtResource("1_g2htk")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 0, 0, 0)
