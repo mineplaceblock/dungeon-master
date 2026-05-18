@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://bm0pckygoni72"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ee4bf"]
+bg_color = Color(0.16924527, 0.16924533, 0.16924518, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62e2m"]
+bg_color = Color(0.047058824, 0.047058824, 0.047058824, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtu10"]
+bg_color = Color(0.75723743, 0.14273694, 9.62615e-08, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uchyk"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fbet"]
+bg_color = Color(0, 0.4333519, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="HealthBar" type="Control" unique_id=304404317]
+layout_mode = 3
+anchor_right = 0.186
+anchor_bottom = 0.036000002
+offset_right = 1.8800049
+offset_bottom = 2.119999
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=59860455]
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.90300006
+anchor_bottom = 1.0
+offset_right = -0.17703247
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ee4bf")
+
+[node name="Damagebar" type="ProgressBar" parent="Panel" unique_id=909443197]
+layout_mode = 0
+offset_right = 324.0
+offset_bottom = 40.0
+theme_override_styles/background = SubResource("StyleBoxFlat_62e2m")
+theme_override_styles/fill = SubResource("StyleBoxFlat_qtu10")
+value = 50.0
+show_percentage = false
+
+[node name="Healthbar" type="ProgressBar" parent="Panel" unique_id=1169779455]
+z_index = 1
+layout_mode = 0
+offset_right = 324.0
+offset_bottom = 40.0
+theme_override_styles/background = SubResource("StyleBoxFlat_uchyk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0fbet")
+value = 40.0
