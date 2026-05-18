@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dvkuulpneoujq"]
 
 [ext_resource type="PackedScene" uid="uid://dwt8tyanglro1" path="res://Prefabs/Enemy/boss.tscn" id="1_4c2oa"]
-[ext_resource type="PackedScene" uid="uid://dwnkhg0oc16lc" path="res://Prefabs/player_controller.tscn" id="2_olcgw"]
+[ext_resource type="PackedScene" uid="uid://dwnkhg0oc16lc" path="res://Prefabs/player.tscn" id="2_olcgw"]
 [ext_resource type="PackedScene" uid="uid://d1jlu16qmh7xv" path="res://Prefabs/map/floor_tile_large.tscn" id="3_dlo4w"]
 [ext_resource type="PackedScene" uid="uid://dumimmjg4m30s" path="res://Prefabs/map/floor_dirt_large.tscn" id="4_q6lx1"]
 [ext_resource type="PackedScene" uid="uid://dhe7g4k4it6ep" path="res://Prefabs/map/wall_scaffold.tscn" id="5_5qtum"]

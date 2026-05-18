@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://qc00tdjfc7os" path="res://Assets/Skeletons/characters/fbx/Skeleton_Warrior.fbx" id="1_g2htk"]
 [ext_resource type="Script" uid="uid://c3f5cjhbps18p" path="res://Scripts/Enemy/skeleton_boss.gd" id="1_mtwsw"]
 [ext_resource type="PackedScene" uid="uid://bjam5kit6kfiw" path="res://Prefabs/flame_pilar.tscn" id="2_hhxbi"]
-[ext_resource type="AnimationLibrary" uid="uid://shotoryeugvn" path="res://Assets/Skeletons/Animations/fbx/Rig_Medium/Final.res" id="3_2pypo"]
+[ext_resource type="AnimationLibrary" uid="uid://celuecdbus13s" path="res://enemy_animations.res" id="4_a213q"]
 [ext_resource type="PackedScene" uid="uid://0e4fn21ii5rr" path="res://Prefabs/health_bar.tscn" id="5_a213q"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g2htk"]
@@ -45,7 +45,7 @@ target_position = Vector3(2, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1711187270]
 root_node = NodePath("../Skeleton_Warrior")
-libraries/ = ExtResource("3_2pypo")
+libraries/ = ExtResource("4_a213q")
 
 [node name="HealthBarPivot" type="Node3D" parent="." unique_id=822843710]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.7994056, 0)

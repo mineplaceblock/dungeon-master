@@ -22,6 +22,7 @@ extends CharacterBody3D
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var attack_hitbox: Area3D        = $AttackHitbox
+@onready var collision: CollisionShape3D        = $CollisionShape3D
 
 # HealthBarPivot es opcional: si el enemigo no tiene barra, todo se omite.
 @onready var _hb_pivot: Node3D       = get_node_or_null("HealthBarPivot")
@@ -307,7 +308,7 @@ func die() -> void:
 	if attack_hitbox:
 		attack_hitbox.monitoring  = false
 		attack_hitbox.monitorable = false
-
+	collision.disabled = true
 	anim_player.play(anim_death)
 
 	# Esperar a que la animación de muerte termine, luego
