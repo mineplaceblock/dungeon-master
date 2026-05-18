@@ -1,21 +1,13 @@
 [gd_scene format=3 uid="uid://dwnkhg0oc16lc"]
 
 [ext_resource type="Script" uid="uid://bimwkqxufe78s" path="res://Scripts/Player/player_controller.gd" id="1_bwbs2"]
-[ext_resource type="PackedScene" uid="uid://bx4o378hsuw6p" path="res://Prefabs/m_4a_1.tscn" id="2_w1mtb"]
 [ext_resource type="PackedScene" uid="uid://ci8rkq0xbiwc0" path="res://Assets/Adventurers/Characters/fbx/Knight.fbx" id="3_5px3i"]
+[ext_resource type="PackedScene" uid="uid://05k22nr5eo1l" path="res://Assets/Adventurers/Assets/fbx/sword_1handed.fbx" id="3_bwbs2"]
 [ext_resource type="Script" uid="uid://dq3caujlaxj7x" path="res://Scripts/Player/player_manager.gd" id="4_5k7yl"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iof21"]
 radius = 0.6347656
 height = 1.8
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_t81vb"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ij2y"]
-albedo_color = Color(1, 0.6666667, 0, 1)
-emission_enabled = true
-emission = Color(1, 0.6666667, 0, 1)
-emission_energy_multiplier = 16.0
 
 [sub_resource type="Animation" id="Animation_halkx"]
 resource_name = "Descans"
@@ -3463,7 +3455,7 @@ _data = {
 &"Walking_C": SubResource("Animation_u5gqg")
 }
 
-[node name="ProtoController" type="CharacterBody3D" unique_id=2066130245]
+[node name="Player" type="CharacterBody3D" unique_id=2066130245]
 script = ExtResource("1_bwbs2")
 can_sprint = true
 can_freefly = true
@@ -3480,21 +3472,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.20971781)
 
 [node name="RayCast3D" type="RayCast3D" parent="Head" unique_id=435590539]
 
-[node name="Arm" parent="Head" unique_id=1138020869 instance=ExtResource("2_w1mtb")]
-transform = Transform3D(-16.949415, 0, -1.3104355, 0, 16.999996, 0, 1.3104355, 0, -16.949415, 0.36090004, -0.2714975, -0.7722651)
-
-[node name="BulletTrail" type="Node3D" parent="Head/Arm" unique_id=1653911576]
-transform = Transform3D(-0.058648515, 0, 0.0045343805, 0, 0.058823552, 0, -0.0045343805, 0, -0.058648515, 0.031325486, -0.097708166, -0.05166244)
-
-[node name="Trail" type="MeshInstance3D" parent="Head/Arm/BulletTrail" unique_id=1698229871]
-transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, -0.02, 0, 0.02, -8.7422775e-10, 0.3701533, 1.7629402, -2.2678967)
-mesh = SubResource("CapsuleMesh_t81vb")
-surface_material_override/0 = SubResource("StandardMaterial3D_8ij2y")
-
 [node name="Knight" parent="." unique_id=1306936116 instance=ExtResource("3_5px3i")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
-[node name="Skeleton3D" parent="Knight/Rig_Medium" parent_id_path=PackedInt32Array(1306936116, 1195833622) index="0" unique_id=517822621]
+[node name="Skeleton3D" parent="Knight/Rig_Medium" parent_id_path=PackedInt32Array(1306936116, 773676963) index="0" unique_id=1555307688]
 bones/1/position = Vector3(4.3561184e-18, 0.36031148, 0)
 bones/1/rotation = Quaternion(-5.3290705e-15, -1.19209275e-07, -6.3527476e-22, 1)
 bones/2/position = Vector3(-7.7539095e-29, 0.1919775, -1.441206e-15)
@@ -3553,6 +3534,9 @@ bones/21/scale = Vector3(1, 1, 1.0000001)
 bones/22/position = Vector3(-2.9802322e-08, 0.16565003, 1.5157335e-08)
 bones/22/rotation = Quaternion(6.646201e-08, 0.91967595, -0.39267838, 1.1641043e-07)
 bones/22/scale = Vector3(1, 1.0000004, 1)
+
+[node name="sword_1handed" parent="Knight/Rig_Medium/Skeleton3D/Knight_ArmRight" parent_id_path=PackedInt32Array(1306936116, 1439240563) index="0" unique_id=975188240 instance=ExtResource("3_bwbs2")]
+transform = Transform3D(-3.3328114e-08, -4.1323805e-08, -1, -0.47268918, 0.8812292, -2.0661902e-08, 0.8812292, 0.47268918, -4.8903026e-08, -0.5424852, 0.9420996, 0.41618237)
 
 [node name="PlayerManager" type="Node" parent="." unique_id=1719169405]
 script = ExtResource("4_5k7yl")
