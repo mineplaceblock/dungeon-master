@@ -10294,12 +10294,32 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_wmrx8"]
 size = Vector3(1, 1, 1.3798828)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wmrx8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x30yk"]
+bg_color = Color(0, 0.4333519, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_be1om"]
+bg_color = Color(0.047058824, 0.047058824, 0.047058824, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6nkk"]
+bg_color = Color(0.75723743, 0.14273694, 9.62615e-08, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
 [node name="Enemy" type="CharacterBody3D" unique_id=1128761082]
 script = ExtResource("1_kjf26")
 
 [node name="Skeleton_Mage" parent="." unique_id=250242427 instance=ExtResource("1_csrp5")]
 
-[node name="Skeleton3D" parent="Skeleton_Mage/Rig_Medium" parent_id_path=PackedInt32Array(250242427, 732426287) index="0" unique_id=983838106]
+[node name="Skeleton3D" parent="Skeleton_Mage/Rig_Medium" parent_id_path=PackedInt32Array(250242427, 2133114882) index="0" unique_id=187230568]
 bones/0/rotation = Quaternion(-2.1855692e-08, 1.19209275e-07, -2.6054013e-15, 1)
 bones/1/position = Vector3(-2.3665827e-30, 0.39206383, 0)
 bones/1/rotation = Quaternion(-1.1112795e-10, 0.043157753, 2.5724098e-09, 0.99906826)
@@ -10365,7 +10385,7 @@ bones/22/position = Vector3(-3.2884202e-09, 0.16565007, 1.1634423e-08)
 bones/22/rotation = Quaternion(-2.258756e-06, 0.9202538, -0.39132187, 5.264053e-07)
 bones/22/scale = Vector3(1, 0.999999, 1.0000018)
 
-[node name="head" parent="Skeleton_Mage/Rig_Medium/Skeleton3D" index="0" unique_id=281362955]
+[node name="head" parent="Skeleton_Mage/Rig_Medium/Skeleton3D" index="0" unique_id=1041117481]
 transform = Transform3D(0.99972034, -1.4014343e-09, 0.023646593, 3.5978842e-10, 0.99999994, 4.4054854e-08, -0.023646593, -4.4034028e-08, 0.99972034, -4.3038546e-09, 1.2278258, -5.3669975e-08)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=797102798]
@@ -10392,5 +10412,21 @@ transform = Transform3D(1, 0, 0, 0, 3.8560538, 0, 0, 0, 1, 0, 0, 0.8691343)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AttackHitbox" unique_id=1689438911]
 transform = Transform3D(1.2574308, 0, 0, 0, 0.5979215, 0, 0, 0, 1.1282818, 0, 0.2599044, -0.16227412)
 shape = SubResource("BoxShape3D_wmrx8")
+
+[node name="Healthbar" type="ProgressBar" parent="." unique_id=714232269]
+offset_right = 324.0
+offset_bottom = 40.0
+theme_override_styles/background = SubResource("StyleBoxFlat_wmrx8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_x30yk")
+value = 40.0
+
+[node name="Damagebar" type="ProgressBar" parent="." unique_id=1857846332]
+z_index = -1
+offset_right = 324.0
+offset_bottom = 40.0
+theme_override_styles/background = SubResource("StyleBoxFlat_be1om")
+theme_override_styles/fill = SubResource("StyleBoxFlat_g6nkk")
+value = 50.0
+show_percentage = false
 
 [editable path="Skeleton_Mage"]
