@@ -3992,323 +3992,139 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 169, 0.5, 52)
 [node name="Enemy" parent="Enemys" unique_id=1128761082 instance=ExtResource("8_fls3e")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -240.115, 0.5, -0.097)
 
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy" unique_id=112566834]
-avoidance_enabled = true
-debug_enabled = true
-
 [node name="Enemy2" parent="Enemys" unique_id=708180959 instance=ExtResource("8_fls3e")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -174.8874, 0.5, -0.097)
-
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy2" unique_id=2136649351]
-avoidance_enabled = true
-debug_enabled = true
 
 [node name="Enemy3" parent="Enemys" unique_id=1920533072 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.64588416, 0, 0.7634354, 0, 1, 0, -0.7634354, 0, 0.64588416, -218.04497, 0.5, -34.223488)
 
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy3" unique_id=625243410]
-avoidance_enabled = true
-debug_enabled = true
-
 [node name="Enemy4" parent="Enemys" unique_id=308792345 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.44211653, 0, -0.89695764, 0, 1, 0, 0.89695764, 0, 0.44211653, -198.85759, 0.5, -33.572258)
-
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy4" unique_id=500725495]
-avoidance_enabled = true
-debug_enabled = true
 
 [node name="Enemy5" parent="Enemys" unique_id=1596601775 instance=ExtResource("8_fls3e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -207.63531, 0.5, -42.217514)
 
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy5" unique_id=1821639410]
-avoidance_enabled = true
-debug_enabled = true
-
 [node name="Enemy6" parent="Enemys" unique_id=19419526 instance=ExtResource("8_fls3e")]
 transform = Transform3D(-0.08178195, 0, 0.9966502, 0, 1, 0, -0.9966502, 0, -0.08178195, -254.3973, 0.5, -61.10825)
-
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy6" unique_id=1206340700]
-avoidance_enabled = true
-debug_enabled = true
 
 [node name="Enemy7" parent="Enemys" unique_id=517158563 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.2905018, 0, 0.9568744, 0, 1, 0, -0.9568744, 0, 0.2905018, -249.79028, 0.5, -68.90924)
 
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy7" unique_id=1121532142]
-avoidance_enabled = true
-debug_enabled = true
-
 [node name="Enemy8" parent="Enemys" unique_id=548901704 instance=ExtResource("8_fls3e")]
 transform = Transform3D(-0.08178195, 0, 0.9966502, 0, 1, 0, -0.9966502, 0, -0.08178195, -245.00244, 0.5, -61.10825)
-
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy8" unique_id=1253014028]
-avoidance_enabled = true
-debug_enabled = true
 
 [node name="Enemy9" parent="Enemys" unique_id=569562276 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.2905018, 0, 0.9568744, 0, 1, 0, -0.9568744, 0, 0.2905018, -250.93182, 0.5, -94.890335)
 
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy9" unique_id=276194258]
-avoidance_enabled = true
-debug_enabled = true
-
 [node name="Enemy10" parent="Enemys" unique_id=1725634411 instance=ExtResource("8_fls3e")]
 transform = Transform3D(-0.08178195, 0, 0.9966502, 0, 1, 0, -0.9966502, 0, -0.08178195, -250.86554, 0.5, -87.08935)
-
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy10" unique_id=1769460320]
-avoidance_enabled = true
-debug_enabled = true
 
 [node name="Enemy11" parent="Enemys" unique_id=1109743867 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.2905018, 0, 0.9568744, 0, 1, 0, -0.9568744, 0, 0.2905018, -222.16353, 0.5, -90.610535)
 
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy11" unique_id=536227661]
-avoidance_enabled = true
-debug_enabled = true
-
 [node name="Enemy12" parent="Enemys" unique_id=2139424272 instance=ExtResource("8_fls3e")]
 transform = Transform3D(-0.08178195, 0, 0.9966502, 0, 1, 0, -0.9966502, 0, -0.08178195, -208.9636, 0.5, -91.440125)
-
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy12" unique_id=534608879]
-avoidance_enabled = true
-debug_enabled = true
 
 [node name="Enemy13" parent="Enemys" unique_id=1450618569 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.2905018, 0, 0.9568744, 0, 1, 0, -0.9568744, 0, 0.2905018, -193.33739, 0.5, -90.225266)
 
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy13" unique_id=1798255375]
-avoidance_enabled = true
-debug_enabled = true
-
 [node name="Enemy14" parent="Enemys" unique_id=2128329916 instance=ExtResource("8_fls3e")]
 transform = Transform3D(-0.08178195, 0, 0.9966502, 0, 1, 0, -0.9966502, 0, -0.08178195, -208.9636, 0.5, -64.44263)
-
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy14" unique_id=316349435]
-avoidance_enabled = true
-debug_enabled = true
 
 [node name="Enemy15" parent="Enemys" unique_id=241420207 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.64588416, 0, 0.7634354, 0, 1, 0, -0.7634354, 0, 0.64588416, -178.10104, 0.5, -32.76116)
 
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy15" unique_id=1424316519]
-avoidance_enabled = true
-debug_enabled = true
-
 [node name="Enemy16" parent="Enemys" unique_id=1426175097 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.44211653, 0, -0.89695764, 0, 1, 0, 0.89695764, 0, 0.44211653, -163.1998, 0.5, -32.109932)
-
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy16" unique_id=839083663]
-avoidance_enabled = true
-debug_enabled = true
 
 [node name="Enemy17" parent="Enemys" unique_id=292786463 instance=ExtResource("8_fls3e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -171.97752, 0.5, -40.755188)
 
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy17" unique_id=1772457812]
-avoidance_enabled = true
-debug_enabled = true
-
 [node name="Enemy18" parent="Enemys" unique_id=560795957 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.64588416, 0, 0.7634354, 0, 1, 0, -0.7634354, 0, 0.64588416, -147.52873, 0.5, -31.017057)
-
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy18" unique_id=1880450066]
-avoidance_enabled = true
-debug_enabled = true
 
 [node name="Enemy19" parent="Enemys" unique_id=801648352 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.44211653, 0, -0.89695764, 0, 1, 0, 0.89695764, 0, 0.44211653, -140.95804, 0.5, -30.365828)
 
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy19" unique_id=1838149745]
-avoidance_enabled = true
-debug_enabled = true
-
 [node name="Enemy20" parent="Enemys" unique_id=222455619 instance=ExtResource("8_fls3e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -144.67885, 0.5, -36.062958)
-
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy20" unique_id=2015715578]
-avoidance_enabled = true
-debug_enabled = true
 
 [node name="Enemy21" parent="Enemys" unique_id=1567107133 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.95386887, 0, -0.30022305, 0, 1, 0, 0.30022305, 0, 0.95386887, -115.73921, 0.5, -71.628555)
 
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy21" unique_id=2099072215]
-avoidance_enabled = true
-debug_enabled = true
-
 [node name="Enemy22" parent="Enemys" unique_id=121514203 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.99743074, 0, 0.07163671, 0, 1, 0, -0.07163671, 0, 0.99743074, -115.043976, 0.5, -58.42087)
-
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy22" unique_id=60883986]
-avoidance_enabled = true
-debug_enabled = true
 
 [node name="Enemy23" parent="Enemys" unique_id=1536424715 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.95386887, 0, -0.30022305, 0, 1, 0, 0.30022305, 0, 0.95386887, -116.417755, 0.5, -42.807835)
 
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy23" unique_id=1606922938]
-avoidance_enabled = true
-debug_enabled = true
-
 [node name="Enemy24" parent="Enemys" unique_id=892772719 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.95386887, 0, -0.30022305, 0, 1, 0, 0.30022305, 0, 0.95386887, -115.73921, 0.5, -115.93609)
-
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy24" unique_id=1724321739]
-avoidance_enabled = true
-debug_enabled = true
 
 [node name="Enemy25" parent="Enemys" unique_id=1412482789 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.99743074, 0, 0.07163671, 0, 1, 0, -0.07163671, 0, 0.99743074, -115.043976, 0.5, -102.38992)
 
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy25" unique_id=2101340464]
-avoidance_enabled = true
-debug_enabled = true
-
 [node name="Enemy26" parent="Enemys" unique_id=312312069 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.95386887, 0, -0.30022305, 0, 1, 0, 0.30022305, 0, 0.95386887, -116.417755, 0.5, -86.776886)
-
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy26" unique_id=1758132749]
-avoidance_enabled = true
-debug_enabled = true
 
 [node name="Enemy27" parent="Enemys" unique_id=1353410601 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.95386887, 0, -0.30022305, 0, 1, 0, 0.30022305, 0, 0.95386887, -114.57362, 0, -133.97723)
 
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy27" unique_id=120548379]
-avoidance_enabled = true
-debug_enabled = true
-
 [node name="Enemy28" parent="Enemys" unique_id=1393718338 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.95386887, 0, -0.30022305, 0, 1, 0, 0.30022305, 0, 0.95386887, -139.64578, 0.5, -119.3019)
-
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy28" unique_id=1932978329]
-avoidance_enabled = true
-debug_enabled = true
 
 [node name="Enemy29" parent="Enemys" unique_id=1306236125 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.99743074, 0, 0.07163671, 0, 1, 0, -0.07163671, 0, 0.99743074, -138.95053, 0.5, -106.09422)
 
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy29" unique_id=460657765]
-avoidance_enabled = true
-debug_enabled = true
-
 [node name="Enemy30" parent="Enemys" unique_id=421049056 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.95386887, 0, -0.30022305, 0, 1, 0, 0.30022305, 0, 0.95386887, -140.32431, 0.5, -90.481186)
-
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy30" unique_id=1918519208]
-avoidance_enabled = true
-debug_enabled = true
 
 [node name="Enemy31" parent="Enemys" unique_id=1434893204 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.95386887, 0, -0.30022305, 0, 1, 0, 0.30022305, 0, 0.95386887, -155.92392, 0.65491104, -116.64004)
 
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy31" unique_id=1436684317]
-avoidance_enabled = true
-debug_enabled = true
-
 [node name="Enemy32" parent="Enemys" unique_id=1263655476 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.99743074, 0, 0.07163671, 0, 1, 0, -0.07163671, 0, 0.99743074, -155.2287, 0.65491104, -103.43236)
-
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy32" unique_id=671510291]
-avoidance_enabled = true
-debug_enabled = true
 
 [node name="Enemy33" parent="Enemys" unique_id=434158212 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.95386887, 0, -0.30022305, 0, 1, 0, 0.30022305, 0, 0.95386887, -156.60248, 0.65491104, -87.81932)
 
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy33" unique_id=321235129]
-avoidance_enabled = true
-debug_enabled = true
-
 [node name="Enemy34" parent="Enemys" unique_id=552596745 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.95386887, 0, -0.30022305, 0, 1, 0, 0.30022305, 0, 0.95386887, -139.64578, 0.5, -133.58963)
-
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy34" unique_id=1732439382]
-avoidance_enabled = true
-debug_enabled = true
 
 [node name="Enemy35" parent="Enemys" unique_id=330476516 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.2905018, 0, 0.9568744, 0, 1, 0, -0.9568744, 0, 0.2905018, -134.77313, 0.5, -149.1139)
 
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy35" unique_id=1639628197]
-avoidance_enabled = true
-debug_enabled = true
-
 [node name="Enemy36" parent="Enemys" unique_id=1747750677 instance=ExtResource("8_fls3e")]
 transform = Transform3D(-0.08178195, 0, 0.9966502, 0, 1, 0, -0.9966502, 0, -0.08178195, -121.57319, 0.5, -149.9435)
-
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy36" unique_id=796808457]
-avoidance_enabled = true
-debug_enabled = true
 
 [node name="Enemy37" parent="Enemys" unique_id=1581475538 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.95386887, 0, -0.30022305, 0, 1, 0, 0.30022305, 0, 0.95386887, -174.45805, 0.65491104, -140.58044)
 
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy37" unique_id=37063099]
-avoidance_enabled = true
-debug_enabled = true
-
 [node name="Enemy38" parent="Enemys" unique_id=167607726 instance=ExtResource("8_fls3e")]
 transform = Transform3D(-0.08178195, 0, 0.9966502, 0, 1, 0, -0.9966502, 0, -0.08178195, -168.15604, 0.5, -163.52953)
-
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy38" unique_id=966557353]
-avoidance_enabled = true
-debug_enabled = true
 
 [node name="Enemy39" parent="Enemys" unique_id=85908322 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.2905018, 0, 0.9568744, 0, 1, 0, -0.9568744, 0, 0.2905018, -163.54903, 0.5, -171.33052)
 
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy39" unique_id=1764702220]
-avoidance_enabled = true
-debug_enabled = true
-
 [node name="Enemy40" parent="Enemys" unique_id=1467503532 instance=ExtResource("8_fls3e")]
 transform = Transform3D(-0.08178195, 0, 0.9966502, 0, 1, 0, -0.9966502, 0, -0.08178195, -158.76118, 0.5, -163.52953)
-
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy40" unique_id=688572946]
-avoidance_enabled = true
-debug_enabled = true
 
 [node name="Enemy41" parent="Enemys" unique_id=1991535701 instance=ExtResource("8_fls3e")]
 transform = Transform3D(-0.08178195, 0, 0.9966502, 0, 1, 0, -0.9966502, 0, -0.08178195, -197.6571, 0.5, -123.3526)
 
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy41" unique_id=794051268]
-avoidance_enabled = true
-debug_enabled = true
-
 [node name="Enemy42" parent="Enemys" unique_id=1391247570 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.2905018, 0, 0.9568744, 0, 1, 0, -0.9568744, 0, 0.2905018, -193.0501, 0.5, -131.1536)
-
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy42" unique_id=1302348987]
-avoidance_enabled = true
-debug_enabled = true
 
 [node name="Enemy43" parent="Enemys" unique_id=1274279391 instance=ExtResource("8_fls3e")]
 transform = Transform3D(-0.08178195, 0, 0.9966502, 0, 1, 0, -0.9966502, 0, -0.08178195, -188.26225, 0.5, -123.3526)
 
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy43" unique_id=1098318751]
-avoidance_enabled = true
-debug_enabled = true
-
 [node name="Enemy44" parent="Enemys" unique_id=218623071 instance=ExtResource("8_fls3e")]
 transform = Transform3D(-0.08178195, 0, 0.9966502, 0, 1, 0, -0.9966502, 0, -0.08178195, -227.62358, 0.5, -123.3526)
-
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy44" unique_id=1138683085]
-avoidance_enabled = true
-debug_enabled = true
 
 [node name="Enemy45" parent="Enemys" unique_id=2095755672 instance=ExtResource("8_fls3e")]
 transform = Transform3D(0.2905018, 0, 0.9568744, 0, 1, 0, -0.9568744, 0, 0.2905018, -223.01657, 0.5, -131.1536)
 
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy45" unique_id=1663396049]
-avoidance_enabled = true
-debug_enabled = true
-
 [node name="Enemy46" parent="Enemys" unique_id=2126530942 instance=ExtResource("8_fls3e")]
 transform = Transform3D(-0.08178195, 0, 0.9966502, 0, 1, 0, -0.9966502, 0, -0.08178195, -218.22873, 0.5, -123.3526)
-
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="Enemys/Enemy46" unique_id=1884236499]
-avoidance_enabled = true
-debug_enabled = true
 
 [node name="PlayerHUD" parent="." unique_id=1313333039 instance=ExtResource("9_k63oc")]
