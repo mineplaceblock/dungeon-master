@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dwt8tyanglro1"]
 
 [ext_resource type="PackedScene" uid="uid://qc00tdjfc7os" path="res://Assets/Skeletons/characters/fbx/Skeleton_Warrior.fbx" id="1_g2htk"]
-[ext_resource type="Script" uid="uid://c3f5cjhbps18p" path="res://Scripts/Enemy/boss.gd" id="1_mtwsw"]
+[ext_resource type="Script" uid="uid://c3f5cjhbps18p" path="res://Scripts/Enemy/skeleton_boss.gd" id="1_mtwsw"]
 [ext_resource type="PackedScene" uid="uid://bjam5kit6kfiw" path="res://Prefabs/flame_pilar.tscn" id="2_hhxbi"]
 [ext_resource type="AnimationLibrary" uid="uid://shotoryeugvn" path="res://Assets/Skeletons/Animations/fbx/Rig_Medium/Final.res" id="3_2pypo"]
 

@@ -23,6 +23,7 @@ extends CharacterBody3D
 @export var anim_run: String     = "Running_A"
 @export var anim_walk: String    = "Walking_B"
 @export var anim_attack: String  = "Atacar"
+@export var anim_attack_back: String  = "Atacar_2"
 
 # ── Estado interno ─────────────────────────────────────────────
 var current_health: float
@@ -221,9 +222,16 @@ func die() -> void:
 # ── Animaciones ───────────────────────────────────────────────
 func _on_animation_finished(anim_name: String) -> void:
 	if anim_name == anim_attack:
+		_apply_attack_hit()
+		# Seguir atacando (bloqueado) durante el backswing
+		anim_player.play(anim_attack_back)
+
+	elif anim_name == anim_attack_back:
+		# Solo aquí termina el ciclo completo
 		attack_timer = attack_cooldown
 		is_attacking  = false
-		_apply_attack_hit()
+		_play_if_not(anim_idle)
+
 	_on_animation_finished_extra(anim_name)
 
 # Aplica el daño al jugador al terminar la animación de ataque

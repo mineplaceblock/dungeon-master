@@ -286,7 +286,6 @@ func check_input_mappings():
 
 func _on_player_died():
 	freeze = true
-	$Head/Arm.visible = false
 	release_mouse()
 	$ThirdPersonCamera.make_current()
 	thirdpelson = true
