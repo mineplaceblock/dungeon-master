@@ -1,15 +1,14 @@
 [gd_scene format=3 uid="uid://dvkuulpneoujq"]
 
-[ext_resource type="PackedScene" uid="uid://dwt8tyanglro1" path="res://Scenes/Nil/Jefe.tscn" id="1_4c2oa"]
+[ext_resource type="PackedScene" uid="uid://dwt8tyanglro1" path="res://Prefabs/Enemy/boss.tscn" id="1_4c2oa"]
 [ext_resource type="PackedScene" uid="uid://dwnkhg0oc16lc" path="res://Prefabs/player_controller.tscn" id="2_olcgw"]
 [ext_resource type="PackedScene" uid="uid://d1jlu16qmh7xv" path="res://Prefabs/map/floor_tile_large.tscn" id="3_dlo4w"]
 [ext_resource type="PackedScene" uid="uid://dumimmjg4m30s" path="res://Prefabs/map/floor_dirt_large.tscn" id="4_q6lx1"]
 [ext_resource type="PackedScene" uid="uid://dhe7g4k4it6ep" path="res://Prefabs/map/wall_scaffold.tscn" id="5_5qtum"]
 [ext_resource type="PackedScene" uid="uid://bjqgs570v2rvq" path="res://Prefabs/map/wall_corner_scaffold.tscn" id="6_ie368"]
 [ext_resource type="PackedScene" uid="uid://cpvy83eo547ad" path="res://Prefabs/map/wall_window_closed_scaffold.tscn" id="7_x5dfk"]
-[ext_resource type="PackedScene" uid="uid://cvg35stxe36r0" path="res://Scenes/Nil/Mage enemy.tscn" id="8_fls3e"]
+[ext_resource type="PackedScene" uid="uid://cvg35stxe36r0" path="res://Prefabs/Enemy/normal.tscn" id="8_fls3e"]
 [ext_resource type="PackedScene" uid="uid://duvmmoehfo3qk" path="res://Interface/PlayerHUD.tscn" id="9_k63oc"]
-[ext_resource type="PackedScene" uid="uid://bjam5kit6kfiw" path="res://Prefabs/flame_pilar.tscn" id="10_hptm8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fmsue"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -4313,6 +4312,3 @@ avoidance_enabled = true
 debug_enabled = true
 
 [node name="PlayerHUD" parent="." unique_id=1313333039 instance=ExtResource("9_k63oc")]
-
-[node name="FlamePilar" parent="." unique_id=512324591 instance=ExtResource("10_hptm8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.97969, 1.5443268, 63.090256)

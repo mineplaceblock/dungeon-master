@@ -6,6 +6,9 @@
 transparency = 4
 depth_draw_mode = 2
 albedo_color = Color(1, 0.54509807, 0.3254902, 1)
+emission_enabled = true
+emission = Color(1, 0.09019608, 0, 1)
+emission_energy_multiplier = 12.0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_khn01"]
 material = SubResource("StandardMaterial3D_h0rxk")
