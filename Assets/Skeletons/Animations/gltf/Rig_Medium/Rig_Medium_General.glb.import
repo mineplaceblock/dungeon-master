@@ -41,7 +41,7 @@ _subresources={
 "animations": {
 "Idle_B": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Scenes/Nil/descansar.tres",
+"save_to_file/fallback_path": "res://Assets/descansar.tres",
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "uid://dkfy7sm5ss78r",
 "settings/loop_mode": 0,
@@ -2097,7 +2097,7 @@ _subresources={
 },
 "Throw": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Scenes/Nil/atacar.tres",
+"save_to_file/fallback_path": "res://Assets/atacar.tres",
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "uid://nypj1if75vma",
 "settings/loop_mode": 0,

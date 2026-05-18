@@ -9,6 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://cpvy83eo547ad" path="res://Prefabs/map/wall_window_closed_scaffold.tscn" id="7_x5dfk"]
 [ext_resource type="PackedScene" uid="uid://cvg35stxe36r0" path="res://Prefabs/Enemy/normal.tscn" id="8_fls3e"]
 [ext_resource type="PackedScene" uid="uid://duvmmoehfo3qk" path="res://Interface/PlayerHUD.tscn" id="9_k63oc"]
+[ext_resource type="ArrayMesh" uid="uid://clrhtav8pwtw6" path="res://Assets/Dungeon/Assets/obj/keg.obj" id="10_fdnlq"]
+[ext_resource type="ArrayMesh" uid="uid://cxc1cd4f4635l" path="res://Assets/Dungeon/Assets/obj/chest_gold.obj" id="11_jkdf5"]
+[ext_resource type="ArrayMesh" uid="uid://boveggwmpnuok" path="res://Assets/Dungeon/Assets/obj/chest_gold_lid.obj" id="12_wsu2k"]
+[ext_resource type="ArrayMesh" uid="uid://dkxnwa6auc3sr" path="res://Assets/Dungeon/Assets/obj/bed_floor.obj" id="13_k12tt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fmsue"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -4128,3 +4132,23 @@ transform = Transform3D(0.2905018, 0, 0.9568744, 0, 1, 0, -0.9568744, 0, 0.29050
 transform = Transform3D(-0.08178195, 0, 0.9966502, 0, 1, 0, -0.9966502, 0, -0.08178195, -218.22873, 0.5, -123.3526)
 
 [node name="PlayerHUD" parent="." unique_id=1313333039 instance=ExtResource("9_k63oc")]
+
+[node name="Keg" type="MeshInstance3D" parent="." unique_id=412201908]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -33, 0.5876771, 77.64842)
+mesh = ExtResource("10_fdnlq")
+
+[node name="Keg2" type="MeshInstance3D" parent="." unique_id=1072065476]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -34.841614, 0.5876771, 77.64842)
+mesh = ExtResource("10_fdnlq")
+
+[node name="ChestGold" type="MeshInstance3D" parent="." unique_id=1456598818]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -45.27507, 0.6037775, 77.844406)
+mesh = ExtResource("11_jkdf5")
+
+[node name="ChestGoldLid" type="MeshInstance3D" parent="." unique_id=1267716951]
+transform = Transform3D(-1, 5.350122e-08, -6.914016e-08, 0, 0.7908712, 0.61198264, 8.742278e-08, 0.61198264, -0.7908712, -45.27507, 1.0695838, 77.60563)
+mesh = ExtResource("12_wsu2k")
+
+[node name="BedFloor" type="MeshInstance3D" parent="ChestGoldLid" unique_id=1627343963]
+transform = Transform3D(-2.5319352e-08, 0.002041936, 0.999998, 0.6119827, 0.7908697, -0.0016149078, -0.79087114, 0.61198145, -0.0012496306, -11.53825, -7.5179825, 8.88451)
+mesh = ExtResource("13_k12tt")
