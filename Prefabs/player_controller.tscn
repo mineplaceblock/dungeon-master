@@ -9,6 +9,8 @@
 radius = 0.6347656
 height = 1.8
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bwbs2"]
+
 [sub_resource type="Animation" id="Animation_halkx"]
 resource_name = "Descans"
 length = 2.2333333
@@ -3471,6 +3473,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, -0.7222316)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.20971781)
 
 [node name="RayCast3D" type="RayCast3D" parent="Head" unique_id=435590539]
+
+[node name="AttackArea" type="Area3D" parent="Head" unique_id=953073577]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/AttackArea" unique_id=2073905495]
+transform = Transform3D(1, 0, 0, 0, -0.014749891, 0.979963, 0, -0.4310083, -0.03353612, 0, -0.14580488, -0.30950952)
+shape = SubResource("CylinderShape3D_bwbs2")
 
 [node name="Knight" parent="." unique_id=1306936116 instance=ExtResource("3_5px3i")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)

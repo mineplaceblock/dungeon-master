@@ -24,24 +24,24 @@ extends CharacterBody3D
 @onready var attack_hitbox: Area3D        = $AttackHitbox
 
 # HealthBarPivot es opcional: si el enemigo no tiene barra, todo se omite.
-@onready var _hb_pivot: Node3D  = get_node_or_null("HealthBarPivot")
-# %HealthBar usa el unique name; funciona aunque esté dentro del SubViewport.
-@onready var _hb_ui: Control    = get_node_or_null("%HealthBar")
-@onready var _hb_sprite: Sprite3D    = $HealthBarPivot/Sprite3D
+@onready var _hb_pivot: Node3D       = get_node_or_null("HealthBarPivot")
+@onready var _hb_ui: Control         = get_node_or_null("%HealthBar")
+@onready var _hb_sprite: Sprite3D    = get_node_or_null("HealthBarPivot/Sprite3D")
 
 # ── Nombres de animaciones (sobrescribir si el enemigo usa otros) ──
-@export var anim_idle: String    = "Descansar"
-@export var anim_run: String     = "Running_A"
-@export var anim_walk: String    = "Walking_B"
-@export var anim_attack: String  = "Atacar"
-@export var anim_attack_back: String  = "Atacar_2"
+@export var anim_idle: String        = "Descansar"
+@export var anim_run: String         = "Running_A"
+@export var anim_walk: String        = "Walking_B"
+@export var anim_attack: String      = "Atacar"
+@export var anim_attack_back: String = "Atacar_2"
+@export var anim_death: String       = "Death_A"
 
 # ── Estado interno ─────────────────────────────────────────────
 var current_health: float
-var target: Node3D     = null
+var target: Node3D      = null
 var spawn_position: Vector3
-var active: bool       = true
-var is_attacking: bool = false
+var active: bool        = true
+var is_attacking: bool  = false
 var attack_timer: float = 0.0
 
 # Estado interno de la barra
@@ -52,14 +52,10 @@ var _hb_last_health: float      = 0.0
 signal health_changed(new_health: float, max_health: float)
 signal died
 
-# ── Navegación compartida ─────────────────────────────────────
-# Un solo bake para todos los enemigos de la escena
-static var _nav_baked: bool = false
-
 # ─────────────────────────────────────────────────────────────
 func _ready() -> void:
-	current_health  = max_health
-	spawn_position  = global_position
+	current_health    = max_health
+	spawn_position    = global_position
 	floor_snap_length = 0.5
 	floor_max_angle   = deg_to_rad(60)
 
@@ -100,22 +96,25 @@ func _process(delta: float) -> void:
 	_hb_billboard()
 
 func _hb_update_visibility(delta: float) -> void:
-	# Mostrar si persigue (active) o si tiene daño y el timer sigue vivo
 	if _hb_is_chasing():
 		_hb_ui.show()
-		_hb_sprite.show()
-		_hb_visibility_timer = health_bar_visible_time   # resetea mientras persigue
+		if _hb_sprite:
+			_hb_sprite.show()
+		_hb_visibility_timer = health_bar_visible_time
 	elif _hb_has_lost_health():
 		if _hb_visibility_timer > 0.0:
 			_hb_visibility_timer -= delta
 			_hb_ui.show()
-			_hb_sprite.show()
+			if _hb_sprite:
+				_hb_sprite.show()
 		else:
 			_hb_ui.hide()
-			_hb_sprite.hide()
+			if _hb_sprite:
+				_hb_sprite.hide()
 	else:
 		_hb_ui.hide()
-		_hb_sprite.hide()
+		if _hb_sprite:
+			_hb_sprite.hide()
 
 func _hb_billboard() -> void:
 	if _hb_pivot == null:
@@ -123,8 +122,8 @@ func _hb_billboard() -> void:
 	var cam := get_viewport().get_camera_3d()
 	if cam == null:
 		return
-	var look_pos := cam.global_position
-	look_pos.y    = _hb_pivot.global_position.y   # mantener horizontal
+	var look_pos      := cam.global_position
+	look_pos.y         = _hb_pivot.global_position.y
 	_hb_pivot.look_at(look_pos, Vector3.UP)
 
 func _hb_is_chasing() -> bool:
@@ -149,33 +148,29 @@ func _on_died_hb() -> void:
 		_hb_ui.hide()
 
 # ── Navegación ────────────────────────────────────────────────
+# NOTA: el NavigationMesh debe estar bakeado desde el editor.
+# No se hace bake en runtime para evitar que la muerte de un
+# enemigo rompa la navegación de los demás.
 func _setup_navigation() -> void:
-	var nav_region: NavigationRegion3D = \
-		get_tree().get_root().find_child("NavigationRegion3D", true, false)
-
-	if not _nav_baked and nav_region:
-		_nav_baked = true
-		nav_region.bake_finished.connect(_on_bake_finished.bind(nav_region))
-		nav_region.bake_navigation_mesh()
-	else:
-		_configure_nav_agent()
+	_configure_nav_agent()
 
 func _configure_nav_agent() -> void:
-	nav_agent.path_desired_distance  = 1.5
+	nav_agent.path_desired_distance   = 1.5
 	nav_agent.target_desired_distance = 1.5
 	await get_tree().physics_frame
 	await get_tree().physics_frame
 	if target and is_instance_valid(target):
 		nav_agent.target_position = target.global_position
 
-func _on_bake_finished(_region) -> void:
-	await _configure_nav_agent()
-
 func _find_player() -> void:
 	target = get_tree().get_first_node_in_group("player")
 
 # ── Loop principal ────────────────────────────────────────────
 func _physics_process(delta: float) -> void:
+	# Si está muerto, ignorar toda física
+	if not is_alive():
+		return
+
 	# Los hijos pueden bloquear el loop (ej: animación especial)
 	if _should_skip_physics():
 		velocity.x = move_toward(velocity.x, 0, move_speed)
@@ -210,9 +205,13 @@ func _apply_gravity(delta: float) -> void:
 		velocity.y += get_gravity().y * delta
 
 func _update_active_state() -> void:
+	# Guard: no actualizar si ya está muerto
+	if not is_alive():
+		return
+
 	var dist = global_position.distance_to(target.global_position)
 	if dist > max_distance:
-		active = false
+		active       = false
 		is_attacking = false
 		nav_agent.target_position = spawn_position
 	else:
@@ -220,7 +219,7 @@ func _update_active_state() -> void:
 		nav_agent.target_position = target.global_position
 
 func _handle_combat() -> void:
-	var dist = global_position.distance_to(target.global_position)
+	var dist     = global_position.distance_to(target.global_position)
 	var in_range = active and dist <= attack_distance
 
 	if in_range and not is_attacking and attack_timer <= 0.0:
@@ -273,8 +272,8 @@ func _face_target() -> void:
 		_face_direction(target.global_position)
 
 func _face_direction(world_pos: Vector3) -> void:
-	var look_pos   = world_pos
-	look_pos.y     = global_position.y
+	var look_pos = world_pos
+	look_pos.y   = global_position.y
 	look_at(look_pos, Vector3.UP)
 	rotate_y(deg_to_rad(180))
 
@@ -300,19 +299,36 @@ func is_alive() -> bool:
 
 func die() -> void:
 	died.emit()
+	active       = false
+	is_attacking = false
+	velocity     = Vector3.ZERO
+
+	# Desactivar hitbox para que no siga haciendo daño
+	if attack_hitbox:
+		attack_hitbox.monitoring  = false
+		attack_hitbox.monitorable = false
+
+	anim_player.play(anim_death)
+
+	# Esperar a que la animación de muerte termine, luego
+	# permanecer en el suelo 60 segundos antes de desaparecer
+	await anim_player.animation_finished
+	await get_tree().create_timer(60.0).timeout
 	queue_free()
 
 # ── Animaciones ───────────────────────────────────────────────
 func _on_animation_finished(anim_name: String) -> void:
+	# Si murió, no procesar más lógica de animación de combate
+	if not is_alive():
+		return
+
 	if anim_name == anim_attack:
 		_apply_attack_hit()
-		# Seguir atacando (bloqueado) durante el backswing
 		anim_player.play(anim_attack_back)
 
 	elif anim_name == anim_attack_back:
-		# Solo aquí termina el ciclo completo
 		attack_timer = attack_cooldown
-		is_attacking  = false
+		is_attacking = false
 		_play_if_not(anim_idle)
 
 	_on_animation_finished_extra(anim_name)

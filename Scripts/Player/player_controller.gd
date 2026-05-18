@@ -23,6 +23,7 @@ extends CharacterBody3D
 @export var input_jump : String = "Jump"
 @export var input_sprint : String = "Sprint"
 @export var input_freefly : String = "Fly"
+@onready var attack_area: Area3D = $Head/AttackArea
 
 var mouse_captured : bool = false
 var look_rotation : Vector2
@@ -37,13 +38,16 @@ var jump_state : JumpState = JumpState.NONE
 var was_on_floor : bool = true
 var jump_hold_timer : float = 0.0          # how long we've been in the air
 const JUMP_LONG_THRESHOLD : float = 0.55   # seconds airborne → Long vs Short land
-
+const ATTACK_DAMAGE: float = 25.0
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
 @onready var player_manager: Node = $PlayerManager
 ## Assign your AnimationPlayer node path here
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
-
+func _perform_attack() -> void:
+	for body in attack_area.get_overlapping_bodies():
+		if body.has_method("take_damage"):
+			body.take_damage(ATTACK_DAMAGE)
 func _ready() -> void:
 	add_to_group("player")
 	check_input_mappings()
@@ -62,7 +66,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		capture_mouse()
 	if Input.is_key_pressed(KEY_ESCAPE):
 		release_mouse()
-
+	
+	if mouse_captured and event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			_perform_attack()
+	
 	if Input.is_action_just_pressed("cambiar_escena"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().change_scene_to_file("res://Minigames/Tic Tac Toe/tictactoe.tscn")
@@ -95,6 +103,8 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector3.ZERO
 		move_and_slide()
 		return
+	
+	
 
 	if can_freefly and freeflying:
 		var input_dir := Input.get_vector(input_left, input_right, input_forward, input_back)
