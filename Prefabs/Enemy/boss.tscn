@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c3f5cjhbps18p" path="res://Scripts/Enemy/skeleton_boss.gd" id="1_mtwsw"]
 [ext_resource type="PackedScene" uid="uid://bjam5kit6kfiw" path="res://Prefabs/flame_pilar.tscn" id="2_hhxbi"]
 [ext_resource type="AnimationLibrary" uid="uid://shotoryeugvn" path="res://Assets/Skeletons/Animations/fbx/Rig_Medium/Final.res" id="3_2pypo"]
+[ext_resource type="PackedScene" uid="uid://0e4fn21ii5rr" path="res://Prefabs/health_bar.tscn" id="5_a213q"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g2htk"]
 radius = 0.9003906
@@ -11,6 +12,9 @@ height = 4.0132446
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mtwsw"]
 size = Vector3(1, 1, 1.9708252)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5ckm4"]
+viewport_path = NodePath("HealthBarPivot/SubViewport")
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=391023328]
 script = ExtResource("1_mtwsw")
@@ -42,3 +46,16 @@ target_position = Vector3(2, 0, 0)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1711187270]
 root_node = NodePath("../Skeleton_Warrior")
 libraries/ = ExtResource("3_2pypo")
+
+[node name="HealthBarPivot" type="Node3D" parent="." unique_id=822843710]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.7994056, 0)
+
+[node name="SubViewport" type="SubViewport" parent="HealthBarPivot" unique_id=1778907804]
+size = Vector2i(324, 40)
+
+[node name="HealthBar" parent="HealthBarPivot/SubViewport" unique_id=304404317 instance=ExtResource("5_a213q")]
+unique_name_in_owner = true
+
+[node name="Sprite3D" type="Sprite3D" parent="HealthBarPivot" unique_id=814840781]
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0, 0, 0)
+texture = SubResource("ViewportTexture_5ckm4")

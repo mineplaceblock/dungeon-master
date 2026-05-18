@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bm0pckygoni72"]
+[gd_scene format=3 uid="uid://0e4fn21ii5rr"]
+
+[ext_resource type="Script" uid="uid://c0gc8vwgfi0nn" path="res://Scripts/health_bar.gd" id="1_w3g03"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ee4bf"]
 bg_color = Color(0.16924527, 0.16924533, 0.16924518, 1)
@@ -29,26 +31,25 @@ corner_radius_bottom_left = 8
 
 [node name="HealthBar" type="Control" unique_id=304404317]
 layout_mode = 3
-anchor_right = 0.186
-anchor_bottom = 0.036000002
-offset_right = 1.8800049
-offset_bottom = 2.119999
+anchor_right = 0.16900001
+anchor_bottom = 0.037
+offset_right = -0.4800415
+offset_bottom = 0.040000916
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_w3g03")
 
 [node name="Panel" type="Panel" parent="." unique_id=59860455]
 z_index = -1
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.90300006
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -0.17703247
-offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ee4bf")
 
-[node name="Damagebar" type="ProgressBar" parent="Panel" unique_id=909443197]
+[node name="DamageBar" type="ProgressBar" parent="Panel" unique_id=909443197]
 layout_mode = 0
 offset_right = 324.0
 offset_bottom = 40.0
@@ -57,7 +58,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_qtu10")
 value = 50.0
 show_percentage = false
 
-[node name="Healthbar" type="ProgressBar" parent="Panel" unique_id=1169779455]
+[node name="HealthBar" type="ProgressBar" parent="Panel" unique_id=1169779455]
 z_index = 1
 layout_mode = 0
 offset_right = 324.0

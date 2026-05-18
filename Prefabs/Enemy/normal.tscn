@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bsaihm6oer2r7" path="res://Scripts/Enemy/mage_enemy.gd" id="1_1g2nk"]
 [ext_resource type="PackedScene" uid="uid://1iatwcevtlew" path="res://Assets/Skeletons/characters/gltf/Skeleton_Mage.glb" id="1_csrp5"]
+[ext_resource type="PackedScene" uid="uid://0e4fn21ii5rr" path="res://Prefabs/health_bar.tscn" id="3_mmd8t"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wmrx8"]
 radius = 0.55908203
@@ -3458,12 +3459,15 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_wmrx8"]
 size = Vector3(1, 1, 1.3798828)
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_ec6pu"]
+viewport_path = NodePath("HealthBarPivot/SubViewport")
+
 [node name="Enemy" type="CharacterBody3D" unique_id=1128761082]
 script = ExtResource("1_1g2nk")
 
 [node name="Skeleton_Mage" parent="." unique_id=250242427 instance=ExtResource("1_csrp5")]
 
-[node name="Skeleton3D" parent="Skeleton_Mage/Rig_Medium" parent_id_path=PackedInt32Array(250242427, 2133114882) index="0" unique_id=187230568]
+[node name="Skeleton3D" parent="Skeleton_Mage/Rig_Medium" parent_id_path=PackedInt32Array(250242427, 1012426533) index="0" unique_id=1285313545]
 bones/0/rotation = Quaternion(-2.1855692e-08, 1.19209275e-07, -2.6054013e-15, 1)
 bones/1/position = Vector3(-2.3665827e-30, 0.39206383, 0)
 bones/1/rotation = Quaternion(-1.1112795e-10, 0.043157753, 2.5724098e-09, 0.99906826)
@@ -3529,7 +3533,7 @@ bones/22/position = Vector3(-3.2884202e-09, 0.16565007, 1.1634423e-08)
 bones/22/rotation = Quaternion(-2.258756e-06, 0.9202538, -0.39132187, 5.264053e-07)
 bones/22/scale = Vector3(1, 0.999999, 1.0000018)
 
-[node name="head" parent="Skeleton_Mage/Rig_Medium/Skeleton3D" index="0" unique_id=1041117481]
+[node name="head" parent="Skeleton_Mage/Rig_Medium/Skeleton3D" index="0" unique_id=200790593]
 transform = Transform3D(0.99972034, -1.4014343e-09, 0.023646593, 3.5978842e-10, 0.99999994, 4.4054854e-08, -0.023646593, -4.4034028e-08, 0.99972034, -4.3038546e-09, 1.2278258, -5.3669975e-08)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=797102798]
@@ -3558,5 +3562,18 @@ shape = SubResource("BoxShape3D_wmrx8")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=668021060]
 avoidance_enabled = true
 debug_enabled = true
+
+[node name="HealthBarPivot" type="Node3D" parent="." unique_id=1926666623]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6342163, 0)
+
+[node name="SubViewport" type="SubViewport" parent="HealthBarPivot" unique_id=86277932]
+size = Vector2i(324, 40)
+
+[node name="HealthBar" parent="HealthBarPivot/SubViewport" unique_id=304404317 instance=ExtResource("3_mmd8t")]
+unique_name_in_owner = true
+
+[node name="Sprite3D" type="Sprite3D" parent="HealthBarPivot" unique_id=1985242147]
+transform = Transform3D(-0.59999996, 0, 5.2453665e-08, 0, 0.59999996, 0, -5.2453665e-08, 0, -0.59999996, 0, 0, 0)
+texture = SubResource("ViewportTexture_ec6pu")
 
 [editable path="Skeleton_Mage"]

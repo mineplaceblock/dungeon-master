@@ -13,10 +13,21 @@ extends CharacterBody3D
 @export var attack_distance: float  = 2.5
 @export var attack_cooldown: float  = 0.5
 
+# ── HealthBar 3D ───────────────────────────────────────────────
+## Tiempo (s) que la barra permanece visible tras recibir daño
+## cuando el enemigo ya no persigue al jugador.
+@export var health_bar_visible_time: float = 3.0
+
 # ── Referencias de escena (los hijos deben tener estos nodos) ──
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var attack_hitbox: Area3D        = $AttackHitbox
+
+# HealthBarPivot es opcional: si el enemigo no tiene barra, todo se omite.
+@onready var _hb_pivot: Node3D  = get_node_or_null("HealthBarPivot")
+# %HealthBar usa el unique name; funciona aunque esté dentro del SubViewport.
+@onready var _hb_ui: Control    = get_node_or_null("%HealthBar")
+@onready var _hb_sprite: Sprite3D    = $HealthBarPivot/Sprite3D
 
 # ── Nombres de animaciones (sobrescribir si el enemigo usa otros) ──
 @export var anim_idle: String    = "Descansar"
@@ -32,6 +43,10 @@ var spawn_position: Vector3
 var active: bool       = true
 var is_attacking: bool = false
 var attack_timer: float = 0.0
+
+# Estado interno de la barra
+var _hb_visibility_timer: float = 0.0
+var _hb_last_health: float      = 0.0
 
 # ── Señales ───────────────────────────────────────────────────
 signal health_changed(new_health: float, max_health: float)
@@ -59,11 +74,79 @@ func _ready() -> void:
 	anim_player.animation_finished.connect(_on_animation_finished)
 	anim_player.play(anim_idle)
 
+	_setup_health_bar()
+	health_changed.connect(_on_health_changed_hb)
+	died.connect(_on_died_hb)
+
 	_on_ready_extra()   # hook para hijos
 
 # Hook vacío que los hijos pueden sobreescribir sin tocar _ready
 func _on_ready_extra() -> void:
 	pass
+
+# ── HealthBar 3D ──────────────────────────────────────────────
+func _setup_health_bar() -> void:
+	if _hb_ui == null:
+		return
+	_hb_ui.set_max_health(max_health)
+	_hb_ui.set_health(current_health)
+	_hb_last_health = current_health
+	_hb_ui.hide()
+
+func _process(delta: float) -> void:
+	if _hb_ui == null:
+		return
+	_hb_update_visibility(delta)
+	_hb_billboard()
+
+func _hb_update_visibility(delta: float) -> void:
+	# Mostrar si persigue (active) o si tiene daño y el timer sigue vivo
+	if _hb_is_chasing():
+		_hb_ui.show()
+		_hb_sprite.show()
+		_hb_visibility_timer = health_bar_visible_time   # resetea mientras persigue
+	elif _hb_has_lost_health():
+		if _hb_visibility_timer > 0.0:
+			_hb_visibility_timer -= delta
+			_hb_ui.show()
+			_hb_sprite.show()
+		else:
+			_hb_ui.hide()
+			_hb_sprite.hide()
+	else:
+		_hb_ui.hide()
+		_hb_sprite.hide()
+
+func _hb_billboard() -> void:
+	if _hb_pivot == null:
+		return
+	var cam := get_viewport().get_camera_3d()
+	if cam == null:
+		return
+	var look_pos := cam.global_position
+	look_pos.y    = _hb_pivot.global_position.y   # mantener horizontal
+	_hb_pivot.look_at(look_pos, Vector3.UP)
+
+func _hb_is_chasing() -> bool:
+	return active and is_alive()
+
+func _hb_has_lost_health() -> bool:
+	return current_health < max_health
+
+func _on_health_changed_hb(new_health: float, _max: float) -> void:
+	if _hb_ui == null:
+		return
+	var delta_hp := _hb_last_health - new_health
+	_hb_last_health = new_health
+	if delta_hp > 0.0:
+		_hb_ui.take_damage(delta_hp)
+	elif delta_hp < 0.0:
+		_hb_ui.heal(-delta_hp)
+	_hb_visibility_timer = health_bar_visible_time
+
+func _on_died_hb() -> void:
+	if _hb_ui:
+		_hb_ui.hide()
 
 # ── Navegación ────────────────────────────────────────────────
 func _setup_navigation() -> void:
