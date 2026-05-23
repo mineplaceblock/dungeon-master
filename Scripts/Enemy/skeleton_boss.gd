@@ -7,17 +7,15 @@ const PILLAR_TPOSE_DURATION = 1.5
 
 @export var pillar_scene: PackedScene
 
-var _pillar_timer: float  = 4.0
-var _doing_pillar: bool   = false
+var _pillar_timer: float = 4.0
+var _doing_pillar: bool  = false
 
 func _on_ready_extra() -> void:
-	max_health     = 500.0
-	attack_damage  = 35.0
-	move_speed     = 5.0
+	attack_damage   = 35.0
+	move_speed      = 5.0
 	attack_distance = 2.5
-	current_health = max_health  # re-aplicar tras cambiar max_health
+	setup_health(500.0)
 
-# Bloquea el loop de física mientras lanza el pilar
 func _should_skip_physics() -> bool:
 	return _doing_pillar
 
@@ -49,13 +47,14 @@ func _spawn_pillar() -> void:
 
 	var pillar = pillar_scene.instantiate() as Node3D
 	get_tree().current_scene.add_child(pillar)
-	var spawn_pos   = target.global_position
-	spawn_pos.y    -= 4.0
+	var spawn_pos          = target.global_position
+	spawn_pos.y           -= 4.0
 	pillar.global_position = spawn_pos
 	pillar.target_y        = target.global_position.y
 
 	await get_tree().create_timer(2.0).timeout
-	_doing_pillar  = false
-	is_attacking   = false
-	_pillar_timer  = PILLAR_COOLDOWN
+
+	_doing_pillar = false
+	is_attacking  = false
+	_pillar_timer = PILLAR_COOLDOWN
 	anim_player.play(anim_idle)
